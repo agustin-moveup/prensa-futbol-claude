@@ -53,5 +53,7 @@ export const meta: BlockMeta = {
     isBest: boolean;
     deepLink: string;
   }>;
+  matchUrl?: string;
+  ctaLabel?: string;
 }`,
 };

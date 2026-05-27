@@ -243,6 +243,43 @@
   border-radius: 0 var(--gds-radius-md) 0 var(--gds-radius-sm);
 }
 
+/* ── CTA ── */
+
+.pf-match-tip-card__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gds-space-2);
+  padding: var(--gds-space-3) var(--gds-space-4);
+  background: var(--gds-color-primary);
+  color: var(--gds-color-text);
+  border-radius: var(--gds-radius-md);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 150ms ease;
+}
+
+.pf-match-tip-card__cta:hover {
+  background: var(--gds-color-primary-deep);
+}
+
+.pf-match-tip-card__cta-arrow {
+  flex-shrink: 0;
+  transition: transform 150ms ease;
+}
+
+.pf-match-tip-card__cta:hover .pf-match-tip-card__cta-arrow {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-match-tip-card__cta,
+  .pf-match-tip-card__cta-arrow {
+    transition: none;
+  }
+}
+
 /* ── Container queries ── */
 
 @container pf-match-tip-card (max-width: 360px) {

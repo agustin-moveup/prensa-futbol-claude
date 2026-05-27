@@ -23,6 +23,8 @@ export interface PfMatchTipCardProps {
   teamAway: { name: string; shortName: string; colorFrom: string; colorTo: string };
   tip: { author: string; text: string };
   odds: OddsItem[];
+  matchUrl?: string;
+  ctaLabel?: string;
 }
 
 const OUTCOME_LABELS: Record<string, string> = {
@@ -92,6 +94,8 @@ export default function PfMatchTipCard({
   teamAway,
   tip,
   odds,
+  matchUrl = "#",
+  ctaLabel = "Ver análisis del partido",
 }: PfMatchTipCardProps) {
   return (
     <article className="pf-match-tip-card">
@@ -145,6 +149,13 @@ export default function PfMatchTipCard({
           <OddPill key={`${item.outcome}-${item.bookmaker.slug}`} item={item} />
         ))}
       </div>
+
+      <a href={matchUrl} className="pf-match-tip-card__cta">
+        {ctaLabel}
+        <svg className="pf-match-tip-card__cta-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </a>
     </article>
   );
 }
