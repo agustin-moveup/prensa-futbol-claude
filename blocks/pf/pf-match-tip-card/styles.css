@@ -174,58 +174,60 @@
   gap: var(--gds-space-2);
 }
 
-/* Branded bookmaker pill */
+/* Odds pill */
 .pf-match-tip-card__odd-pill {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: var(--gds-space-2);
   padding: var(--gds-space-3) var(--gds-space-2);
-  background: var(--bm-brand-color, var(--gds-color-surface-elevated));
+  background: var(--gds-color-surface-elevated);
   border-radius: var(--gds-radius-md);
-  border: 2px solid transparent;
+  border: 1px solid var(--gds-color-border);
   cursor: pointer;
   text-decoration: none;
-  color: var(--bm-text-color, var(--gds-color-text));
-  transition: filter 150ms ease, border-color 150ms ease;
-  overflow: hidden;
+  color: var(--gds-color-text);
+  transition: border-color 150ms ease;
 }
 
 .pf-match-tip-card__odd-pill:hover {
-  filter: brightness(1.12);
+  border-color: var(--gds-color-primary);
 }
 
 .pf-match-tip-card__odd-pill--best {
   border-color: var(--gds-color-accent);
-  box-shadow: 0 0 0 1px var(--gds-color-accent);
 }
 
 .pf-match-tip-card__odd-outcome {
-  font-size: 0.6rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  opacity: 0.75;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--gds-color-text-muted);
 }
 
-.pf-match-tip-card__odd-bm-name {
-  font-size: 0.6rem;
+/* Brand color circle — instance-level color via inline CSS var */
+.pf-match-tip-card__odd-bm-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bm-brand-color, var(--gds-color-border));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5rem;
   font-weight: 700;
-  letter-spacing: 0.03em;
-  opacity: 0.9;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 100%;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
 }
 
 .pf-match-tip-card__odd-value {
   font-family: var(--gds-font-family-mono);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
   line-height: 1;
-  margin-top: 2px;
+  color: var(--gds-color-text);
 }
 
 .pf-match-tip-card__odd-best-badge {
@@ -261,8 +263,9 @@
     height: 36px;
   }
 
-  .pf-match-tip-card__odd-bm-name {
-    display: none;
+  .pf-match-tip-card__odd-bm-logo {
+    width: 22px;
+    height: 22px;
   }
 
   .pf-match-tip-card__vs {
@@ -297,7 +300,9 @@
     font-size: 1.4rem;
   }
 
-  .pf-match-tip-card__odd-bm-name {
-    font-size: 0.7rem;
+  .pf-match-tip-card__odd-bm-logo {
+    width: 34px;
+    height: 34px;
+    font-size: 0.6rem;
   }
 }
