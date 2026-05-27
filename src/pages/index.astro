@@ -4,25 +4,44 @@ import PfBookmakerBanner from "@blocks/pf/pf-bookmaker-banner/index";
 import { sampleData as bannerData } from "@blocks/pf/pf-bookmaker-banner/sample-data";
 import PfMatchTipCard from "@blocks/pf/pf-match-tip-card/index";
 import { sampleData as matchTipData } from "@blocks/pf/pf-match-tip-card/sample-data";
-import PfBookmakerList from "@blocks/pf/pf-bookmaker-list/index";
-import { sampleData as bookmakerData } from "@blocks/pf/pf-bookmaker-list/sample-data";
 import PfCompetitionAccordion from "@blocks/pf/pf-competition-accordion/index";
 import { sampleData as accordionData } from "@blocks/pf/pf-competition-accordion/sample-data";
+import PfBookmakerList from "@blocks/pf/pf-bookmaker-list/index";
+import { sampleData as bookmakerData } from "@blocks/pf/pf-bookmaker-list/sample-data";
 import PfTipsterCard from "@blocks/pf/pf-tipster-card/index";
 import { sampleData as tipsterData } from "@blocks/pf/pf-tipster-card/sample-data";
+import PfLinkGrid from "@blocks/pf/pf-link-grid/index";
+import { sampleData as linkGridData } from "@blocks/pf/pf-link-grid/sample-data";
+import PfSeoText from "@blocks/pf/pf-seo-text/index";
+import { sampleData as seoData } from "@blocks/pf/pf-seo-text/sample-data";
 ---
 
 <BaseLayout>
   <main class="pf-home">
+    <!-- 1. Banner comercial top -->
     <PfBookmakerBanner {...bannerData.default.default} client:visible />
+
+    <!-- 2. Featured match tip -->
     <PfMatchTipCard {...matchTipData.default.default} client:visible />
+
+    <!-- 3. Acordeones de competición con odds -->
     <PfCompetitionAccordion {...accordionData.default.default} client:visible />
     <PfCompetitionAccordion {...accordionData.default.closed} client:visible />
+
+    <!-- 4. Tipsters en grid -->
     <div class="pf-home__tipsters">
       <PfTipsterCard {...tipsterData.default.default} client:visible />
       <PfTipsterCard {...tipsterData.default.alternate} client:visible />
     </div>
+
+    <!-- 5. Top casas de apuestas -->
     <PfBookmakerList {...bookmakerData.card.default} client:visible />
+
+    <!-- 6. Link grid de guías -->
+    <PfLinkGrid {...linkGridData.default.default} client:visible />
+
+    <!-- 7. SEO text footer -->
+    <PfSeoText {...seoData.default.default} client:visible />
   </main>
 </BaseLayout>
 

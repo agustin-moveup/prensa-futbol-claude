@@ -1,0 +1,53 @@
+.pf-seo-text {
+  container-type: inline-size;
+  container-name: pf-seo-text;
+
+  font-family: var(--gds-font-family-base);
+  color: var(--gds-color-text);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gds-space-5);
+}
+
+.pf-seo-text__title {
+  font-family: var(--gds-font-family-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--gds-color-text);
+  letter-spacing: -0.01em;
+  padding-bottom: var(--gds-space-4);
+  border-bottom: 1px solid var(--gds-color-border);
+}
+
+.pf-seo-text__body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gds-space-5) var(--gds-space-7);
+}
+
+.pf-seo-text__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gds-space-2);
+}
+
+.pf-seo-text__section-heading {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gds-color-text);
+}
+
+.pf-seo-text__section-body {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--gds-color-text-muted);
+}
+
+/* ── Container queries ── */
+
+@container pf-seo-text (max-width: 560px) {
+  .pf-seo-text__body {
+    grid-template-columns: 1fr;
+  }
+}
