@@ -3,7 +3,7 @@
   container-name: pf-match-tip-card;
 
   background: var(--gds-color-surface);
-  border-radius: var(--gds-radius-lg);
+  border-radius: var(--gds-radius-sm);
   border: 1px solid var(--gds-color-border);
   padding: var(--gds-space-5);
   display: flex;

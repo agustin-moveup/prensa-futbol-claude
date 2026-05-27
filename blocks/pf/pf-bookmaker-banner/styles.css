@@ -4,7 +4,7 @@
 
   background: color-mix(in srgb, var(--gds-color-accent) 13%, var(--gds-color-surface));
   border: 1px solid color-mix(in srgb, var(--gds-color-accent) 30%, transparent);
-  border-radius: var(--gds-radius-lg);
+  border-radius: var(--gds-radius-sm);
   padding: var(--gds-space-3) var(--gds-space-5);
   font-family: var(--gds-font-family-base);
   display: flex;

@@ -4,7 +4,7 @@
 
   background: var(--gds-color-surface);
   border: 1px solid var(--gds-color-border);
-  border-radius: var(--gds-radius-lg);
+  border-radius: var(--gds-radius-sm);
   overflow: hidden;
   font-family: var(--gds-font-family-base);
   color: var(--gds-color-text);

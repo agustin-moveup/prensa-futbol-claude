@@ -142,7 +142,7 @@
 .pf-bookmaker-list--card .pf-bookmaker-list__item {
   background: var(--gds-color-surface);
   border: 1px solid var(--gds-color-border);
-  border-radius: var(--gds-radius-lg);
+  border-radius: var(--gds-radius-sm);
   padding: var(--gds-space-4);
   display: flex;
   flex-direction: column;
