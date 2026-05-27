@@ -1,0 +1,311 @@
+.pf-bookmaker-list {
+  container-type: inline-size;
+  container-name: pf-bookmaker-list;
+
+  font-family: var(--gds-font-family-base);
+  color: var(--gds-color-text);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gds-space-4);
+}
+
+/* ── Title ── */
+
+.pf-bookmaker-list__title {
+  font-size: 1.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--gds-color-text);
+  line-height: 1.1;
+}
+
+/* ── List reset ── */
+
+.pf-bookmaker-list__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gds-space-3);
+}
+
+/* ── Logo circle ── */
+
+.pf-bookmaker-list__logo-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.pf-bookmaker-list__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--logo-size, 48px);
+  height: var(--logo-size, 48px);
+  border-radius: var(--gds-radius-md);
+  background: linear-gradient(135deg, var(--logo-from, #555), var(--logo-to, #222));
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--gds-color-text);
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+/* ── Rank badge ── */
+
+.pf-bookmaker-list__rank {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gds-color-surface-elevated);
+  border: 1px solid var(--gds-color-border);
+  font-size: 0.55rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gds-color-text-muted);
+}
+
+.pf-bookmaker-list__rank--gold {
+  background: var(--gds-color-accent);
+  border-color: var(--gds-color-accent);
+  color: var(--gds-color-bg);
+}
+
+/* ── Stars ── */
+
+.pf-bookmaker-list__rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--gds-color-accent);
+}
+
+.pf-bookmaker-list__star--empty {
+  color: var(--gds-color-border);
+}
+
+.pf-bookmaker-list__rating-value {
+  font-family: var(--gds-font-family-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gds-color-text-muted);
+  margin-left: var(--gds-space-1);
+}
+
+/* ── CTA button ── */
+
+.pf-bookmaker-list__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gds-space-3) var(--gds-space-5);
+  background: var(--gds-color-primary-deep);
+  color: var(--gds-color-text);
+  border-radius: var(--gds-radius-md);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 150ms ease;
+}
+
+.pf-bookmaker-list__cta:hover {
+  background: var(--gds-color-primary);
+}
+
+.pf-bookmaker-list__cta--full {
+  width: 100%;
+}
+
+/* ── Disclaimer ── */
+
+.pf-bookmaker-list__disclaimer {
+  font-size: 0.65rem;
+  color: var(--gds-color-text-muted);
+  text-align: center;
+  line-height: 1.5;
+  padding-top: var(--gds-space-2);
+  border-top: 1px solid var(--gds-color-border);
+}
+
+/* ════════════════════════════════════
+   CARD variant
+   ════════════════════════════════════ */
+
+.pf-bookmaker-list--card .pf-bookmaker-list__item {
+  background: var(--gds-color-surface);
+  border: 1px solid var(--gds-color-border);
+  border-radius: var(--gds-radius-lg);
+  padding: var(--gds-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gds-space-3);
+}
+
+.pf-bookmaker-list--card .pf-bookmaker-list__item-main {
+  display: flex;
+  align-items: center;
+  gap: var(--gds-space-3);
+}
+
+.pf-bookmaker-list--card .pf-bookmaker-list__item-left {
+  display: flex;
+  align-items: center;
+  gap: var(--gds-space-3);
+  flex: 1;
+  min-width: 0;
+}
+
+.pf-bookmaker-list--card .pf-bookmaker-list__item-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gds-space-1);
+  min-width: 0;
+}
+
+.pf-bookmaker-list--card .pf-bookmaker-list__bm-name {
+  font-size: 0.75rem;
+  color: var(--gds-color-text-muted);
+}
+
+.pf-bookmaker-list--card .pf-bookmaker-list__bonus {
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--gds-color-text);
+  line-height: 1.2;
+}
+
+/* ════════════════════════════════════
+   SIDEBAR variant
+   ════════════════════════════════════ */
+
+.pf-bookmaker-list--sidebar .pf-bookmaker-list__list {
+  gap: var(--gds-space-2);
+}
+
+.pf-bookmaker-list--sidebar .pf-bookmaker-list__item--sidebar {
+  background: var(--gds-color-surface);
+  border: 1px solid var(--gds-color-border);
+  border-radius: var(--gds-radius-md);
+  padding: var(--gds-space-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gds-space-2);
+  text-align: center;
+}
+
+.pf-bookmaker-list--sidebar .pf-bookmaker-list__bm-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gds-color-text);
+}
+
+.pf-bookmaker-list--sidebar .pf-bookmaker-list__bonus {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gds-color-accent);
+  text-align: center;
+}
+
+/* ════════════════════════════════════
+   TABLE variant
+   ════════════════════════════════════ */
+
+.pf-bookmaker-list--table .pf-bookmaker-list__table-header {
+  display: grid;
+  grid-template-columns: 36px 1fr 100px 1fr auto;
+  gap: var(--gds-space-3);
+  padding: var(--gds-space-2) var(--gds-space-4);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gds-color-text-muted);
+}
+
+.pf-bookmaker-list--table .pf-bookmaker-list__item--row {
+  display: grid;
+  grid-template-columns: 36px 1fr 100px 1fr auto;
+  align-items: center;
+  gap: var(--gds-space-3);
+  background: var(--gds-color-surface);
+  border: 1px solid var(--gds-color-border);
+  border-radius: var(--gds-radius-md);
+  padding: var(--gds-space-3) var(--gds-space-4);
+}
+
+.pf-bookmaker-list--table .pf-bookmaker-list__col--rank {
+  display: flex;
+  justify-content: center;
+}
+
+.pf-bookmaker-list--table .pf-bookmaker-list__col--rank .pf-bookmaker-list__rank {
+  position: static;
+  width: 24px;
+  height: 24px;
+  font-size: 0.65rem;
+}
+
+.pf-bookmaker-list--table .pf-bookmaker-list__col--logo-name {
+  display: flex;
+  align-items: center;
+  gap: var(--gds-space-2);
+}
+
+.pf-bookmaker-list--table .pf-bookmaker-list__col--logo-name .pf-bookmaker-list__logo-wrap {
+  position: static;
+}
+
+.pf-bookmaker-list--table .pf-bookmaker-list__col--logo-name .pf-bookmaker-list__logo-wrap .pf-bookmaker-list__rank {
+  display: none;
+}
+
+.pf-bookmaker-list--table .pf-bookmaker-list__bm-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.pf-bookmaker-list--table .pf-bookmaker-list__col--bonus {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gds-color-accent);
+}
+
+/* ── Table container queries — collapse columns ── */
+
+@container pf-bookmaker-list (max-width: 600px) {
+  .pf-bookmaker-list--table .pf-bookmaker-list__table-header,
+  .pf-bookmaker-list--table .pf-bookmaker-list__item--row {
+    grid-template-columns: 36px 1fr auto;
+  }
+
+  .pf-bookmaker-list--table .pf-bookmaker-list__col--rating,
+  .pf-bookmaker-list--table .pf-bookmaker-list__col--bonus {
+    display: none;
+  }
+}
+
+@container pf-bookmaker-list (max-width: 400px) {
+  .pf-bookmaker-list--card .pf-bookmaker-list__bonus {
+    font-size: 0.85rem;
+  }
+
+  .pf-bookmaker-list--card .pf-bookmaker-list__cta {
+    padding: var(--gds-space-2) var(--gds-space-3);
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-bookmaker-list__cta {
+    transition: none;
+  }
+}

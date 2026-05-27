@@ -27,12 +27,6 @@ export interface PfMatchTipCardProps {
   ctaLabel?: string;
 }
 
-const OUTCOME_LABELS: Record<string, string> = {
-  "1": "Casa",
-  "X": "Empate",
-  "2": "Visitante",
-};
-
 function TeamLogo({
   colorFrom,
   colorTo,
