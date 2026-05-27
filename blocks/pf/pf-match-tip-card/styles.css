@@ -93,12 +93,12 @@
   flex: 1;
 }
 
-.pf-match-tip-card__team--away {
-  align-items: flex-end;
-}
-
 .pf-match-tip-card__team--home {
   align-items: flex-start;
+}
+
+.pf-match-tip-card__team--away {
+  align-items: flex-end;
 }
 
 .pf-match-tip-card__team-logo {
@@ -107,8 +107,8 @@
   border-radius: 50%;
   background: linear-gradient(
     135deg,
-    var(--team-color-from, #666),
-    var(--team-color-to, #333)
+    var(--team-color-from, #555),
+    var(--team-color-to, #222)
   );
   display: flex;
   align-items: center;
@@ -123,7 +123,6 @@
 .pf-match-tip-card__team-name {
   font-size: 0.8rem;
   font-weight: 600;
-  text-align: center;
   color: var(--gds-color-text);
 }
 
@@ -175,63 +174,67 @@
   gap: var(--gds-space-2);
 }
 
+/* Branded bookmaker pill */
 .pf-match-tip-card__odd-pill {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--gds-space-1);
+  gap: 2px;
   padding: var(--gds-space-3) var(--gds-space-2);
-  background: var(--gds-color-surface-elevated);
-  border: 1px solid var(--gds-color-border);
+  background: var(--bm-brand-color, var(--gds-color-surface-elevated));
   border-radius: var(--gds-radius-md);
+  border: 2px solid transparent;
   cursor: pointer;
-  transition: border-color 150ms ease, background 150ms ease;
   text-decoration: none;
-  color: var(--gds-color-text);
+  color: var(--bm-text-color, var(--gds-color-text));
+  transition: filter 150ms ease, border-color 150ms ease;
+  overflow: hidden;
 }
 
 .pf-match-tip-card__odd-pill:hover {
-  border-color: var(--gds-color-primary);
-  background: var(--gds-color-surface);
+  filter: brightness(1.12);
 }
 
 .pf-match-tip-card__odd-pill--best {
   border-color: var(--gds-color-accent);
+  box-shadow: 0 0 0 1px var(--gds-color-accent);
 }
 
 .pf-match-tip-card__odd-outcome {
-  font-size: 0.65rem;
-  font-weight: 700;
+  font-size: 0.6rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--gds-color-text-muted);
+  opacity: 0.75;
 }
 
-.pf-match-tip-card__odd-value {
-  font-family: var(--gds-font-family-mono);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--gds-color-text);
-}
-
-.pf-match-tip-card__odd-bookmaker {
+.pf-match-tip-card__odd-bm-name {
   font-size: 0.6rem;
-  color: var(--gds-color-text-muted);
-  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  opacity: 0.9;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   max-width: 100%;
 }
 
+.pf-match-tip-card__odd-value {
+  font-family: var(--gds-font-family-mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 2px;
+}
+
 .pf-match-tip-card__odd-best-badge {
   position: absolute;
-  top: -1px;
-  right: -1px;
+  top: 0;
+  right: 0;
   background: var(--gds-color-accent);
   color: var(--gds-color-bg);
-  font-size: 0.55rem;
+  font-size: 0.5rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   padding: 2px var(--gds-space-1);
@@ -258,7 +261,7 @@
     height: 36px;
   }
 
-  .pf-match-tip-card__odd-bookmaker {
+  .pf-match-tip-card__odd-bm-name {
     display: none;
   }
 
@@ -291,6 +294,10 @@
   }
 
   .pf-match-tip-card__odd-value {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
+  }
+
+  .pf-match-tip-card__odd-bm-name {
+    font-size: 0.7rem;
   }
 }

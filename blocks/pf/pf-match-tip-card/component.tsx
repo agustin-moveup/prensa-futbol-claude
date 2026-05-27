@@ -2,7 +2,13 @@ import React from "react";
 
 export interface OddsItem {
   outcome: "1" | "X" | "2";
-  bookmaker: { name: string; slug: string };
+  outcomeLabel?: string;
+  bookmaker: {
+    name: string;
+    slug: string;
+    brandColor: string;
+    brandTextColor?: string;
+  };
   value: number;
   isBest: boolean;
   deepLink: string;
@@ -18,6 +24,12 @@ export interface PfMatchTipCardProps {
   tip: { author: string; text: string };
   odds: OddsItem[];
 }
+
+const OUTCOME_LABELS: Record<string, string> = {
+  "1": "Casa",
+  "X": "Empate",
+  "2": "Visitante",
+};
 
 function TeamLogo({
   colorFrom,
@@ -45,16 +57,24 @@ function TeamLogo({
 }
 
 function OddPill({ item }: { item: OddsItem }) {
+  const label = item.outcomeLabel ?? OUTCOME_LABELS[item.outcome] ?? item.outcome;
   return (
     <a
       href={item.deepLink}
       className={`pf-match-tip-card__odd-pill${item.isBest ? " pf-match-tip-card__odd-pill--best" : ""}`}
+      style={
+        {
+          "--bm-brand-color": item.bookmaker.brandColor,
+          "--bm-text-color": item.bookmaker.brandTextColor ?? "#ffffff",
+        } as React.CSSProperties
+      }
       target="_blank"
       rel="noopener noreferrer sponsored"
+      aria-label={`${label}: ${item.value.toFixed(2)} en ${item.bookmaker.name}`}
     >
-      <span className="pf-match-tip-card__odd-outcome">{item.outcome}</span>
+      <span className="pf-match-tip-card__odd-outcome">{label}</span>
+      <span className="pf-match-tip-card__odd-bm-name">{item.bookmaker.name}</span>
       <span className="pf-match-tip-card__odd-value">{item.value.toFixed(2)}</span>
-      <span className="pf-match-tip-card__odd-bookmaker">{item.bookmaker.name}</span>
       {item.isBest && (
         <span className="pf-match-tip-card__odd-best-badge" aria-label="Mejor cuota">
           BEST

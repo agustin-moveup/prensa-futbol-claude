@@ -47,7 +47,8 @@ export const meta: BlockMeta = {
   tip: { author: string; text: string };
   odds: Array<{
     outcome: "1" | "X" | "2";
-    bookmaker: { name: string; slug: string };
+    outcomeLabel?: string;
+    bookmaker: { name: string; slug: string; brandColor: string; brandTextColor?: string };
     value: number;
     isBest: boolean;
     deepLink: string;

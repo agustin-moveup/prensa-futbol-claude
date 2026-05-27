@@ -1,5 +1,15 @@
 import type { PfMatchTipCardProps } from "./component";
 
+// Bookmaker brand colors — instance-level data, not design tokens
+const BM = {
+  betano:  { name: "Betano",  slug: "betano",  brandColor: "#e01f26", brandTextColor: "#ffffff" },
+  betsson: { name: "Betsson", slug: "betsson", brandColor: "#f7a600", brandTextColor: "#1a1a1a" },
+  codere:  { name: "Codere",  slug: "codere",  brandColor: "#1a7233", brandTextColor: "#ffffff" },
+  coolbet: { name: "Coolbet", slug: "coolbet", brandColor: "#0a4f8f", brandTextColor: "#ffffff" },
+  novibet: { name: "Novibet", slug: "novibet", brandColor: "#1b3a6b", brandTextColor: "#ffffff" },
+  epicbet: { name: "EpicBet", slug: "epicbet", brandColor: "#16a34a", brandTextColor: "#ffffff" },
+} as const;
+
 const defaultDefault: PfMatchTipCardProps = {
   competition: { name: "Primera División Chile", slug: "primera-division-chile" },
   kickoff: "Hoy · 20:00",
@@ -23,22 +33,22 @@ const defaultDefault: PfMatchTipCardProps = {
   odds: [
     {
       outcome: "1",
-      bookmaker: { name: "Betsson", slug: "betsson" },
-      value: 2.1,
+      bookmaker: BM.betano,
+      value: 2.10,
       isBest: true,
       deepLink: "#",
     },
     {
       outcome: "X",
-      bookmaker: { name: "Coolbet", slug: "coolbet" },
+      bookmaker: BM.novibet,
       value: 3.25,
       isBest: false,
       deepLink: "#",
     },
     {
       outcome: "2",
-      bookmaker: { name: "Codere", slug: "codere" },
-      value: 3.5,
+      bookmaker: BM.codere,
+      value: 3.50,
       isBest: false,
       deepLink: "#",
     },
