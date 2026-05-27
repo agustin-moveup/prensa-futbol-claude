@@ -1,0 +1,32 @@
+---
+import { generateCssVars } from "@/lib/tokens";
+import "@/styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Prensa Futbol — Apuestas, Cuotas y Tips de Fútbol Chile",
+  description = "Las mejores cuotas, tips de expertos y guías de casas de apuestas para el fútbol chileno.",
+} = Astro.props;
+
+const cssVars = generateCssVars();
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <style set:html={`.pf-scope {\n${cssVars}\n}`}></style>
+  </head>
+  <body>
+    <div class="pf-scope">
+      <slot />
+    </div>
+  </body>
+</html>
