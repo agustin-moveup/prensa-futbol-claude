@@ -17,53 +17,136 @@ import { sampleData as seoData } from "@blocks/pf/pf-seo-text/sample-data";
 ---
 
 <BaseLayout>
-  <main class="pf-home">
-    <!-- 1. Banner comercial top -->
-    <PfBookmakerBanner {...bannerData.default.default} client:visible />
+  <div class="pf-page">
 
-    <!-- 2. Featured match tip -->
-    <PfMatchTipCard {...matchTipData.default.default} client:visible />
-
-    <!-- 3. Acordeones de competición con odds -->
-    <PfCompetitionAccordion {...accordionData.default.default} client:visible />
-    <PfCompetitionAccordion {...accordionData.default.closed} client:visible />
-
-    <!-- 4. Tipsters en grid -->
-    <div class="pf-home__tipsters">
-      <PfTipsterCard {...tipsterData.default.default} client:visible />
-      <PfTipsterCard {...tipsterData.default.alternate} client:visible />
+    <!-- Banner comercial top — sin H2, es un strip -->
+    <div class="pf-page__banner">
+      <div class="pf-page__container">
+        <PfBookmakerBanner {...bannerData.default.default} client:visible />
+      </div>
     </div>
 
-    <!-- 5. Top casas de apuestas -->
-    <PfBookmakerList {...bookmakerData.card.default} client:visible />
+    <main class="pf-page__main">
+      <div class="pf-page__container">
 
-    <!-- 6. Link grid de guías -->
-    <PfLinkGrid {...linkGridData.default.default} client:visible />
+        <!-- Pronóstico del día -->
+        <section class="pf-section">
+          <h2 class="pf-section__heading">Pronóstico del día</h2>
+          <PfMatchTipCard {...matchTipData.default.default} client:visible />
+        </section>
 
-    <!-- 7. SEO text footer -->
-    <PfSeoText {...seoData.default.default} client:visible />
-  </main>
+        <!-- Partidos por competición -->
+        <section class="pf-section">
+          <h2 class="pf-section__heading">Partidos de hoy</h2>
+          <div class="pf-section__stack">
+            <PfCompetitionAccordion {...accordionData.default.default} client:visible />
+            <PfCompetitionAccordion {...accordionData.default.closed} client:visible />
+          </div>
+        </section>
+
+        <!-- Expertos -->
+        <section class="pf-section">
+          <h2 class="pf-section__heading">Nuestros expertos</h2>
+          <div class="pf-section__grid-2">
+            <PfTipsterCard {...tipsterData.default.default} client:visible />
+            <PfTipsterCard {...tipsterData.default.alternate} client:visible />
+          </div>
+        </section>
+
+        <!-- Top casas -->
+        <section class="pf-section">
+          <PfBookmakerList {...bookmakerData.card.default} client:visible />
+        </section>
+
+        <!-- Guías y códigos -->
+        <section class="pf-section">
+          <PfLinkGrid {...linkGridData.default.default} client:visible />
+        </section>
+
+        <!-- SEO footer -->
+        <section class="pf-section pf-section--last">
+          <PfSeoText {...seoData.default.default} client:visible />
+        </section>
+
+      </div>
+    </main>
+  </div>
 </BaseLayout>
 
 <style>
-  .pf-home {
+  .pf-page {
+    min-height: 100dvh;
+  }
+
+  .pf-page__container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--gds-space-5) var(--gds-space-4);
+    padding: 0 var(--gds-space-5);
+  }
+
+  /* Banner strip */
+  .pf-page__banner {
+    padding: var(--gds-space-4) 0;
+    border-bottom: 1px solid var(--gds-color-border);
+  }
+
+  /* Main content */
+  .pf-page__main {
+    padding: var(--gds-space-7) 0 var(--gds-space-8);
+  }
+
+  /* Sections */
+  .pf-section {
     display: flex;
     flex-direction: column;
     gap: var(--gds-space-5);
+    padding-bottom: var(--gds-space-8);
+    border-bottom: 1px solid var(--gds-color-border);
+    margin-bottom: var(--gds-space-8);
   }
 
-  .pf-home__tipsters {
+  .pf-section--last {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  /* Section headings */
+  .pf-section__heading {
+    font-family: var(--gds-font-family-heading);
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--gds-color-text);
+    line-height: 1.1;
+  }
+
+  /* Section layouts */
+  .pf-section__stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gds-space-3);
+  }
+
+  .pf-section__grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--gds-space-4);
+    gap: var(--gds-space-5);
   }
 
   @media (max-width: 768px) {
-    .pf-home__tipsters {
+    .pf-page__container {
+      padding: 0 var(--gds-space-4);
+    }
+
+    .pf-section__grid-2 {
       grid-template-columns: 1fr;
+    }
+
+    .pf-section {
+      padding-bottom: var(--gds-space-6);
+      margin-bottom: var(--gds-space-6);
     }
   }
 </style>

@@ -1,5 +1,6 @@
 ---
 import { generateCssVars } from "@/lib/tokens";
+import SiteHeader from "@/components/SiteHeader.astro";
 import "@/styles/global.css";
 
 interface Props {
@@ -29,6 +30,7 @@ const cssVars = generateCssVars();
   </head>
   <body>
     <div class="pf-scope">
+      <SiteHeader />
       <slot />
     </div>
   </body>

@@ -1,0 +1,186 @@
+---
+const navLinks = [
+  { label: "Noticias", href: "/noticias" },
+  { label: "Mundial 2026", href: "/mundial-2026" },
+  { label: "Casas de apuestas", href: "/casas-de-apuestas" },
+  { label: "Pronósticos de Fútbol", href: "/pronosticos" },
+];
+---
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="/" class="site-header__logo" aria-label="Prensa Futbol — Inicio">
+      <span class="site-header__logo-icon" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <rect width="36" height="36" rx="4" fill="#CC0000"/>
+          <path
+            d="M18 6l2.94 9.06H30l-7.72 5.61 2.94 9.06L18 24.12l-7.22 5.61 2.94-9.06L6 15.06h9.06z"
+            fill="white"
+          />
+        </svg>
+      </span>
+      <span class="site-header__logo-text" aria-hidden="true">
+        <span class="site-header__logo-line1">PRENSA</span>
+        <span class="site-header__logo-line2">FUTBOL</span>
+      </span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Navegación principal">
+      <ul class="site-header__nav-list">
+        {navLinks.map((link) => (
+          <li>
+            <a href={link.href} class="site-header__nav-link">{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <button class="site-header__search-btn" aria-label="Buscar">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="7.5" cy="7.5" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12 12l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <button class="site-header__menu-btn" aria-label="Menú" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background: var(--gds-color-bg);
+    border-bottom: 1px solid var(--gds-color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .site-header__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--gds-space-4);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: var(--gds-space-6);
+  }
+
+  /* ── Logo ── */
+
+  .site-header__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--gds-space-2);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .site-header__logo-icon {
+    display: flex;
+    align-items: center;
+  }
+
+  .site-header__logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .site-header__logo-line1,
+  .site-header__logo-line2 {
+    font-family: var(--gds-font-family-heading);
+    font-weight: 900;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    color: var(--gds-color-text);
+  }
+
+  /* ── Nav ── */
+
+  .site-header__nav {
+    flex: 1;
+  }
+
+  .site-header__nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--gds-space-6);
+  }
+
+  .site-header__nav-link {
+    font-family: var(--gds-font-family-base);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--gds-color-text-muted);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 150ms ease;
+  }
+
+  .site-header__nav-link:hover {
+    color: var(--gds-color-text);
+  }
+
+  /* ── Actions ── */
+
+  .site-header__actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .site-header__search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gds-color-text-muted);
+    padding: var(--gds-space-2);
+    display: flex;
+    align-items: center;
+    transition: color 150ms ease;
+  }
+
+  .site-header__search-btn:hover {
+    color: var(--gds-color-text);
+  }
+
+  /* ── Mobile hamburger — hidden on desktop ── */
+
+  .site-header__menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gds-color-text-muted);
+    padding: var(--gds-space-2);
+  }
+
+  @media (max-width: 768px) {
+    .site-header__nav {
+      display: none;
+    }
+
+    .site-header__menu-btn {
+      display: flex;
+      align-items: center;
+    }
+
+    .site-header__actions {
+      margin-left: auto;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .site-header__nav-link,
+    .site-header__search-btn {
+      transition: none;
+    }
+  }
+</style>
