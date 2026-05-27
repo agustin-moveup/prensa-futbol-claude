@@ -1,0 +1,328 @@
+.pf-competition-accordion {
+  container-type: inline-size;
+  container-name: pf-competition-accordion;
+
+  background: var(--gds-color-surface);
+  border: 1px solid var(--gds-color-border);
+  border-radius: var(--gds-radius-lg);
+  overflow: hidden;
+  font-family: var(--gds-font-family-base);
+  color: var(--gds-color-text);
+}
+
+/* ── Summary / trigger ── */
+
+.pf-competition-accordion__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--gds-space-3) var(--gds-space-4);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  gap: var(--gds-space-3);
+}
+
+.pf-competition-accordion__summary::-webkit-details-marker {
+  display: none;
+}
+
+.pf-competition-accordion__summary:hover {
+  background: var(--gds-color-surface-elevated);
+}
+
+.pf-competition-accordion__summary-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--gds-space-3);
+  min-width: 0;
+}
+
+/* ── Competition logo ── */
+
+.pf-competition-accordion__comp-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--gds-radius-sm);
+  background: linear-gradient(135deg, var(--logo-from, #555), var(--logo-to, #222));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5rem;
+  font-weight: 800;
+  color: var(--gds-color-text);
+  flex-shrink: 0;
+}
+
+.pf-competition-accordion__comp-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gds-color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Chevron — rotates when open ── */
+
+.pf-competition-accordion__chevron {
+  color: var(--gds-color-text-muted);
+  flex-shrink: 0;
+  transition: transform 200ms ease;
+}
+
+.pf-competition-accordion[open] .pf-competition-accordion__chevron {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-competition-accordion__chevron {
+    transition: none;
+  }
+}
+
+/* ── Body ── */
+
+.pf-competition-accordion__body {
+  border-top: 1px solid var(--gds-color-border);
+}
+
+/* ── Table header ── */
+
+.pf-competition-accordion__table-header {
+  display: grid;
+  grid-template-columns: 64px 1fr repeat(3, 88px) 40px;
+  gap: var(--gds-space-2);
+  padding: var(--gds-space-2) var(--gds-space-4);
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gds-color-text-muted);
+  background: var(--gds-color-surface-elevated);
+}
+
+.pf-competition-accordion__table-header span:nth-child(3),
+.pf-competition-accordion__table-header span:nth-child(4),
+.pf-competition-accordion__table-header span:nth-child(5) {
+  text-align: center;
+}
+
+/* ── Match list ── */
+
+.pf-competition-accordion__matches {
+  list-style: none;
+}
+
+.pf-competition-accordion__match-row {
+  display: grid;
+  grid-template-columns: 64px 1fr repeat(3, 88px) 40px;
+  align-items: center;
+  gap: var(--gds-space-2);
+  padding: var(--gds-space-3) var(--gds-space-4);
+  border-top: 1px solid var(--gds-color-border);
+}
+
+.pf-competition-accordion__match-row:hover {
+  background: var(--gds-color-surface-elevated);
+}
+
+/* ── Kickoff / status ── */
+
+.pf-competition-accordion__kickoff {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+}
+
+.pf-competition-accordion__time {
+  font-family: var(--gds-font-family-mono);
+  font-size: 0.65rem;
+  color: var(--gds-color-text-muted);
+  white-space: pre-line;
+  line-height: 1.4;
+}
+
+.pf-competition-accordion__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 2px var(--gds-space-2);
+  border-radius: var(--gds-radius-sm);
+}
+
+.pf-competition-accordion__badge--live {
+  background: color-mix(in srgb, var(--gds-color-live) 15%, transparent);
+  color: var(--gds-color-live);
+}
+
+.pf-competition-accordion__badge--finish {
+  background: var(--gds-color-surface-elevated);
+  color: var(--gds-color-text-muted);
+}
+
+.pf-competition-accordion__live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gds-color-live);
+  animation: pf-ca-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pf-ca-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-competition-accordion__live-dot {
+    animation: none;
+  }
+}
+
+/* ── Teams ── */
+
+.pf-competition-accordion__teams {
+  display: flex;
+  align-items: center;
+  gap: var(--gds-space-2);
+  min-width: 0;
+}
+
+.pf-competition-accordion__team-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--logo-from, #555), var(--logo-to, #222));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.4rem;
+  font-weight: 800;
+  color: var(--gds-color-text);
+  flex-shrink: 0;
+}
+
+.pf-competition-accordion__match-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gds-color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pf-competition-accordion__vs {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--gds-color-text-muted);
+}
+
+/* ── Odds pill (duplicated from pf-match-tip-card — standalone) ── */
+
+.pf-competition-accordion__odd-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: var(--gds-space-2) var(--gds-space-1);
+  background: var(--gds-color-surface-elevated);
+  border: 1px solid var(--gds-color-border);
+  border-radius: var(--gds-radius-sm);
+  text-decoration: none;
+  color: var(--gds-color-text);
+  transition: border-color 150ms ease;
+}
+
+.pf-competition-accordion__odd-pill:hover {
+  border-color: var(--gds-color-primary);
+}
+
+.pf-competition-accordion__odd-logo {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--bm-brand-color, var(--gds-color-border));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.pf-competition-accordion__odd-value {
+  font-family: var(--gds-font-family-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gds-color-text);
+}
+
+.pf-competition-accordion__odd-empty {
+  text-align: center;
+  color: var(--gds-color-text-muted);
+  font-size: 0.75rem;
+}
+
+/* ── Arrow CTA ── */
+
+.pf-competition-accordion__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--gds-color-primary-deep);
+  color: var(--gds-color-text);
+  border-radius: var(--gds-radius-sm);
+  text-decoration: none;
+  transition: background 150ms ease;
+  margin-left: auto;
+}
+
+.pf-competition-accordion__arrow:hover {
+  background: var(--gds-color-primary);
+}
+
+/* ── Container queries ── */
+
+@container pf-competition-accordion (max-width: 560px) {
+  .pf-competition-accordion__table-header,
+  .pf-competition-accordion__match-row {
+    grid-template-columns: 52px 1fr repeat(3, 64px) 32px;
+    gap: var(--gds-space-1);
+    padding: var(--gds-space-2) var(--gds-space-3);
+  }
+
+  .pf-competition-accordion__match-title {
+    font-size: 0.72rem;
+  }
+
+  .pf-competition-accordion__team-logo {
+    display: none;
+  }
+}
+
+@container pf-competition-accordion (max-width: 420px) {
+  .pf-competition-accordion__table-header,
+  .pf-competition-accordion__match-row {
+    grid-template-columns: 44px 1fr repeat(3, 52px) 28px;
+  }
+
+  .pf-competition-accordion__odd-logo {
+    width: 16px;
+    height: 16px;
+    font-size: 0.35rem;
+  }
+
+  .pf-competition-accordion__odd-value {
+    font-size: 0.7rem;
+  }
+}

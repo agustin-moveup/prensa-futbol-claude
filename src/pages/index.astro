@@ -6,12 +6,16 @@ import PfMatchTipCard from "@blocks/pf/pf-match-tip-card/index";
 import { sampleData as matchTipData } from "@blocks/pf/pf-match-tip-card/sample-data";
 import PfBookmakerList from "@blocks/pf/pf-bookmaker-list/index";
 import { sampleData as bookmakerData } from "@blocks/pf/pf-bookmaker-list/sample-data";
+import PfCompetitionAccordion from "@blocks/pf/pf-competition-accordion/index";
+import { sampleData as accordionData } from "@blocks/pf/pf-competition-accordion/sample-data";
 ---
 
 <BaseLayout>
   <main class="pf-home">
     <PfBookmakerBanner {...bannerData.default.default} client:visible />
     <PfMatchTipCard {...matchTipData.default.default} client:visible />
+    <PfCompetitionAccordion {...accordionData.default.default} client:visible />
+    <PfCompetitionAccordion {...accordionData.default.closed} client:visible />
     <PfBookmakerList {...bookmakerData.card.default} client:visible />
   </main>
 </BaseLayout>
