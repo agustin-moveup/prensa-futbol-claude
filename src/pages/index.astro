@@ -8,6 +8,8 @@ import PfBookmakerList from "@blocks/pf/pf-bookmaker-list/index";
 import { sampleData as bookmakerData } from "@blocks/pf/pf-bookmaker-list/sample-data";
 import PfCompetitionAccordion from "@blocks/pf/pf-competition-accordion/index";
 import { sampleData as accordionData } from "@blocks/pf/pf-competition-accordion/sample-data";
+import PfTipsterCard from "@blocks/pf/pf-tipster-card/index";
+import { sampleData as tipsterData } from "@blocks/pf/pf-tipster-card/sample-data";
 ---
 
 <BaseLayout>
@@ -16,6 +18,10 @@ import { sampleData as accordionData } from "@blocks/pf/pf-competition-accordion
     <PfMatchTipCard {...matchTipData.default.default} client:visible />
     <PfCompetitionAccordion {...accordionData.default.default} client:visible />
     <PfCompetitionAccordion {...accordionData.default.closed} client:visible />
+    <div class="pf-home__tipsters">
+      <PfTipsterCard {...tipsterData.default.default} client:visible />
+      <PfTipsterCard {...tipsterData.default.alternate} client:visible />
+    </div>
     <PfBookmakerList {...bookmakerData.card.default} client:visible />
   </main>
 </BaseLayout>
@@ -28,5 +34,17 @@ import { sampleData as accordionData } from "@blocks/pf/pf-competition-accordion
     display: flex;
     flex-direction: column;
     gap: var(--gds-space-5);
+  }
+
+  .pf-home__tipsters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gds-space-4);
+  }
+
+  @media (max-width: 768px) {
+    .pf-home__tipsters {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
