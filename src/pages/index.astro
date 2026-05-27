@@ -33,10 +33,18 @@ import { sampleData as seoData } from "@blocks/pf/pf-seo-text/sample-data";
         <section class="pf-section">
           <h2 class="pf-section__heading">Pronóstico del día</h2>
           <div class="pf-tip-slider">
-            <PfMatchTipCard {...matchTipData.default.default} client:visible />
-            <PfMatchTipCard {...matchTipData.default.libertadores} client:visible />
-            <PfMatchTipCard {...matchTipData.default.premierLeague} client:visible />
-            <PfMatchTipCard {...matchTipData.default.mundialClub} client:visible />
+            <div class="pf-tip-slider__item">
+              <PfMatchTipCard {...matchTipData.default.default} client:visible />
+            </div>
+            <div class="pf-tip-slider__item">
+              <PfMatchTipCard {...matchTipData.default.libertadores} client:visible />
+            </div>
+            <div class="pf-tip-slider__item">
+              <PfMatchTipCard {...matchTipData.default.premierLeague} client:visible />
+            </div>
+            <div class="pf-tip-slider__item">
+              <PfMatchTipCard {...matchTipData.default.mundialClub} client:visible />
+            </div>
           </div>
         </section>
 
@@ -140,10 +148,16 @@ import { sampleData as seoData } from "@blocks/pf/pf-seo-text/sample-data";
     scrollbar-color: var(--gds-color-surface-elevated) transparent;
   }
 
-  .pf-tip-slider > * {
+  .pf-tip-slider__item {
     flex: 0 0 min(480px, 90vw);
     scroll-snap-align: start;
     min-width: 0;
+  }
+
+  /* astro-island wrapper needs to fill the slot */
+  .pf-tip-slider__item > * {
+    display: block;
+    width: 100%;
   }
 
   /* Section layouts */

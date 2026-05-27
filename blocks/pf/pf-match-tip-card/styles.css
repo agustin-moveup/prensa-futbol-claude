@@ -1,6 +1,7 @@
 .pf-match-tip-card {
   container-type: inline-size;
   container-name: pf-match-tip-card;
+  width: 100%;
 
   background: var(--gds-color-surface);
   border-radius: var(--gds-radius-sm);
