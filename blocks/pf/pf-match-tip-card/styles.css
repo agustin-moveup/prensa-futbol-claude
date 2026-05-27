@@ -251,7 +251,7 @@
   justify-content: center;
   gap: var(--gds-space-2);
   padding: var(--gds-space-3) var(--gds-space-4);
-  background: var(--gds-color-primary);
+  background: var(--gds-color-primary-deep);
   color: var(--gds-color-text);
   border-radius: var(--gds-radius-md);
   font-size: 0.875rem;
@@ -261,7 +261,7 @@
 }
 
 .pf-match-tip-card__cta:hover {
-  background: var(--gds-color-primary-deep);
+  background: var(--gds-color-primary);
 }
 
 .pf-match-tip-card__cta-arrow {
