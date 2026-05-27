@@ -12,6 +12,7 @@
 /* ── Title ── */
 
 .pf-bookmaker-list__title {
+  font-family: var(--gds-font-family-heading);
   font-size: 1.75rem;
   font-weight: 900;
   text-transform: uppercase;
