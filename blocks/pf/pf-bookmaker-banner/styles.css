@@ -84,7 +84,7 @@
   padding: var(--gds-space-2) var(--gds-space-5);
   background: var(--gds-color-primary-deep);
   color: var(--gds-color-text);
-  border-radius: var(--gds-radius-md);
+  border-radius: var(--gds-radius-sm);
   font-size: 0.85rem;
   font-weight: 700;
   text-decoration: none;

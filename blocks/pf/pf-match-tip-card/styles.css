@@ -183,7 +183,7 @@
   gap: var(--gds-space-2);
   padding: var(--gds-space-3) var(--gds-space-2);
   background: var(--gds-color-surface-elevated);
-  border-radius: var(--gds-radius-md);
+  border-radius: var(--gds-radius-sm);
   border: 1px solid var(--gds-color-border);
   cursor: pointer;
   text-decoration: none;
@@ -240,7 +240,7 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   padding: 2px var(--gds-space-1);
-  border-radius: 0 var(--gds-radius-md) 0 var(--gds-radius-sm);
+  border-radius: 0 var(--gds-radius-sm) 0 var(--gds-radius-sm);
 }
 
 /* ── CTA ── */
@@ -253,7 +253,7 @@
   padding: var(--gds-space-3) var(--gds-space-4);
   background: var(--gds-color-primary-deep);
   color: var(--gds-color-text);
-  border-radius: var(--gds-radius-md);
+  border-radius: var(--gds-radius-sm);
   font-size: 0.875rem;
   font-weight: 700;
   text-decoration: none;
