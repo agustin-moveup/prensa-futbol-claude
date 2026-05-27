@@ -1,0 +1,123 @@
+.pf-bookmaker-banner {
+  container-type: inline-size;
+  container-name: pf-bookmaker-banner;
+
+  background: color-mix(in srgb, var(--gds-color-accent) 13%, var(--gds-color-surface));
+  border: 1px solid color-mix(in srgb, var(--gds-color-accent) 30%, transparent);
+  border-radius: var(--gds-radius-lg);
+  padding: var(--gds-space-3) var(--gds-space-5);
+  font-family: var(--gds-font-family-base);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gds-space-2);
+}
+
+/* ── Inner row ── */
+
+.pf-bookmaker-banner__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--gds-space-3);
+}
+
+/* ── Left group ── */
+
+.pf-bookmaker-banner__left {
+  display: flex;
+  align-items: center;
+  gap: var(--gds-space-2);
+  flex: 1;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+/* ── Logo circle ── */
+
+.pf-bookmaker-banner__logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--logo-from, #555), var(--logo-to, #222));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.55rem;
+  font-weight: 800;
+  color: var(--gds-color-text);
+  flex-shrink: 0;
+}
+
+/* ── Text elements ── */
+
+.pf-bookmaker-banner__name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gds-color-text);
+  white-space: nowrap;
+}
+
+.pf-bookmaker-banner__sep {
+  color: var(--gds-color-text-muted);
+  font-size: 0.75rem;
+}
+
+.pf-bookmaker-banner__tagline {
+  font-size: 0.85rem;
+  color: var(--gds-color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pf-bookmaker-banner__value {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--gds-color-accent);
+  white-space: nowrap;
+}
+
+/* ── CTA ── */
+
+.pf-bookmaker-banner__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--gds-space-2) var(--gds-space-5);
+  background: var(--gds-color-primary-deep);
+  color: var(--gds-color-text);
+  border-radius: var(--gds-radius-md);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 150ms ease;
+}
+
+.pf-bookmaker-banner__cta:hover {
+  background: var(--gds-color-primary);
+}
+
+/* ── Disclaimer ── */
+
+.pf-bookmaker-banner__disclaimer {
+  font-size: 0.6rem;
+  color: var(--gds-color-text-muted);
+  text-align: center;
+  opacity: 0.7;
+  line-height: 1.4;
+}
+
+/* ── Container queries ── */
+
+@container pf-bookmaker-banner (max-width: 480px) {
+  .pf-bookmaker-banner__tagline,
+  .pf-bookmaker-banner__sep:nth-of-type(1) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-bookmaker-banner__cta {
+    transition: none;
+  }
+}
