@@ -1,10 +1,12 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import PfMatchTipCard from "@blocks/pf/pf-match-tip-card/index";
+import { sampleData as matchTipData } from "@blocks/pf/pf-match-tip-card/sample-data";
 ---
 
 <BaseLayout>
   <main class="pf-home">
-    <!-- blocks will be rendered here -->
+    <PfMatchTipCard {...matchTipData.default.default} client:visible />
   </main>
 </BaseLayout>
 
@@ -12,7 +14,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
   .pf-home {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--gds-space-4);
+    padding: var(--gds-space-5) var(--gds-space-4);
     display: flex;
     flex-direction: column;
     gap: var(--gds-space-5);

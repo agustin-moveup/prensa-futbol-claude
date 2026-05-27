@@ -1,0 +1,296 @@
+.pf-match-tip-card {
+  container-type: inline-size;
+  container-name: pf-match-tip-card;
+
+  background: var(--gds-color-surface);
+  border-radius: var(--gds-radius-lg);
+  border: 1px solid var(--gds-color-border);
+  padding: var(--gds-space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gds-space-4);
+  font-family: var(--gds-font-family-base);
+  color: var(--gds-color-text);
+}
+
+/* ── Header ── */
+
+.pf-match-tip-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--gds-space-3);
+  flex-wrap: wrap;
+}
+
+.pf-match-tip-card__competition {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gds-color-primary);
+}
+
+.pf-match-tip-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--gds-space-2);
+  margin-left: auto;
+}
+
+.pf-match-tip-card__kickoff {
+  font-family: var(--gds-font-family-mono);
+  font-size: 0.75rem;
+  color: var(--gds-color-text-muted);
+}
+
+.pf-match-tip-card__live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gds-color-live);
+  animation: pf-live-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pf-live-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-match-tip-card__live-dot {
+    animation: none;
+  }
+}
+
+.pf-match-tip-card__live-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gds-color-live);
+}
+
+.pf-match-tip-card__live-score {
+  font-family: var(--gds-font-family-mono);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--gds-color-text);
+}
+
+/* ── Matchup ── */
+
+.pf-match-tip-card__matchup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gds-space-3);
+}
+
+.pf-match-tip-card__team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gds-space-2);
+  flex: 1;
+}
+
+.pf-match-tip-card__team--away {
+  align-items: flex-end;
+}
+
+.pf-match-tip-card__team--home {
+  align-items: flex-start;
+}
+
+.pf-match-tip-card__team-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--team-color-from, #666),
+    var(--team-color-to, #333)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--gds-color-text);
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.pf-match-tip-card__team-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--gds-color-text);
+}
+
+.pf-match-tip-card__vs {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gds-color-text-muted);
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+}
+
+/* ── Tip box ── */
+
+.pf-match-tip-card__tip-box {
+  background: var(--gds-color-surface-elevated);
+  border-left: 3px solid var(--gds-color-accent);
+  border-radius: var(--gds-radius-sm);
+  padding: var(--gds-space-3) var(--gds-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gds-space-2);
+}
+
+.pf-match-tip-card__tip-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gds-color-accent);
+}
+
+.pf-match-tip-card__tip-text {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--gds-color-text);
+}
+
+.pf-match-tip-card__tip-author {
+  font-size: 0.75rem;
+  color: var(--gds-color-text-muted);
+  font-style: italic;
+}
+
+/* ── Odds grid ── */
+
+.pf-match-tip-card__odds {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gds-space-2);
+}
+
+.pf-match-tip-card__odd-pill {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gds-space-1);
+  padding: var(--gds-space-3) var(--gds-space-2);
+  background: var(--gds-color-surface-elevated);
+  border: 1px solid var(--gds-color-border);
+  border-radius: var(--gds-radius-md);
+  cursor: pointer;
+  transition: border-color 150ms ease, background 150ms ease;
+  text-decoration: none;
+  color: var(--gds-color-text);
+}
+
+.pf-match-tip-card__odd-pill:hover {
+  border-color: var(--gds-color-primary);
+  background: var(--gds-color-surface);
+}
+
+.pf-match-tip-card__odd-pill--best {
+  border-color: var(--gds-color-accent);
+}
+
+.pf-match-tip-card__odd-outcome {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gds-color-text-muted);
+}
+
+.pf-match-tip-card__odd-value {
+  font-family: var(--gds-font-family-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gds-color-text);
+}
+
+.pf-match-tip-card__odd-bookmaker {
+  font-size: 0.6rem;
+  color: var(--gds-color-text-muted);
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.pf-match-tip-card__odd-best-badge {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: var(--gds-color-accent);
+  color: var(--gds-color-bg);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px var(--gds-space-1);
+  border-radius: 0 var(--gds-radius-md) 0 var(--gds-radius-sm);
+}
+
+/* ── Container queries ── */
+
+@container pf-match-tip-card (max-width: 360px) {
+  .pf-match-tip-card__matchup {
+    flex-direction: column;
+    gap: var(--gds-space-3);
+  }
+
+  .pf-match-tip-card__team--home,
+  .pf-match-tip-card__team--away {
+    align-items: center;
+    flex-direction: row;
+    gap: var(--gds-space-2);
+  }
+
+  .pf-match-tip-card__team-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .pf-match-tip-card__odd-bookmaker {
+    display: none;
+  }
+
+  .pf-match-tip-card__vs {
+    order: -1;
+  }
+}
+
+@container pf-match-tip-card (min-width: 600px) {
+  .pf-match-tip-card {
+    padding: var(--gds-space-6);
+  }
+
+  .pf-match-tip-card__team-logo {
+    width: 60px;
+    height: 60px;
+    font-size: 0.75rem;
+  }
+
+  .pf-match-tip-card__team-name {
+    font-size: 0.95rem;
+  }
+
+  .pf-match-tip-card__competition {
+    font-size: 0.8rem;
+  }
+
+  .pf-match-tip-card__tip-text {
+    font-size: 1rem;
+  }
+
+  .pf-match-tip-card__odd-value {
+    font-size: 1.25rem;
+  }
+}
