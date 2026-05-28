@@ -30,8 +30,25 @@ const cssVars = generateCssVars();
   </head>
   <body>
     <div class="pf-scope">
+      <div class="pf-brand-glow" aria-hidden="true"></div>
       <SiteHeader />
       <slot />
     </div>
   </body>
 </html>
+
+<style>
+  .pf-brand-glow {
+    position: fixed;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 480px;
+    background: radial-gradient(ellipse at 50% 20%, #cc0000 0%, rgba(204,0,0,0.3) 35%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.55;
+  }
+</style>
