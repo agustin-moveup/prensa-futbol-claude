@@ -14,6 +14,8 @@ import PfTipsterCard from "@blocks/pf/pf-tipster-card/index";
 import { sampleData as tipsterData } from "@blocks/pf/pf-tipster-card/sample-data";
 import PfLinkGrid from "@blocks/pf/pf-link-grid/index";
 import { sampleData as linkGridData } from "@blocks/pf/pf-link-grid/sample-data";
+import PfOfferList from "@blocks/pf/pf-offer-list/index";
+import { sampleData as offerData } from "@blocks/pf/pf-offer-list/sample-data";
 import PfSeoText from "@blocks/pf/pf-seo-text/index";
 import { sampleData as seoData } from "@blocks/pf/pf-seo-text/sample-data";
 ---
@@ -68,6 +70,11 @@ import { sampleData as seoData } from "@blocks/pf/pf-seo-text/sample-data";
             <PfTipsterCard {...tipsterData.default.default} client:visible />
             <PfTipsterCard {...tipsterData.default.alternate} client:visible />
           </div>
+        </section>
+
+        <!-- Ofertas destacadas -->
+        <section class="pf-section">
+          <PfOfferList {...offerData.code.default} client:visible />
         </section>
 
         <!-- Top casas Chile -->
