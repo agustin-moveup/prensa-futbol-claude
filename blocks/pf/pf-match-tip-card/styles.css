@@ -281,7 +281,7 @@
 
 /* ── Container queries ── */
 
-@container pf-match-tip-card (max-width: 360px) {
+@container pf-match-tip-card (max-width: 320px) {
   .pf-match-tip-card__matchup {
     flex-direction: column;
     gap: var(--gds-space-3);
