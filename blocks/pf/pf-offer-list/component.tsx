@@ -155,7 +155,12 @@ function OfferCard(item: OfferItem) {
   );
 }
 
-// ── Main export ────────────────────────────────────────────────
+// ── Main export ───────────────────────────────────────────────
+// Variant reference:
+//   code     → promo code only       — landing pages, bonus hunters
+//   pros     → feature bullets only  — ranking/comparison pages (best use case for ordered lists)
+//   code-pros → code + bullets       — high-priority placements where both signals matter
+//   plain    → no zone               — minimal editorial contexts
 
 export default function PfOfferList({ title, ctaLabel, ctaHref = "#", items }: PfOfferListProps) {
   return (

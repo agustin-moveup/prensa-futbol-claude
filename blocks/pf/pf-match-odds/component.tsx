@@ -75,6 +75,9 @@ function OddCell({
 }
 
 // ── Main component ────────────────────────────────────────────
+// Reserved for match preview / match screen context: shows the best available
+// odds across bookmakers for a single 1X2 market. Best value per column is
+// highlighted automatically — intended to sit above or alongside match analysis.
 
 export default function PfMatchOdds({
   title,

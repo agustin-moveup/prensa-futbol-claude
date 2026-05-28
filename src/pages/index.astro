@@ -74,9 +74,14 @@ import { sampleData as matchOddsData } from "@blocks/pf/pf-match-odds/sample-dat
           </div>
         </section>
 
-        <!-- Ofertas destacadas -->
+        <!-- Ofertas destacadas (variante: código promo) -->
         <section class="pf-section">
           <PfOfferList {...offerData.code.default} client:visible />
+        </section>
+
+        <!-- Ofertas destacadas (variante: pros / ranking) -->
+        <section class="pf-section">
+          <PfOfferList {...offerData.pros.default} client:visible />
         </section>
 
         <!-- Match odds example -->
