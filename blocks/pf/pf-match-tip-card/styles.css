@@ -28,7 +28,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--gds-color-primary);
+  color: var(--gds-color-text-muted);
 }
 
 .pf-match-tip-card__meta {

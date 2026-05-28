@@ -23,7 +23,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--gds-color-primary);
+  color: var(--gds-color-accent);
   margin-bottom: var(--gds-space-1);
 }
 
@@ -53,7 +53,7 @@
 
 .pf-match-odds__col-headers {
   display: grid;
-  grid-template-columns: 1fr repeat(3, 88px) 100px;
+  grid-template-columns: 1fr repeat(3, 88px) 120px;
   gap: var(--gds-space-2);
   padding: var(--gds-space-2) var(--gds-space-5);
   font-size: 0.6rem;
@@ -78,7 +78,7 @@
 
 .pf-match-odds__row {
   display: grid;
-  grid-template-columns: 1fr repeat(3, 88px) 100px;
+  grid-template-columns: 1fr repeat(3, 88px) 120px;
   align-items: center;
   gap: var(--gds-space-2);
   padding: var(--gds-space-3) var(--gds-space-5);
@@ -230,12 +230,12 @@
   align-items: center;
   justify-content: center;
   gap: var(--gds-space-2);
-  padding: var(--gds-space-2) var(--gds-space-3);
+  padding: var(--gds-space-3) var(--gds-space-4);
   background: var(--gds-color-primary-deep);
   color: var(--gds-color-text);
   border-radius: var(--gds-radius-sm);
   text-decoration: none;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 700;
   white-space: nowrap;
   transition: background 150ms ease;

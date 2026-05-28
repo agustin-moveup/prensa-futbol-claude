@@ -5,12 +5,14 @@
 <section class="pf-hero">
   <div class="pf-hero__inner">
     <div class="pf-hero__content">
-      <h1 class="pf-hero__title">
-        Prensa Fútbol: <em class="pf-hero__title-em">noticias y apuestas</em> en un solo lugar
-      </h1>
-      <p class="pf-hero__sub">
-        En Prensa Fútbol encontrás las últimas noticias deportivas, el mejor análisis y las oportunidades de apuestas más destacadas, todo en un solo lugar.
-      </p>
+      <div class="pf-hero__text">
+        <h1 class="pf-hero__title">
+          Prensa Fútbol: <em class="pf-hero__title-em">noticias y apuestas</em> en un solo lugar
+        </h1>
+        <p class="pf-hero__sub">
+          Las últimas noticias deportivas, análisis experto y las mejores oportunidades de apuestas, todo en un solo lugar.
+        </p>
+      </div>
       <div class="pf-hero__links">
         <a href="/casas-de-apuestas" class="pf-hero__link pf-hero__link--primary">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -33,7 +35,7 @@
 <style>
   .pf-hero {
     position: relative;
-    padding: var(--gds-space-8) 0 calc(var(--gds-space-8) + var(--gds-space-4));
+    padding: var(--gds-space-7) 0;
   }
 
   .pf-hero__inner {
@@ -42,23 +44,33 @@
     padding: 0 var(--gds-space-5);
   }
 
+  /* Two-column: text left, CTAs right */
   .pf-hero__content {
-    max-width: 680px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gds-space-8);
+  }
+
+  .pf-hero__text {
+    flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--gds-space-5);
+    gap: var(--gds-space-4);
   }
 
   /* H1 */
   .pf-hero__title {
     font-family: var(--gds-font-family-base);
-    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.01em;
     line-height: 1.05;
     color: var(--gds-color-text);
     font-style: normal;
+    margin: 0;
   }
 
   .pf-hero__title-em {
@@ -69,30 +81,34 @@
   /* Subtitle */
   .pf-hero__sub {
     font-family: var(--gds-font-family-base);
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     color: var(--gds-color-text-muted);
-    max-width: 560px;
+    margin: 0;
   }
 
-  /* CTA links */
+  /* CTA column — fixed width so both buttons are equal */
   .pf-hero__links {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: var(--gds-space-3);
+    flex-shrink: 0;
+    width: 230px;
   }
 
   .pf-hero__link {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: center;
     gap: var(--gds-space-2);
-    padding: var(--gds-space-3) var(--gds-space-5);
+    width: 100%;
+    padding: var(--gds-space-3) var(--gds-space-4);
     border-radius: var(--gds-radius-sm);
     font-family: var(--gds-font-family-base);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 700;
     text-decoration: none;
-    transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+    transition: background 150ms ease, border-color 150ms ease;
   }
 
   .pf-hero__link--primary {
@@ -121,21 +137,24 @@
     }
   }
 
-  @media (max-width: 768px) {
+  /* Mobile: stack back to column */
+  @media (max-width: 640px) {
     .pf-hero {
-      padding: var(--gds-space-7) 0 var(--gds-space-7);
+      padding: var(--gds-space-6) 0;
     }
 
     .pf-hero__inner {
       padding: 0 var(--gds-space-4);
     }
 
-    .pf-hero__links {
+    .pf-hero__content {
       flex-direction: column;
+      align-items: flex-start;
+      gap: var(--gds-space-5);
     }
 
-    .pf-hero__link {
-      justify-content: center;
+    .pf-hero__links {
+      width: 100%;
     }
   }
 </style>
