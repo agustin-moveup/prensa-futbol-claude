@@ -24,6 +24,12 @@ import PfPostCard from "@blocks/pf/pf-post-card/index";
 import { sampleData as postData } from "@blocks/pf/pf-post-card/sample-data";
 import PfEventSpotlight from "@blocks/pf/pf-event-spotlight/index";
 import { sampleData as spotlightData } from "@blocks/pf/pf-event-spotlight/sample-data";
+
+// Reuse the card variant items in the compact sidebar variant
+const sidebarListData = {
+  variant: "sidebar" as const,
+  items: bookmakerData.card.default.items,
+};
 ---
 
 <BaseLayout>
@@ -40,107 +46,120 @@ import { sampleData as spotlightData } from "@blocks/pf/pf-event-spotlight/sampl
 
     <main class="pf-page__main">
       <div class="pf-page__container">
+        <div class="pf-page__layout">
 
-        <!-- No te pierdas estos partidos -->
-        <section class="pf-section">
-          <PfSectionHeading heading="No te pierdas estos partidos" ctaLabel="Ver todos" ctaHref="/pronosticos" />
-          <div class="pf-tip-slider">
-            <div class="pf-tip-slider__item">
-              <PfMatchTipCard {...matchTipData.default.default} client:visible />
+          <!-- ── Main content column ── -->
+          <div class="pf-page__content">
+
+            <!-- No te pierdas estos partidos -->
+            <section class="pf-section">
+              <PfSectionHeading heading="No te pierdas estos partidos" ctaLabel="Ver todos" ctaHref="/pronosticos" />
+              <div class="pf-tip-slider">
+                <div class="pf-tip-slider__item">
+                  <PfMatchTipCard {...matchTipData.default.default} client:visible />
+                </div>
+                <div class="pf-tip-slider__item">
+                  <PfMatchTipCard {...matchTipData.default.libertadores} client:visible />
+                </div>
+                <div class="pf-tip-slider__item">
+                  <PfMatchTipCard {...matchTipData.default.premierLeague} client:visible />
+                </div>
+                <div class="pf-tip-slider__item">
+                  <PfMatchTipCard {...matchTipData.default.mundialClub} client:visible />
+                </div>
+              </div>
+            </section>
+
+            <!-- Partidos por competición -->
+            <section class="pf-section">
+              <PfSectionHeading heading="Pronósticos por competición" />
+              <div class="pf-section__stack">
+                <PfCompetitionAccordion {...accordionData.default.default} client:visible />
+                <PfCompetitionAccordion {...accordionData.default.closed} client:visible />
+              </div>
+            </section>
+
+            <!-- Conoce a nuestros expertos -->
+            <section class="pf-section">
+              <PfSectionHeading heading="Nuestros expertos" />
+              <div class="pf-section__grid-2">
+                <PfTipsterCard {...tipsterData.default.default} client:visible />
+                <PfTipsterCard {...tipsterData.default.alternate} client:visible />
+              </div>
+            </section>
+
+            <!-- Ofertas destacadas (código: copy / reveal / none) -->
+            <section class="pf-section">
+              <PfOfferList {...offerData.code.showcase} client:visible />
+            </section>
+
+            <!-- Ofertas destacadas (variante: pros / ranking) -->
+            <section class="pf-section">
+              <PfOfferList {...offerData.pros.default} client:visible />
+            </section>
+
+            <!-- Match odds example -->
+            <section class="pf-section">
+              <PfMatchOdds {...matchOddsData.default.default} client:visible />
+            </section>
+
+            <!-- Guías y códigos promocionales -->
+            <section class="pf-section">
+              <PfLinkGrid {...linkGridData.default.default} client:visible />
+            </section>
+
+            <!-- Cobertura especial: Mundial 2026 -->
+            <section class="pf-section">
+              <PfEventSpotlight {...spotlightData.mundial.spotlight} client:visible />
+            </section>
+
+            <!-- Copa América (rail) -->
+            <section class="pf-section">
+              <PfEventSpotlight {...spotlightData.copaAmerica.rail} client:visible />
+            </section>
+
+            <!-- Últimas noticias -->
+            <section class="pf-section">
+              <PfSectionHeading heading="Últimas noticias" ctaLabel="Ver todas" ctaHref="/noticias" />
+              <div class="pf-news-slider">
+                <div class="pf-news-slider__item">
+                  <PfPostCard {...postData.featured.knicks} client:visible />
+                </div>
+                <div class="pf-news-slider__item">
+                  <PfPostCard {...postData.featured.tabilo} client:visible />
+                </div>
+                <div class="pf-news-slider__item">
+                  <PfPostCard {...postData.featured.garin} client:visible />
+                </div>
+                <div class="pf-news-slider__item">
+                  <PfPostCard {...postData.featured.coloColo} client:visible />
+                </div>
+                <div class="pf-news-slider__item">
+                  <PfPostCard {...postData.featured.chileMundial} client:visible />
+                </div>
+              </div>
+            </section>
+
+            <!-- SEO footer -->
+            <section class="pf-section pf-section--last">
+              <PfSeoText {...seoData.default.default} client:visible />
+            </section>
+
+          </div><!-- /pf-page__content -->
+
+          <!-- ── Right sidebar ── -->
+          <aside class="pf-page__sidebar" aria-label="Top casas de apuestas">
+            <div class="pf-page__sidebar-inner">
+              <PfSectionHeading
+                heading="Top casas Chile"
+                ctaLabel="Ver todas"
+                ctaHref="/casas-de-apuestas"
+              />
+              <PfBookmakerList {...sidebarListData} title="" client:visible />
             </div>
-            <div class="pf-tip-slider__item">
-              <PfMatchTipCard {...matchTipData.default.libertadores} client:visible />
-            </div>
-            <div class="pf-tip-slider__item">
-              <PfMatchTipCard {...matchTipData.default.premierLeague} client:visible />
-            </div>
-            <div class="pf-tip-slider__item">
-              <PfMatchTipCard {...matchTipData.default.mundialClub} client:visible />
-            </div>
-          </div>
-        </section>
+          </aside>
 
-        <!-- Partidos por competición -->
-        <section class="pf-section">
-          <PfSectionHeading heading="Pronósticos por competición" />
-          <div class="pf-section__stack">
-            <PfCompetitionAccordion {...accordionData.default.default} client:visible />
-            <PfCompetitionAccordion {...accordionData.default.closed} client:visible />
-          </div>
-        </section>
-
-        <!-- Conoce a nuestros expertos -->
-        <section class="pf-section">
-          <PfSectionHeading heading="Nuestros expertos" />
-          <div class="pf-section__grid-2">
-            <PfTipsterCard {...tipsterData.default.default} client:visible />
-            <PfTipsterCard {...tipsterData.default.alternate} client:visible />
-          </div>
-        </section>
-
-        <!-- Ofertas destacadas (código: copy / reveal / none) -->
-        <section class="pf-section">
-          <PfOfferList {...offerData.code.showcase} client:visible />
-        </section>
-
-        <!-- Ofertas destacadas (variante: pros / ranking) -->
-        <section class="pf-section">
-          <PfOfferList {...offerData.pros.default} client:visible />
-        </section>
-
-        <!-- Match odds example -->
-        <section class="pf-section">
-          <PfMatchOdds {...matchOddsData.default.default} client:visible />
-        </section>
-
-        <!-- Top casas Chile -->
-        <section class="pf-section">
-          <PfSectionHeading heading="Top casas de apuestas Chile" ctaLabel="Ver todas" ctaHref="/casas-de-apuestas" />
-          <PfBookmakerList {...bookmakerData.card.default} title="" client:visible />
-        </section>
-
-        <!-- Guías y códigos promocionales -->
-        <section class="pf-section">
-          <PfLinkGrid {...linkGridData.default.default} client:visible />
-        </section>
-
-        <!-- Cobertura especial: Mundial 2026 (spotlight) -->
-        <section class="pf-section">
-          <PfEventSpotlight {...spotlightData.mundial.spotlight} client:visible />
-        </section>
-
-        <!-- Copa América (rail) -->
-        <section class="pf-section">
-          <PfEventSpotlight {...spotlightData.copaAmerica.rail} client:visible />
-        </section>
-
-        <!-- Últimas noticias -->
-        <section class="pf-section">
-          <PfSectionHeading heading="Últimas noticias" ctaLabel="Ver todas" ctaHref="/noticias" />
-          <div class="pf-news-slider">
-            <div class="pf-news-slider__item">
-              <PfPostCard {...postData.featured.knicks} client:visible />
-            </div>
-            <div class="pf-news-slider__item">
-              <PfPostCard {...postData.featured.tabilo} client:visible />
-            </div>
-            <div class="pf-news-slider__item">
-              <PfPostCard {...postData.featured.garin} client:visible />
-            </div>
-            <div class="pf-news-slider__item">
-              <PfPostCard {...postData.featured.coloColo} client:visible />
-            </div>
-            <div class="pf-news-slider__item">
-              <PfPostCard {...postData.featured.chileMundial} client:visible />
-            </div>
-          </div>
-        </section>
-
-        <!-- SEO footer -->
-        <section class="pf-section pf-section--last">
-          <PfSeoText {...seoData.default.default} client:visible />
-        </section>
-
+        </div><!-- /pf-page__layout -->
       </div>
     </main>
   </div>
@@ -166,6 +185,27 @@ import { sampleData as spotlightData } from "@blocks/pf/pf-event-spotlight/sampl
   /* Main content */
   .pf-page__main {
     padding: var(--gds-space-7) 0 var(--gds-space-8);
+  }
+
+  /* Two-column layout: main + sidebar */
+  .pf-page__layout {
+    display: grid;
+    grid-template-columns: 1fr 272px;
+    align-items: start;
+    gap: 0 var(--gds-space-8);
+  }
+
+  .pf-page__content {
+    min-width: 0;
+  }
+
+  /* Sticky sidebar */
+  .pf-page__sidebar-inner {
+    position: sticky;
+    top: var(--gds-space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gds-space-5);
   }
 
   /* Sections */
@@ -203,7 +243,6 @@ import { sampleData as spotlightData } from "@blocks/pf/pf-event-spotlight/sampl
     min-width: 0;
   }
 
-  /* astro-island wrapper needs to fill the slot */
   .pf-tip-slider__item > * {
     display: block;
     width: 100%;
@@ -226,7 +265,6 @@ import { sampleData as spotlightData } from "@blocks/pf/pf-event-spotlight/sampl
     flex: 0 0 min(300px, 85vw);
     scroll-snap-align: start;
     min-width: 0;
-    /* Fixed height so all featured cards are uniform */
     height: 280px;
   }
 
@@ -247,6 +285,23 @@ import { sampleData as spotlightData } from "@blocks/pf/pf-event-spotlight/sampl
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--gds-space-5);
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .pf-page__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .pf-page__sidebar-inner {
+      position: static;
+    }
+
+    /* On mobile the sidebar appears below all main content */
+    .pf-page__sidebar {
+      padding-top: var(--gds-space-8);
+      border-top: 1px solid var(--gds-color-border);
+    }
   }
 
   @media (max-width: 768px) {
