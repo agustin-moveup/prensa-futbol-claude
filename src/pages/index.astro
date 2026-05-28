@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import PfSectionHeading from "@/components/PfSectionHeading.astro";
 import PfBookmakerBanner from "@blocks/pf/pf-bookmaker-banner/index";
 import { sampleData as bannerData } from "@blocks/pf/pf-bookmaker-banner/sample-data";
 import PfMatchTipCard from "@blocks/pf/pf-match-tip-card/index";
@@ -31,7 +32,7 @@ import { sampleData as seoData } from "@blocks/pf/pf-seo-text/sample-data";
 
         <!-- No te pierdas estos partidos -->
         <section class="pf-section">
-          <h2 class="pf-section__heading">No te pierdas estos partidos</h2>
+          <PfSectionHeading heading="No te pierdas estos partidos" ctaLabel="Ver todos" ctaHref="/pronosticos" />
           <div class="pf-tip-slider">
             <div class="pf-tip-slider__item">
               <PfMatchTipCard {...matchTipData.default.default} client:visible />
@@ -50,7 +51,7 @@ import { sampleData as seoData } from "@blocks/pf/pf-seo-text/sample-data";
 
         <!-- Partidos por competición -->
         <section class="pf-section">
-          <h2 class="pf-section__heading">Pronósticos por competición</h2>
+          <PfSectionHeading heading="Pronósticos por competición" />
           <div class="pf-section__stack">
             <PfCompetitionAccordion {...accordionData.default.default} client:visible />
             <PfCompetitionAccordion {...accordionData.default.closed} client:visible />
@@ -59,7 +60,7 @@ import { sampleData as seoData } from "@blocks/pf/pf-seo-text/sample-data";
 
         <!-- Conoce a nuestros expertos -->
         <section class="pf-section">
-          <h2 class="pf-section__heading">Nuestros expertos</h2>
+          <PfSectionHeading heading="Nuestros expertos" />
           <div class="pf-section__grid-2">
             <PfTipsterCard {...tipsterData.default.default} client:visible />
             <PfTipsterCard {...tipsterData.default.alternate} client:visible />
@@ -68,7 +69,8 @@ import { sampleData as seoData } from "@blocks/pf/pf-seo-text/sample-data";
 
         <!-- Top casas Chile -->
         <section class="pf-section">
-          <PfBookmakerList {...bookmakerData.card.default} client:visible />
+          <PfSectionHeading heading="Top casas de apuestas Chile" ctaLabel="Ver todas" ctaHref="/casas-de-apuestas" />
+          <PfBookmakerList {...{ ...bookmakerData.card.default, title: undefined }} client:visible />
         </section>
 
         <!-- Guías y códigos promocionales -->
@@ -122,17 +124,6 @@ import { sampleData as seoData } from "@blocks/pf/pf-seo-text/sample-data";
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
-  }
-
-  /* Section headings */
-  .pf-section__heading {
-    font-family: var(--gds-font-family-base);
-    font-size: 1.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    color: var(--gds-color-text);
-    line-height: 1.1;
   }
 
   /* Match tip slider */

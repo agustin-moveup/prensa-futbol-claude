@@ -1,0 +1,64 @@
+---
+interface Props {
+  heading: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const { heading, ctaLabel, ctaHref = "#" } = Astro.props;
+---
+
+<div class="pf-section-heading">
+  <h2 class="pf-section-heading__h2">{heading}</h2>
+  {ctaLabel && (
+    <a href={ctaHref} class="pf-section-heading__cta">
+      {ctaLabel}
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  )}
+</div>
+
+<style>
+  .pf-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gds-space-4);
+  }
+
+  .pf-section-heading__h2 {
+    font-family: var(--gds-font-family-base);
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--gds-color-text);
+    line-height: 1.1;
+  }
+
+  .pf-section-heading__cta {
+    display: flex;
+    align-items: center;
+    gap: var(--gds-space-1);
+    font-family: var(--gds-font-family-base);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--gds-color-text-muted);
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: color 150ms ease;
+  }
+
+  .pf-section-heading__cta:hover {
+    color: var(--gds-color-text);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pf-section-heading__cta {
+      transition: none;
+    }
+  }
+</style>
