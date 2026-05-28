@@ -18,6 +18,8 @@ import PfOfferList from "@blocks/pf/pf-offer-list/index";
 import { sampleData as offerData } from "@blocks/pf/pf-offer-list/sample-data";
 import PfSeoText from "@blocks/pf/pf-seo-text/index";
 import { sampleData as seoData } from "@blocks/pf/pf-seo-text/sample-data";
+import PfMatchOdds from "@blocks/pf/pf-match-odds/index";
+import { sampleData as matchOddsData } from "@blocks/pf/pf-match-odds/sample-data";
 ---
 
 <BaseLayout>
@@ -75,6 +77,11 @@ import { sampleData as seoData } from "@blocks/pf/pf-seo-text/sample-data";
         <!-- Ofertas destacadas -->
         <section class="pf-section">
           <PfOfferList {...offerData.code.default} client:visible />
+        </section>
+
+        <!-- Match odds example -->
+        <section class="pf-section">
+          <PfMatchOdds {...matchOddsData.default.default} client:visible />
         </section>
 
         <!-- Top casas Chile -->

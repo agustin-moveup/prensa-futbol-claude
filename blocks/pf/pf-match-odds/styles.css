@@ -1,0 +1,292 @@
+.pf-match-odds {
+  container-type: inline-size;
+  container-name: pf-match-odds;
+
+  background: var(--gds-color-surface);
+  border: 1px solid var(--gds-color-border);
+  border-radius: var(--gds-radius-sm);
+  overflow: hidden;
+  font-family: var(--gds-font-family-base);
+  color: var(--gds-color-text);
+}
+
+/* ── Header ── */
+
+.pf-match-odds__header {
+  padding: var(--gds-space-4) var(--gds-space-5);
+  border-bottom: 1px solid var(--gds-color-border);
+}
+
+.pf-match-odds__competition {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gds-color-primary);
+  margin-bottom: var(--gds-space-1);
+}
+
+.pf-match-odds__title {
+  font-family: var(--gds-font-family-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--gds-color-text);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.pf-match-odds__subtitle {
+  font-size: 0.78rem;
+  color: var(--gds-color-text-muted);
+  margin: var(--gds-space-1) 0 0;
+  line-height: 1.4;
+}
+
+/* ── Table ── */
+
+.pf-match-odds__table {
+  /* nothing extra needed — children handle their own layout */
+}
+
+/* ── Column headers ── */
+
+.pf-match-odds__col-headers {
+  display: grid;
+  grid-template-columns: 1fr repeat(3, 88px) 100px;
+  gap: var(--gds-space-2);
+  padding: var(--gds-space-2) var(--gds-space-5);
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gds-color-text-muted);
+  background: var(--gds-color-surface-elevated);
+}
+
+.pf-match-odds__col-headers span:nth-child(2),
+.pf-match-odds__col-headers span:nth-child(3),
+.pf-match-odds__col-headers span:nth-child(4) {
+  text-align: center;
+}
+
+/* ── Row list ── */
+
+.pf-match-odds__list {
+  list-style: none;
+}
+
+.pf-match-odds__row {
+  display: grid;
+  grid-template-columns: 1fr repeat(3, 88px) 100px;
+  align-items: center;
+  gap: var(--gds-space-2);
+  padding: var(--gds-space-3) var(--gds-space-5);
+  border-top: 1px solid var(--gds-color-border);
+}
+
+.pf-match-odds__row:hover {
+  background: var(--gds-color-surface-elevated);
+}
+
+/* ── Bookmaker cell ── */
+
+.pf-match-odds__bm {
+  display: flex;
+  align-items: center;
+  gap: var(--gds-space-3);
+  min-width: 0;
+}
+
+.pf-match-odds__bm-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--gds-radius-sm);
+  background: var(--bm-brand-color, var(--gds-color-border));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.pf-match-odds__bm-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.pf-match-odds__bm-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gds-color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pf-match-odds__bm-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--gds-space-1);
+}
+
+.pf-match-odds__bm-rating-num {
+  font-size: 0.65rem;
+  color: var(--gds-color-text-muted);
+  font-family: var(--gds-font-family-mono);
+}
+
+/* ── Stars ── */
+
+.pf-match-odds__stars {
+  position: relative;
+  display: inline-flex;
+  width: 60px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.pf-match-odds__stars-track,
+.pf-match-odds__stars-fill {
+  display: flex;
+  gap: 1px;
+  position: absolute;
+  inset: 0;
+}
+
+.pf-match-odds__stars-track {
+  color: var(--gds-color-border);
+}
+
+.pf-match-odds__stars-fill {
+  overflow: hidden;
+  color: var(--gds-color-accent);
+}
+
+.pf-match-odds__stars svg,
+.pf-match-odds__stars-track svg,
+.pf-match-odds__stars-fill svg {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+}
+
+/* ── Odd cell ── */
+
+.pf-match-odds__odd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: var(--gds-space-2) var(--gds-space-1);
+  background: var(--gds-color-surface-elevated);
+  border: 1px solid var(--gds-color-border);
+  border-radius: var(--gds-radius-sm);
+  text-decoration: none;
+  color: var(--gds-color-text);
+  transition: border-color 150ms ease;
+}
+
+.pf-match-odds__odd:hover {
+  border-color: var(--gds-color-primary);
+}
+
+.pf-match-odds__odd--best {
+  border-color: var(--gds-color-accent);
+  background: color-mix(in srgb, var(--gds-color-accent) 10%, var(--gds-color-surface-elevated));
+}
+
+.pf-match-odds__odd-label {
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gds-color-text-muted);
+}
+
+.pf-match-odds__odd--best .pf-match-odds__odd-label {
+  color: var(--gds-color-accent);
+}
+
+.pf-match-odds__odd-value {
+  font-family: var(--gds-font-family-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gds-color-text);
+}
+
+.pf-match-odds__odd--best .pf-match-odds__odd-value {
+  color: var(--gds-color-accent);
+}
+
+/* ── CTA button ── */
+
+.pf-match-odds__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gds-space-2);
+  padding: var(--gds-space-2) var(--gds-space-3);
+  background: var(--gds-color-primary-deep);
+  color: var(--gds-color-text);
+  border-radius: var(--gds-radius-sm);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background 150ms ease;
+}
+
+.pf-match-odds__cta:hover {
+  background: var(--gds-color-primary);
+}
+
+/* ── Container queries ── */
+
+@container pf-match-odds (max-width: 640px) {
+  .pf-match-odds__col-headers,
+  .pf-match-odds__row {
+    grid-template-columns: 1fr repeat(3, 64px) 80px;
+    gap: var(--gds-space-1);
+    padding: var(--gds-space-2) var(--gds-space-4);
+  }
+
+  .pf-match-odds__bm-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .pf-match-odds__bm-name {
+    font-size: 0.78rem;
+  }
+}
+
+@container pf-match-odds (max-width: 480px) {
+  .pf-match-odds__col-headers,
+  .pf-match-odds__row {
+    grid-template-columns: 1fr repeat(3, 52px) 60px;
+    padding: var(--gds-space-2) var(--gds-space-3);
+  }
+
+  .pf-match-odds__bm-info {
+    display: none;
+  }
+
+  .pf-match-odds__bm-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .pf-match-odds__odd-value {
+    font-size: 0.8rem;
+  }
+
+  .pf-match-odds__cta {
+    font-size: 0.65rem;
+    padding: var(--gds-space-2) var(--gds-space-2);
+  }
+}
