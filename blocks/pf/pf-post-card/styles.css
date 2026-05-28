@@ -1,0 +1,262 @@
+.pf-post-card {
+  container-type: inline-size;
+  container-name: pf-post-card;
+  --pc-title-transform: uppercase; /* TOKEN: asset may override to 'none' */
+  font-family: var(--gds-font-family-base);
+  border-radius: var(--gds-radius-sm);
+  overflow: hidden;
+  background: var(--gds-color-surface);
+  border: 1px solid var(--gds-color-border);
+  color: var(--gds-color-text);
+}
+
+/* ── Link wrapper ── */
+
+.pf-post-card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+/* ── Category badge (shared) ── */
+
+.pf-post-card__category {
+  display: inline-block;
+  background: var(--gds-color-primary);
+  color: var(--gds-color-text);
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px var(--gds-space-2);
+  border-radius: var(--gds-radius-sm);
+  line-height: 1.4;
+}
+
+/* ── Image ── */
+
+.pf-post-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.pf-post-card:hover .pf-post-card__image {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-post-card__image {
+    transition: none;
+  }
+}
+
+/* ── Title (shared) ── */
+
+.pf-post-card__title {
+  font-family: var(--gds-font-family-heading);
+  color: var(--gds-color-text);
+  text-transform: var(--pc-title-transform);
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* ── Excerpt ── */
+
+.pf-post-card__excerpt {
+  font-size: 0.82rem;
+  color: var(--gds-color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Byline ── */
+
+.pf-post-card__byline {
+  display: flex;
+  align-items: center;
+  gap: var(--gds-space-2);
+  font-size: 0.7rem;
+  color: var(--gds-color-text-muted);
+}
+
+.pf-post-card__author {
+  color: var(--gds-color-text);
+  font-weight: 500;
+}
+
+.pf-post-card__byline-sep {
+  opacity: 0.4;
+}
+
+/* ══════════════════════════════════════════════
+   FEATURED
+══════════════════════════════════════════════ */
+
+.pf-post-card--featured .pf-post-card__link {
+  position: relative;
+  min-height: 260px;
+}
+
+/* Image fills the entire card */
+.pf-post-card--featured .pf-post-card__image-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Gradient overlay — darkens bottom for text legibility */
+.pf-post-card--featured .pf-post-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.38) 50%,
+    transparent 100%
+  );
+}
+
+/* Category badge: absolute top-left above the image */
+.pf-post-card--featured .pf-post-card__category {
+  position: absolute;
+  top: var(--gds-space-3);
+  left: var(--gds-space-3);
+  z-index: 2;
+}
+
+/* Body: anchored to bottom, overlaid on image */
+.pf-post-card--featured .pf-post-card__body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: var(--gds-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gds-space-2);
+}
+
+.pf-post-card--featured .pf-post-card__title {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+@container pf-post-card (max-width: 380px) {
+  .pf-post-card--featured .pf-post-card__title {
+    font-size: 0.82rem;
+  }
+
+  .pf-post-card--featured .pf-post-card__body {
+    padding: var(--gds-space-3);
+  }
+}
+
+/* ══════════════════════════════════════════════
+   MD
+══════════════════════════════════════════════ */
+
+.pf-post-card--md .pf-post-card__image-wrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.pf-post-card--md .pf-post-card__category {
+  position: absolute;
+  top: var(--gds-space-2);
+  left: var(--gds-space-2);
+  z-index: 1;
+}
+
+.pf-post-card--md .pf-post-card__body {
+  padding: var(--gds-space-3) var(--gds-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gds-space-2);
+}
+
+.pf-post-card--md .pf-post-card__title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ══════════════════════════════════════════════
+   SM
+══════════════════════════════════════════════ */
+
+.pf-post-card--sm .pf-post-card__link {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 96px;
+}
+
+.pf-post-card--sm .pf-post-card__image-wrap {
+  width: 100px;
+  flex-shrink: 0;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.pf-post-card--sm .pf-post-card__body {
+  padding: var(--gds-space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gds-space-1);
+  min-width: 0;
+}
+
+.pf-post-card--sm .pf-post-card__title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Stack image over body below 320px */
+@container pf-post-card (max-width: 320px) {
+  .pf-post-card--sm .pf-post-card__link {
+    flex-direction: column;
+  }
+
+  .pf-post-card--sm .pf-post-card__image-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   XS
+══════════════════════════════════════════════ */
+
+.pf-post-card--xs .pf-post-card__body {
+  padding: var(--gds-space-3) var(--gds-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gds-space-1);
+}
+
+.pf-post-card--xs .pf-post-card__title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

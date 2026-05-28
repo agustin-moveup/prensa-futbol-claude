@@ -20,6 +20,8 @@ import PfSeoText from "@blocks/pf/pf-seo-text/index";
 import { sampleData as seoData } from "@blocks/pf/pf-seo-text/sample-data";
 import PfMatchOdds from "@blocks/pf/pf-match-odds/index";
 import { sampleData as matchOddsData } from "@blocks/pf/pf-match-odds/sample-data";
+import PfPostCard from "@blocks/pf/pf-post-card/index";
+import { sampleData as postData } from "@blocks/pf/pf-post-card/sample-data";
 ---
 
 <BaseLayout>
@@ -100,6 +102,28 @@ import { sampleData as matchOddsData } from "@blocks/pf/pf-match-odds/sample-dat
           <PfLinkGrid {...linkGridData.default.default} client:visible />
         </section>
 
+        <!-- Últimas noticias -->
+        <section class="pf-section">
+          <PfSectionHeading heading="Últimas noticias" ctaLabel="Ver todas" ctaHref="/noticias" />
+          <div class="pf-news-slider">
+            <div class="pf-news-slider__item">
+              <PfPostCard {...postData.featured.knicks} client:visible />
+            </div>
+            <div class="pf-news-slider__item">
+              <PfPostCard {...postData.featured.tabilo} client:visible />
+            </div>
+            <div class="pf-news-slider__item">
+              <PfPostCard {...postData.featured.garin} client:visible />
+            </div>
+            <div class="pf-news-slider__item">
+              <PfPostCard {...postData.featured.coloColo} client:visible />
+            </div>
+            <div class="pf-news-slider__item">
+              <PfPostCard {...postData.featured.chileMundial} client:visible />
+            </div>
+          </div>
+        </section>
+
         <!-- SEO footer -->
         <section class="pf-section pf-section--last">
           <PfSeoText {...seoData.default.default} client:visible />
@@ -171,6 +195,33 @@ import { sampleData as matchOddsData } from "@blocks/pf/pf-match-odds/sample-dat
   .pf-tip-slider__item > * {
     display: block;
     width: 100%;
+  }
+
+  /* News slider — featured cards, fixed height */
+  .pf-news-slider {
+    display: flex;
+    gap: var(--gds-space-4);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--gds-space-5);
+    padding-bottom: var(--gds-space-3);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gds-color-surface-elevated) transparent;
+  }
+
+  .pf-news-slider__item {
+    flex: 0 0 min(300px, 85vw);
+    scroll-snap-align: start;
+    min-width: 0;
+    /* Fixed height so all featured cards are uniform */
+    height: 280px;
+  }
+
+  .pf-news-slider__item > * {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 
   /* Section layouts */
