@@ -190,38 +190,39 @@
 
 .pf-competition-accordion__teams {
   display: flex;
+  flex-direction: column;
+  gap: var(--gds-space-1);
+  min-width: 0;
+}
+
+.pf-competition-accordion__team-row {
+  display: flex;
   align-items: center;
   gap: var(--gds-space-2);
   min-width: 0;
 }
 
 .pf-competition-accordion__team-logo {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--logo-from, #555), var(--logo-to, #222));
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.4rem;
+  font-size: 0.38rem;
   font-weight: 800;
   color: var(--gds-color-text);
   flex-shrink: 0;
 }
 
-.pf-competition-accordion__match-title {
+.pf-competition-accordion__team-name {
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--gds-color-text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.pf-competition-accordion__vs {
-  font-size: 0.7rem;
-  font-weight: 400;
-  color: var(--gds-color-text-muted);
 }
 
 /* ── Odds pill (duplicated from pf-match-tip-card — standalone) ── */
@@ -301,7 +302,7 @@
     padding: var(--gds-space-2) var(--gds-space-3);
   }
 
-  .pf-competition-accordion__match-title {
+  .pf-competition-accordion__team-name {
     font-size: 0.72rem;
   }
 

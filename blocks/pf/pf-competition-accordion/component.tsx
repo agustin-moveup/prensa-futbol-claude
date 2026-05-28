@@ -149,11 +149,14 @@ export default function PfCompetitionAccordion({
                 <StatusBadge status={match.status} kickoff={match.kickoff} />
 
                 <div className="pf-competition-accordion__teams">
-                  <TeamLogo logo={home.logo} />
-                  <TeamLogo logo={away.logo} />
-                  <span className="pf-competition-accordion__match-title">
-                    {home.name} <span className="pf-competition-accordion__vs">vs</span> {away.name}
-                  </span>
+                  <div className="pf-competition-accordion__team-row">
+                    <TeamLogo logo={home.logo} />
+                    <span className="pf-competition-accordion__team-name">{home.name}</span>
+                  </div>
+                  <div className="pf-competition-accordion__team-row">
+                    <TeamLogo logo={away.logo} />
+                    <span className="pf-competition-accordion__team-name">{away.name}</span>
+                  </div>
                 </div>
 
                 {(["1", "X", "2"] as const).map((outcome) =>
