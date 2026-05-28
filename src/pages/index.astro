@@ -76,9 +76,9 @@ import { sampleData as postData } from "@blocks/pf/pf-post-card/sample-data";
           </div>
         </section>
 
-        <!-- Ofertas destacadas (variante: código promo) -->
+        <!-- Ofertas destacadas (código: copy / reveal / none) -->
         <section class="pf-section">
-          <PfOfferList {...offerData.code.default} client:visible />
+          <PfOfferList {...offerData.code.showcase} client:visible />
         </section>
 
         <!-- Ofertas destacadas (variante: pros / ranking) -->

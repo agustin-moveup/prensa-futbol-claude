@@ -13,6 +13,7 @@ export interface OfferItem {
   bookmaker: OfferBookmaker;
   offer: string;
   promoCode?: string;
+  codeMode?: "copy" | "reveal" | "none"; // copy=default, reveal=blurred until click, none=disabled placeholder
   pros?: string[];
   ctaLabel?: string;
   ctaHref?: string;
@@ -60,20 +61,73 @@ function RankBadge({ rank }: { rank: number }) {
 
 // ── Promo code box ─────────────────────────────────────────────
 
-function CodeBox({ code }: { code: string }) {
+function IconCopy() {
+  return (
+    <svg viewBox="0 0 18 18" fill="none" width="15" height="15" aria-hidden="true">
+      <rect x="5.75" y="5.75" width="9" height="9" rx="1.25" stroke="currentColor" strokeWidth="1.5"/>
+      <path d="M11.5 5V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6.5a1 1 0 0 0 1 1h1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconEye() {
+  return (
+    <svg viewBox="0 0 18 18" fill="none" width="15" height="15" aria-hidden="true">
+      <path d="M1.5 9s3-6 7.5-6 7.5 6 7.5 6-3 6-7.5 6-7.5-6-7.5-6Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/>
+      <circle cx="9" cy="9" r="2.25" stroke="currentColor" strokeWidth="1.4"/>
+    </svg>
+  );
+}
+
+// codeMode:
+//   "copy"   — visible code + copy icon (default)
+//   "reveal" — blurred code + eye icon; click once to reveal, then shows copy icon
+//   "none"   — no code required; disabled placeholder, no icon
+
+function CodeBox({ code, mode = "copy" }: { code?: string; mode?: "copy" | "reveal" | "none" }) {
+  const [revealed, setRevealed] = React.useState(false);
+
+  if (mode === "none") {
+    return (
+      <div
+        className="pf-offer-list__code pf-offer-list__code--none"
+        aria-label="No requiere código promocional"
+      >
+        <span className="pf-offer-list__code-label">Código promo</span>
+        <span className="pf-offer-list__code-nocode">No necesita código</span>
+      </div>
+    );
+  }
+
+  if (mode === "reveal") {
+    return (
+      <button
+        className={`pf-offer-list__code pf-offer-list__code--reveal${revealed ? " pf-offer-list__code--revealed" : ""}`}
+        type="button"
+        aria-label={revealed ? `Código: ${code}` : "Haz clic para ver el código"}
+        onClick={() => setRevealed(true)}
+      >
+        <span className="pf-offer-list__code-label">
+          {revealed ? "Código promo" : "Clic para ver"}
+        </span>
+        <span className="pf-offer-list__code-value">{code}</span>
+        <span className="pf-offer-list__code-icon" aria-hidden="true">
+          {revealed ? <IconCopy /> : <IconEye />}
+        </span>
+      </button>
+    );
+  }
+
   return (
     <button
       className="pf-offer-list__code"
       type="button"
-      aria-label={`Copiar código promocional ${code}`}
+      aria-label={`Copiar código ${code}`}
     >
       <span className="pf-offer-list__code-label">Código promo</span>
       <span className="pf-offer-list__code-value">{code}</span>
       <span className="pf-offer-list__code-icon" aria-hidden="true">
-        <svg viewBox="0 0 18 18" fill="none" width="15" height="15">
-          <rect x="5.75" y="5.75" width="9" height="9" rx="1.25" stroke="currentColor" strokeWidth="1.5"/>
-          <path d="M11.5 5V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6.5a1 1 0 0 0 1 1h1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-        </svg>
+        <IconCopy />
       </span>
     </button>
   );
@@ -102,8 +156,10 @@ function ProsList({ pros }: { pros: string[] }) {
 // ── Single offer card ──────────────────────────────────────────
 
 function OfferCard(item: OfferItem) {
-  const { rank, bookmaker, offer, promoCode, pros, ctaLabel = "Obtener bono", ctaHref = "#", terms } = item;
-  const variant = promoCode && pros?.length ? "code-pros" : promoCode ? "code" : pros?.length ? "pros" : "plain";
+  const { rank, bookmaker, offer, promoCode, codeMode = "copy", pros, ctaLabel = "Obtener bono", ctaHref = "#", terms } = item;
+  const hasCode = promoCode || codeMode === "none";
+  const hasPros = !!pros?.length;
+  const variant = hasCode && hasPros ? "code-pros" : hasCode ? "code" : hasPros ? "pros" : "plain";
 
   return (
     <li className="pf-offer-list__item">
@@ -134,10 +190,10 @@ function OfferCard(item: OfferItem) {
         <p className="pf-offer-list__offer">{offer}</p>
 
         {/* Zone: code and/or pros */}
-        {(promoCode || (pros && pros.length > 0)) && (
+        {(hasCode || hasPros) && (
           <div className="pf-offer-list__zone">
-            {promoCode && <CodeBox code={promoCode}/>}
-            {pros && pros.length > 0 && <ProsList pros={pros}/>}
+            {hasCode && <CodeBox code={promoCode} mode={codeMode}/>}
+            {hasPros && <ProsList pros={pros!}/>}
           </div>
         )}
 

@@ -142,8 +142,47 @@ const codePlusPros: PfOfferListProps = {
   ],
 };
 
+// ── code mode showcase (copy / reveal / none) ─────────────────────────────
+
+const codeShowcase: PfOfferListProps = {
+  title: "Ofertas destacadas",
+  ctaLabel: "Ver todas",
+  ctaHref: "/casas-de-apuestas",
+  items: [
+    {
+      rank: 1,
+      bookmaker: BM.betano,
+      offer: "200% hasta USD 2.000 en tu primer depósito",
+      promoCode: "LATAMVIP",
+      codeMode: "copy",
+      ctaLabel: "Obtener bono",
+      ctaHref: "#betano",
+      terms: TERMS,
+    },
+    {
+      rank: 2,
+      bookmaker: BM.novibet,
+      offer: "Bono exclusivo $200.000 — código solo para lectores",
+      promoCode: "NOVICHILE",
+      codeMode: "reveal",
+      ctaLabel: "Obtener bono",
+      ctaHref: "#novibet",
+      terms: TERMS,
+    },
+    {
+      rank: 3,
+      bookmaker: BM.stake,
+      offer: "Apuesta sin riesgo — sin código, bono automático",
+      codeMode: "none",
+      ctaLabel: "Obtener bono",
+      ctaHref: "#stake",
+      terms: TERMS,
+    },
+  ],
+};
+
 export const sampleData = {
-  code:      { default: codeList },
-  pros:      { default: prosList },
-  codePros:  { default: codePlusPros },
+  code:          { default: codeList, showcase: codeShowcase },
+  pros:          { default: prosList },
+  codePros:      { default: codePlusPros },
 };

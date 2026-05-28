@@ -252,6 +252,38 @@
   color: var(--gds-color-accent);
 }
 
+/* Reveal mode: code blurred until clicked */
+.pf-offer-list__code--reveal .pf-offer-list__code-value {
+  filter: blur(6px);
+  user-select: none;
+  transition: filter 280ms ease;
+}
+
+.pf-offer-list__code--revealed .pf-offer-list__code-value {
+  filter: none;
+  user-select: auto;
+}
+
+/* None mode: no-code-required placeholder — disabled, not interactive */
+.pf-offer-list__code--none {
+  grid-template-columns: 1fr;
+  grid-template-areas: "label" "value";
+  border-color: var(--gds-color-border);
+  opacity: 0.52;
+  pointer-events: none;
+  cursor: default;
+}
+
+.pf-offer-list__code-nocode {
+  grid-area: value;
+  font-family: var(--gds-font-family-base);
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--gds-color-text-muted);
+  line-height: 1;
+}
+
 /* Pros list */
 .pf-offer-list__pros {
   list-style: none;
