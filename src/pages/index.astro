@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import PfHero from "@/components/PfHero.astro";
 import PfSectionHeading from "@/components/PfSectionHeading.astro";
 import PfBookmakerBanner from "@blocks/pf/pf-bookmaker-banner/index";
 import { sampleData as bannerData } from "@blocks/pf/pf-bookmaker-banner/sample-data";
@@ -20,7 +21,9 @@ import { sampleData as seoData } from "@blocks/pf/pf-seo-text/sample-data";
 <BaseLayout>
   <div class="pf-page">
 
-    <!-- Banner comercial top — sin H2, es un strip -->
+    <PfHero />
+
+    <!-- Banner comercial top -->
     <div class="pf-page__banner">
       <div class="pf-page__container">
         <PfBookmakerBanner {...bannerData.default.default} client:visible />
@@ -70,7 +73,7 @@ import { sampleData as seoData } from "@blocks/pf/pf-seo-text/sample-data";
         <!-- Top casas Chile -->
         <section class="pf-section">
           <PfSectionHeading heading="Top casas de apuestas Chile" ctaLabel="Ver todas" ctaHref="/casas-de-apuestas" />
-          <PfBookmakerList {...{ ...bookmakerData.card.default, title: undefined }} client:visible />
+          <PfBookmakerList {...bookmakerData.card.default} title="" client:visible />
         </section>
 
         <!-- Guías y códigos promocionales -->

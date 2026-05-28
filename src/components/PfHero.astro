@@ -1,0 +1,141 @@
+---
+// Homepage hero — no heavy images, CSS-only visual layer
+---
+
+<section class="pf-hero">
+  <div class="pf-hero__inner">
+    <div class="pf-hero__content">
+      <h1 class="pf-hero__title">
+        Prensa Fútbol: <em class="pf-hero__title-em">noticias y apuestas</em> en un solo lugar
+      </h1>
+      <p class="pf-hero__sub">
+        En Prensa Fútbol encontrás las últimas noticias deportivas, el mejor análisis y las oportunidades de apuestas más destacadas, todo en un solo lugar.
+      </p>
+      <div class="pf-hero__links">
+        <a href="/casas-de-apuestas" class="pf-hero__link pf-hero__link--primary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M2 8h8M7 5l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="11" cy="8" r="1.5" fill="currentColor"/>
+          </svg>
+          Mejores casas de apuestas
+        </a>
+        <a href="/ofertas" class="pf-hero__link pf-hero__link--secondary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M8 2l1.5 3.5L13 6.5l-2.5 2.5.6 3.5L8 11l-3.1 1.5.6-3.5L3 6.5l3.5-1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+          </svg>
+          Ofertas deportivas
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pf-hero {
+    position: relative;
+    padding: var(--gds-space-8) 0 calc(var(--gds-space-8) + var(--gds-space-4));
+  }
+
+  .pf-hero__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--gds-space-5);
+  }
+
+  .pf-hero__content {
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gds-space-5);
+  }
+
+  /* H1 */
+  .pf-hero__title {
+    font-family: var(--gds-font-family-base);
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 1.05;
+    color: var(--gds-color-text);
+    font-style: normal;
+  }
+
+  .pf-hero__title-em {
+    color: var(--gds-color-primary);
+    font-style: normal;
+  }
+
+  /* Subtitle */
+  .pf-hero__sub {
+    font-family: var(--gds-font-family-base);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--gds-color-text-muted);
+    max-width: 560px;
+  }
+
+  /* CTA links */
+  .pf-hero__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gds-space-3);
+  }
+
+  .pf-hero__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gds-space-2);
+    padding: var(--gds-space-3) var(--gds-space-5);
+    border-radius: var(--gds-radius-sm);
+    font-family: var(--gds-font-family-base);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+  }
+
+  .pf-hero__link--primary {
+    background: var(--gds-color-primary-deep);
+    color: var(--gds-color-text);
+    border: 1px solid transparent;
+  }
+
+  .pf-hero__link--primary:hover {
+    background: var(--gds-color-primary);
+  }
+
+  .pf-hero__link--secondary {
+    background: transparent;
+    color: var(--gds-color-text);
+    border: 1px solid var(--gds-color-border);
+  }
+
+  .pf-hero__link--secondary:hover {
+    border-color: var(--gds-color-text-muted);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pf-hero__link {
+      transition: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .pf-hero {
+      padding: var(--gds-space-7) 0 var(--gds-space-7);
+    }
+
+    .pf-hero__inner {
+      padding: 0 var(--gds-space-4);
+    }
+
+    .pf-hero__links {
+      flex-direction: column;
+    }
+
+    .pf-hero__link {
+      justify-content: center;
+    }
+  }
+</style>
