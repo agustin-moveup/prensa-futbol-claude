@@ -156,15 +156,13 @@
 }
 
 .pf-match-tip-card__tip-text {
-  font-size: 0.875rem;
-  line-height: 1.5;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.3;
   color: var(--gds-color-text);
-}
-
-.pf-match-tip-card__tip-author {
-  font-size: 0.75rem;
-  color: var(--gds-color-text-muted);
-  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ── Odds grid ── */

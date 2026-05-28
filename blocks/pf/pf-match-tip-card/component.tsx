@@ -135,7 +135,6 @@ export default function PfMatchTipCard({
       <div className="pf-match-tip-card__tip-box">
         <span className="pf-match-tip-card__tip-label">Tip experto</span>
         <p className="pf-match-tip-card__tip-text">{tip.text}</p>
-        <span className="pf-match-tip-card__tip-author">— {tip.author}</span>
       </div>
 
       <div className="pf-match-tip-card__odds" role="list">

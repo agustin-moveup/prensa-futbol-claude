@@ -28,7 +28,7 @@ const defaultDefault: PfMatchTipCardProps = {
   },
   tip: {
     author: "Carlos Mendoza",
-    text: "Colo-Colo lleva 6 partidos invicto en casa. El clásico se inclina para los albos con gol en la segunda parte.",
+    text: "Colo-Colo para ganar en casa",
   },
   odds: [
     {
@@ -79,7 +79,7 @@ const libertadores: PfMatchTipCardProps = {
   },
   tip: {
     author: "Diego Herrera",
-    text: "River en el Monumental es un fortín. Con Flamengo en baja forma fuera de casa, apostamos por victoria local.",
+    text: "River Plate para ganar por más de 1 gol",
   },
   odds: [
     {
@@ -124,7 +124,7 @@ const premierLeague: PfMatchTipCardProps = {
   },
   tip: {
     author: "Sofía Ramos",
-    text: "El Emirates se convierte en un campo minado para el City. Arsenal con motivación extra tras la derrota de la semana pasada.",
+    text: "Arsenal para ganar en casa",
   },
   odds: [
     {
@@ -169,7 +169,7 @@ const mundialClub: PfMatchTipCardProps = {
   },
   tip: {
     author: "Marcos Fuentes",
-    text: "Real Madrid con toda su artillería en un torneo que quiere ganar sí o sí. Los saudíes pueden sorprender pero la diferencia de nivel es clara.",
+    text: "Real Madrid para ganar y más de 2 goles",
   },
   odds: [
     {
