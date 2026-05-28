@@ -59,7 +59,7 @@ const items: PfBookmakerListProps["items"] = [
 
 export const sampleData: Record<string, Record<string, PfBookmakerListProps>> = {
   card: {
-    default: { title: "Mejores Casas de Apuestas", variant: "card", items },
+    default: { title: "Top casas de apuestas Chile", variant: "card", items },
   },
   sidebar: {
     default: { title: "Top Casas", variant: "sidebar", items: items.slice(0, 3) },
