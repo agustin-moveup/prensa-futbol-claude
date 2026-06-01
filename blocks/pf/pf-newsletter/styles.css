@@ -2,19 +2,21 @@
   container-type: inline-size;
   container-name: pf-newsletter;
   background: linear-gradient(135deg, var(--gds-color-primary-deep) 0%, #1a1f3a 50%, #0F1828 100%);
-  padding: var(--gds-space-9) var(--gds-space-5);
+  padding: 56px var(--gds-space-6);
   font-family: var(--gds-font-family-base);
   color: var(--gds-color-text);
 }
 
+/* ── Desktop: two-column, text left / form right ── */
+
 .pf-newsletter__inner {
-  max-width: 640px;
+  max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gds-space-8);
   align-items: center;
-  gap: var(--gds-space-6);
-  text-align: center;
+  text-align: left;
 }
 
 /* ── Text ── */
@@ -54,7 +56,6 @@
   font-size: 1rem;
   line-height: 1.6;
   color: var(--gds-color-text-muted);
-  max-width: 480px;
 }
 
 /* ── Form ── */
@@ -67,7 +68,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--gds-space-3);
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
 }
 
@@ -171,9 +172,19 @@
   line-height: 1.5;
 }
 
-/* ── Responsive ── */
+/* ── Mobile: single column, centered, more side padding ── */
 
-@container pf-newsletter (max-width: 520px) {
+@container pf-newsletter (max-width: 640px) {
+  .pf-newsletter__inner {
+    grid-template-columns: 1fr;
+    gap: var(--gds-space-6);
+    text-align: center;
+  }
+
+  .pf-newsletter__field {
+    align-items: center;
+  }
+
   .pf-newsletter__title {
     font-size: 1.75rem;
   }
@@ -185,6 +196,14 @@
   .pf-newsletter__cta {
     width: 100%;
     padding: var(--gds-space-3) var(--gds-space-4);
+  }
+}
+
+/* Boost side padding on small phones so nothing clips the viewport edge */
+@media (max-width: 480px) {
+  .pf-newsletter {
+    padding-left: var(--gds-space-5);
+    padding-right: var(--gds-space-5);
   }
 }
 
