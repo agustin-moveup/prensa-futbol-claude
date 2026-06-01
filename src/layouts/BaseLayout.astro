@@ -1,6 +1,7 @@
 ---
 import { generateCssVars } from "@/lib/tokens";
 import SiteHeader from "@/components/SiteHeader.astro";
+import PfFooter from "@/components/PfFooter.astro";
 import "@/styles/global.css";
 
 interface Props {
@@ -33,6 +34,7 @@ const cssVars = generateCssVars();
       <div class="pf-brand-glow" aria-hidden="true"></div>
       <SiteHeader />
       <slot />
+      <PfFooter />
     </div>
   </body>
 </html>

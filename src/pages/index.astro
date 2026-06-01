@@ -24,6 +24,10 @@ import PfPostCard from "@blocks/pf/pf-post-card/index";
 import { sampleData as postData } from "@blocks/pf/pf-post-card/sample-data";
 import PfEventSpotlight from "@blocks/pf/pf-event-spotlight/index";
 import { sampleData as spotlightData } from "@blocks/pf/pf-event-spotlight/sample-data";
+import PfNewsletter from "@blocks/pf/pf-newsletter/index";
+import { sampleData as newsletterData } from "@blocks/pf/pf-newsletter/sample-data";
+import PfContentBlock from "@blocks/pf/pf-content-block/index";
+import { sampleData as contentBlockData } from "@blocks/pf/pf-content-block/sample-data";
 
 // Reuse the card variant items in the compact sidebar variant
 const sidebarListData = {
@@ -140,6 +144,16 @@ const sidebarListData = {
               </div>
             </section>
 
+            <!-- Prensa Fútbol une deporte y apuestas (features) -->
+            <section class="pf-section">
+              <PfContentBlock {...contentBlockData.features.default} client:visible />
+            </section>
+
+            <!-- Cómo elegimos las casas de apuestas (FAQ) -->
+            <section class="pf-section">
+              <PfContentBlock {...contentBlockData.faq.default} client:visible />
+            </section>
+
             <!-- SEO footer -->
             <section class="pf-section pf-section--last">
               <PfSeoText {...seoData.default.default} client:visible />
@@ -162,6 +176,10 @@ const sidebarListData = {
         </div><!-- /pf-page__layout -->
       </div>
     </main>
+
+    <!-- Newsletter — full-width strip -->
+    <PfNewsletter {...newsletterData.default.default} client:visible />
+
   </div>
 </BaseLayout>
 
