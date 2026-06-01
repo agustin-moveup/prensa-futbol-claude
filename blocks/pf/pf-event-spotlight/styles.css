@@ -78,42 +78,48 @@
 
 /* ── Spotlight layout ── */
 
+/* Featured card on top, row of md cards below */
 .pf-event-spotlight--spotlight .pf-event-spotlight__body {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  grid-template-areas: "primary rail";
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
   gap: var(--gds-space-4);
 }
 
 .pf-event-spotlight__primary {
-  grid-area: primary;
-  min-height: 340px;
+  height: 420px;
 }
 
-/* Stretch the post-card to fill its grid cell */
+/* Post-card fills the fixed-height container */
 .pf-event-spotlight__primary > * {
   height: 100%;
 }
 
+/* Row of md cards — 3 equal columns by default */
 .pf-event-spotlight__rail {
-  grid-area: rail;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--gds-space-3);
 }
 
-/* Under 620px: stack rail below primary */
-@container pf-event-spotlight (max-width: 620px) {
-  .pf-event-spotlight--spotlight .pf-event-spotlight__body {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "primary"
-      "rail";
+/* Narrow: 2 columns */
+@container pf-event-spotlight (max-width: 580px) {
+  .pf-event-spotlight__rail {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .pf-event-spotlight__primary {
-    min-height: 260px;
+    height: 300px;
+  }
+}
+
+/* Very narrow: 1 column */
+@container pf-event-spotlight (max-width: 380px) {
+  .pf-event-spotlight__rail {
+    grid-template-columns: 1fr;
+  }
+
+  .pf-event-spotlight__primary {
+    height: 260px;
   }
 }
 

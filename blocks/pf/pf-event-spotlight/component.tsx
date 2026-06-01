@@ -21,7 +21,7 @@ export interface PfEventSpotlightProps {
 }
 
 // Themeable editorial container for featured events (World Cup, Copa América, sponsor takeovers).
-// spotlight: first article as featured card, remaining as sm cards in side rail.
+// spotlight: first article as featured card (full-width), remaining as md cards in a row below.
 // rail: all articles as md cards in horizontal scroll.
 // Toggle / swap at the page/CMS layer — this block is always-on and data-driven.
 export default function PfEventSpotlight({
@@ -75,7 +75,7 @@ export default function PfEventSpotlight({
           {articles.length > 1 && (
             <aside className="pf-event-spotlight__rail" aria-label="Artículos relacionados">
               {articles.slice(1).map((article, i) => (
-                <PfPostCard key={i} {...article} variant="sm" />
+                <PfPostCard key={i} {...article} variant="md" />
               ))}
             </aside>
           )}
