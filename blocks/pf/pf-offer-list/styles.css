@@ -344,9 +344,13 @@
 }
 
 /* ── Container queries ── */
+/* NOTE: rules that modify .pf-offer-list__card's own grid must query
+   an ANCESTOR container — the card cannot query itself. We use
+   pf-offer-list (the outer list) which is approximately equal in
+   width since cards fill the list. */
 
-/* Tablet: wrap zone below, cta stays right of head */
-@container pf-offer-card (max-width: 860px) {
+/* Tablet: zone wraps below, cta stays right of head */
+@container pf-offer-list (max-width: 860px) {
   .pf-offer-list__card {
     grid-template-columns: 1fr auto;
     grid-template-areas:
@@ -361,8 +365,8 @@
   }
 }
 
-/* Mobile: single column */
-@container pf-offer-card (max-width: 480px) {
+/* Mobile: single column, full-width zone + cta */
+@container pf-offer-list (max-width: 480px) {
   .pf-offer-list__card {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -371,20 +375,27 @@
       "zone"
       "cta";
     padding: var(--gds-space-4);
+    gap: var(--gds-space-3);
+  }
+
+  .pf-offer-list__head {
+    min-width: 0;
+  }
+
+  .pf-offer-list__offer {
+    font-size: 1rem;
+  }
+
+  .pf-offer-list__code {
+    width: 100%;
+    min-width: 0;
   }
 
   .pf-offer-list__cta {
     min-width: 0;
     width: 100%;
     justify-content: center;
-  }
-
-  .pf-offer-list__code {
-    width: 100%;
-  }
-
-  .pf-offer-list__head {
-    min-width: 0;
+    padding: var(--gds-space-3) var(--gds-space-4);
   }
 }
 
