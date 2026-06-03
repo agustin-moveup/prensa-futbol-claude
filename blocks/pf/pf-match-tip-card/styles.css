@@ -6,10 +6,10 @@
   background: var(--gds-color-surface);
   border-radius: var(--gds-radius-sm);
   border: 1px solid var(--gds-color-border);
-  padding: var(--gds-space-5);
+  padding: var(--gds-space-4);
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-4);
+  gap: var(--gds-space-3);
   font-family: var(--gds-font-family-base);
   color: var(--gds-color-text);
 }
@@ -103,8 +103,8 @@
 }
 
 .pf-match-tip-card__team-logo {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: linear-gradient(
     135deg,
@@ -141,10 +141,10 @@
   background: var(--gds-color-surface-elevated);
   border-left: 3px solid var(--gds-color-accent);
   border-radius: var(--gds-radius-sm);
-  padding: var(--gds-space-3) var(--gds-space-4);
+  padding: var(--gds-space-2) var(--gds-space-3);
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-2);
+  gap: var(--gds-space-1);
 }
 
 .pf-match-tip-card__tip-label {
@@ -179,8 +179,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--gds-space-2);
-  padding: var(--gds-space-3) var(--gds-space-2);
+  gap: var(--gds-space-1);
+  padding: var(--gds-space-2) var(--gds-space-2);
   background: var(--gds-color-surface-elevated);
   border-radius: var(--gds-radius-sm);
   border: 1px solid var(--gds-color-border);
@@ -311,12 +311,12 @@
 
 @container pf-match-tip-card (min-width: 600px) {
   .pf-match-tip-card {
-    padding: var(--gds-space-6);
+    padding: var(--gds-space-5);
   }
 
   .pf-match-tip-card__team-logo {
-    width: 60px;
-    height: 60px;
+    width: 52px;
+    height: 52px;
     font-size: 0.75rem;
   }
 
