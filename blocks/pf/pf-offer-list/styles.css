@@ -3,9 +3,9 @@
   container-name: pf-offer-list;
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-5);
-  font-family: var(--gds-font-family-base);
-  color: var(--gds-color-text);
+  gap: var(--pf-space-5);
+  font-family: var(--pf-font-body);
+  color: var(--pf-color-text);
 }
 
 /* ── Header ── */
@@ -14,27 +14,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--gds-space-4);
+  gap: var(--pf-space-4);
 }
 
 .pf-offer-list__title {
-  font-family: var(--gds-font-family-base);
+  font-family: var(--pf-font-body);
   font-size: 1.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1.1;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
   margin: 0;
 }
 
 .pf-offer-list__header-cta {
   display: flex;
   align-items: center;
-  gap: var(--gds-space-1);
+  gap: var(--pf-space-1);
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--gds-color-text-muted);
+  color: var(--pf-color-text-muted);
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
@@ -42,7 +42,7 @@
 }
 
 .pf-offer-list__header-cta:hover {
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
 }
 
 /* ── Items list ── */
@@ -53,7 +53,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-3);
+  gap: var(--pf-space-3);
 }
 
 /* ── Card wrapper (li) ── */
@@ -61,7 +61,7 @@
 .pf-offer-list__item {
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-2);
+  gap: var(--pf-space-2);
 }
 
 /* ── Card ── */
@@ -74,11 +74,11 @@
   grid-template-columns: 200px 1fr 260px 160px;
   grid-template-areas: "head offer zone cta";
   align-items: center;
-  gap: var(--gds-space-5);
-  padding: var(--gds-space-4) var(--gds-space-5);
-  background: var(--gds-color-surface);
-  border-radius: var(--gds-radius-sm);
-  border: 1px solid var(--gds-color-border);
+  gap: var(--pf-space-5);
+  padding: var(--pf-space-4) var(--pf-space-5);
+  background: var(--pf-color-surface);
+  border-radius: var(--pf-radius-sm);
+  border: 1px solid var(--pf-color-border);
 }
 
 /* ── Head ── */
@@ -87,7 +87,7 @@
   grid-area: head;
   display: flex;
   align-items: center;
-  gap: var(--gds-space-3);
+  gap: var(--pf-space-3);
   min-width: 160px;
 }
 
@@ -106,14 +106,14 @@
 .pf-offer-list__rank--gold   { background: #F1AD00; color: #1a1a1a; }
 .pf-offer-list__rank--silver { background: #a8b0c0; color: #1a1a1a; }
 .pf-offer-list__rank--bronze { background: #c47a3a; color: #ffffff; }
-.pf-offer-list__rank--plain  { background: var(--gds-color-surface-elevated); color: var(--gds-color-text-muted); }
+.pf-offer-list__rank--plain  { background: var(--pf-color-surface-elevated); color: var(--pf-color-text-muted); }
 
 /* Brand logo circle — instance-level color via inline var */
 .pf-offer-list__logo {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: var(--bm-brand-color, var(--gds-color-surface-elevated));
+  background: var(--bm-brand-color, var(--pf-color-surface-elevated));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,14 +134,14 @@
 .pf-offer-list__name {
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
   white-space: nowrap;
 }
 
 .pf-offer-list__rating {
   display: flex;
   align-items: center;
-  gap: var(--gds-space-2);
+  gap: var(--pf-space-2);
 }
 
 /* Star rating */
@@ -164,19 +164,19 @@
   flex-shrink: 0;
 }
 
-.pf-offer-list__stars-track { color: var(--gds-color-border); }
+.pf-offer-list__stars-track { color: var(--pf-color-border); }
 
 .pf-offer-list__stars-fill {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  color: var(--gds-color-accent);
+  color: var(--pf-color-accent);
 }
 
 .pf-offer-list__rating-num {
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--gds-color-accent);
+  color: var(--pf-color-accent);
   font-variant-numeric: tabular-nums;
 }
 
@@ -190,7 +190,7 @@
   text-transform: uppercase;
   letter-spacing: 0.01em;
   line-height: 1.3;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
   min-width: 0;
 }
 
@@ -200,7 +200,7 @@
   grid-area: zone;
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-3);
+  gap: var(--pf-space-3);
   min-width: 0;
 }
 
@@ -211,20 +211,20 @@
   grid-template-rows: auto auto;
   grid-template-areas: "label icon" "value icon";
   align-items: center;
-  gap: 2px var(--gds-space-3);
-  padding: var(--gds-space-2) var(--gds-space-3);
-  background: var(--gds-color-surface-elevated);
-  border: 1.5px dashed var(--gds-color-accent);
-  border-radius: var(--gds-radius-sm);
+  gap: 2px var(--pf-space-3);
+  padding: var(--pf-space-2) var(--pf-space-3);
+  background: var(--pf-color-surface-elevated);
+  border: 1.5px dashed var(--pf-color-accent);
+  border-radius: var(--pf-radius-sm);
   cursor: pointer;
   font-family: inherit;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
   text-align: left;
   transition: border-color 150ms ease, background 150ms ease;
   min-width: 160px;
 }
 
-.pf-offer-list__code:hover { border-color: var(--gds-color-primary); }
+.pf-offer-list__code:hover { border-color: var(--pf-color-primary); }
 
 .pf-offer-list__code-label {
   grid-area: label;
@@ -232,16 +232,16 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gds-color-text-muted);
+  color: var(--pf-color-text-muted);
 }
 
 .pf-offer-list__code-value {
   grid-area: value;
-  font-family: var(--gds-font-family-mono);
+  font-family: var(--pf-font-mono);
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: var(--gds-color-accent);
+  color: var(--pf-color-accent);
   line-height: 1;
 }
 
@@ -249,7 +249,7 @@
   grid-area: icon;
   display: flex;
   align-items: center;
-  color: var(--gds-color-accent);
+  color: var(--pf-color-accent);
 }
 
 /* Reveal mode: code blurred until clicked */
@@ -268,7 +268,7 @@
 .pf-offer-list__code--none {
   grid-template-columns: 1fr;
   grid-template-areas: "label" "value";
-  border-color: var(--gds-color-border);
+  border-color: var(--pf-color-border);
   opacity: 0.52;
   pointer-events: none;
   cursor: default;
@@ -276,11 +276,11 @@
 
 .pf-offer-list__code-nocode {
   grid-area: value;
-  font-family: var(--gds-font-family-base);
+  font-family: var(--pf-font-body);
   font-size: 0.8rem;
   font-weight: 500;
   font-style: italic;
-  color: var(--gds-color-text-muted);
+  color: var(--pf-color-text-muted);
   line-height: 1;
 }
 
@@ -291,21 +291,21 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-2);
+  gap: var(--pf-space-2);
 }
 
 .pf-offer-list__pro {
   display: flex;
   align-items: flex-start;
-  gap: var(--gds-space-2);
+  gap: var(--pf-space-2);
   font-size: 0.85rem;
   line-height: 1.35;
-  color: var(--gds-color-text-muted);
+  color: var(--pf-color-text-muted);
 }
 
 .pf-offer-list__pro-icon {
   flex-shrink: 0;
-  color: var(--gds-color-success);
+  color: var(--pf-color-success);
   margin-top: 1px;
   display: flex;
 }
@@ -317,13 +317,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--gds-space-2);
+  gap: var(--pf-space-2);
   min-width: 140px;
-  padding: var(--gds-space-3) var(--gds-space-5);
-  background: var(--gds-color-primary-deep);
-  border-radius: var(--gds-radius-sm);
-  color: var(--gds-color-text);
-  font-family: var(--gds-font-family-base);
+  padding: var(--pf-space-3) var(--pf-space-5);
+  background: var(--pf-color-primary-deep);
+  border-radius: var(--pf-radius-sm);
+  color: var(--pf-color-text);
+  font-family: var(--pf-font-body);
   font-size: 0.95rem;
   font-weight: 700;
   text-decoration: none;
@@ -331,16 +331,16 @@
   transition: background 150ms ease;
 }
 
-.pf-offer-list__cta:hover { background: var(--gds-color-primary); }
+.pf-offer-list__cta:hover { background: var(--pf-color-primary); }
 
 /* ── Terms ── */
 
 .pf-offer-list__terms {
   margin: 0;
-  padding: 0 var(--gds-space-5);
+  padding: 0 var(--pf-space-5);
   font-size: 0.7rem;
   line-height: 1.4;
-  color: var(--gds-color-text-muted);
+  color: var(--pf-color-text-muted);
 }
 
 /* ── Container queries ── */
@@ -357,7 +357,7 @@
       "head cta"
       "offer offer"
       "zone zone";
-    gap: var(--gds-space-4);
+    gap: var(--pf-space-4);
   }
 
   .pf-offer-list__offer {
@@ -374,8 +374,8 @@
       "offer"
       "zone"
       "cta";
-    padding: var(--gds-space-4);
-    gap: var(--gds-space-3);
+    padding: var(--pf-space-4);
+    gap: var(--pf-space-3);
   }
 
   .pf-offer-list__head {
@@ -395,7 +395,7 @@
     min-width: 0;
     width: 100%;
     justify-content: center;
-    padding: var(--gds-space-3) var(--gds-space-4);
+    padding: var(--pf-space-3) var(--pf-space-4);
   }
 }
 

@@ -25,27 +25,27 @@ const { heading, ctaLabel, ctaHref = "#" } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--gds-space-4);
+    gap: var(--pf-space-4);
   }
 
   .pf-section-heading__h2 {
-    font-family: var(--gds-font-family-base);
+    font-family: var(--pf-font-body);
     font-size: 1.75rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.02em;
-    color: var(--gds-color-text);
+    color: var(--pf-color-text);
     line-height: 1.1;
   }
 
   .pf-section-heading__cta {
     display: flex;
     align-items: center;
-    gap: var(--gds-space-1);
-    font-family: var(--gds-font-family-base);
+    gap: var(--pf-space-1);
+    font-family: var(--pf-font-body);
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--gds-color-text-muted);
+    color: var(--pf-color-text-muted);
     text-decoration: none;
     white-space: nowrap;
     flex-shrink: 0;
@@ -53,7 +53,7 @@ const { heading, ctaLabel, ctaHref = "#" } = Astro.props;
   }
 
   .pf-section-heading__cta:hover {
-    color: var(--gds-color-text);
+    color: var(--pf-color-text);
   }
 
   @media (prefers-reduced-motion: reduce) {

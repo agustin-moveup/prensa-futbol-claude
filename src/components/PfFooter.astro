@@ -148,14 +148,14 @@ const socialLinks = [
   .pf-footer {
     background: #07111f;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    font-family: var(--gds-font-family-base);
-    color: var(--gds-color-text);
+    font-family: var(--pf-font-body);
+    color: var(--pf-color-text);
   }
 
   .pf-footer__inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 56px var(--gds-space-6) var(--gds-space-8);
+    padding: 56px var(--pf-space-6) var(--pf-space-8);
     display: grid;
     grid-template-columns: 1fr auto auto;
     gap: 64px;
@@ -167,7 +167,7 @@ const socialLinks = [
   .pf-footer__brand {
     display: flex;
     flex-direction: column;
-    gap: var(--gds-space-5);
+    gap: var(--pf-space-5);
   }
 
   .pf-footer__logo {
@@ -185,7 +185,7 @@ const socialLinks = [
     margin: 0;
     font-size: 0.9rem;
     line-height: 1.6;
-    color: var(--gds-color-text-muted);
+    color: var(--pf-color-text-muted);
     max-width: 340px;
   }
 
@@ -194,16 +194,16 @@ const socialLinks = [
   .pf-footer__social {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--gds-space-2);
+    gap: var(--pf-space-2);
   }
 
   .pf-footer__social-link {
     display: flex;
     align-items: center;
-    gap: var(--gds-space-2);
-    padding: var(--gds-space-2) var(--gds-space-3);
-    background: var(--gds-color-accent);
-    border-radius: var(--gds-radius-sm);
+    gap: var(--pf-space-2);
+    padding: var(--pf-space-2) var(--pf-space-3);
+    background: var(--pf-color-accent);
+    border-radius: var(--pf-radius-sm);
     color: #1a1a1a;
     text-decoration: none;
     font-size: 0.75rem;
@@ -234,12 +234,12 @@ const socialLinks = [
   /* ── Nav columns ── */
 
   .pf-footer__nav-title {
-    margin: 0 0 var(--gds-space-4);
+    margin: 0 0 var(--pf-space-4);
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--gds-color-accent);
+    color: var(--pf-color-accent);
   }
 
   .pf-footer__nav-list {
@@ -248,26 +248,26 @@ const socialLinks = [
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--gds-space-3);
+    gap: var(--pf-space-3);
   }
 
   .pf-footer__nav-link {
     display: inline-flex;
     align-items: center;
-    gap: var(--gds-space-2);
+    gap: var(--pf-space-2);
     font-size: 0.9rem;
-    color: var(--gds-color-text-muted);
+    color: var(--pf-color-text-muted);
     text-decoration: none;
     transition: color 150ms ease;
     white-space: nowrap;
   }
 
   .pf-footer__nav-link:hover {
-    color: var(--gds-color-text);
+    color: var(--pf-color-text);
   }
 
   .pf-footer__nav-link--cta {
-    color: var(--gds-color-primary);
+    color: var(--pf-color-primary);
     font-weight: 600;
   }
 
@@ -284,11 +284,11 @@ const socialLinks = [
   .pf-footer__bottom-inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--gds-space-5) var(--gds-space-5);
+    padding: var(--pf-space-5) var(--pf-space-5);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--gds-space-4);
+    gap: var(--pf-space-4);
   }
 
   .pf-footer__legal {
@@ -314,7 +314,7 @@ const socialLinks = [
   @media (max-width: 960px) {
     .pf-footer__inner {
       grid-template-columns: 1fr 1fr;
-      gap: var(--gds-space-7);
+      gap: var(--pf-space-7);
     }
 
     .pf-footer__brand {
@@ -325,8 +325,8 @@ const socialLinks = [
   @media (max-width: 600px) {
     .pf-footer__inner {
       grid-template-columns: 1fr;
-      padding: var(--gds-space-7) var(--gds-space-4) var(--gds-space-6);
-      gap: var(--gds-space-6);
+      padding: var(--pf-space-7) var(--pf-space-4) var(--pf-space-6);
+      gap: var(--pf-space-6);
     }
 
     .pf-footer__brand {
@@ -336,12 +336,12 @@ const socialLinks = [
     .pf-footer__bottom-inner {
       flex-direction: column;
       align-items: flex-start;
-      gap: var(--gds-space-3);
-      padding: var(--gds-space-4);
+      gap: var(--pf-space-3);
+      padding: var(--pf-space-4);
     }
 
     .pf-footer__social {
-      gap: var(--gds-space-2);
+      gap: var(--pf-space-2);
     }
   }
 

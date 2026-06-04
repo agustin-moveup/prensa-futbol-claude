@@ -2,14 +2,14 @@
   container-type: inline-size;
   container-name: pf-bookmaker-banner;
 
-  background: color-mix(in srgb, var(--gds-color-accent) 13%, var(--gds-color-surface));
-  border: 1px solid color-mix(in srgb, var(--gds-color-accent) 30%, transparent);
-  border-radius: var(--gds-radius-sm);
-  padding: var(--gds-space-3) var(--gds-space-5);
-  font-family: var(--gds-font-family-base);
+  background: color-mix(in srgb, var(--pf-color-accent) 13%, var(--pf-color-surface));
+  border: 1px solid color-mix(in srgb, var(--pf-color-accent) 30%, transparent);
+  border-radius: var(--pf-radius-sm);
+  padding: var(--pf-space-3) var(--pf-space-5);
+  font-family: var(--pf-font-body);
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-2);
+  gap: var(--pf-space-2);
 }
 
 /* ── Inner row ── */
@@ -17,7 +17,7 @@
 .pf-bookmaker-banner__inner {
   display: flex;
   align-items: center;
-  gap: var(--gds-space-3);
+  gap: var(--pf-space-3);
 }
 
 /* ── Left group ── */
@@ -25,7 +25,7 @@
 .pf-bookmaker-banner__left {
   display: flex;
   align-items: center;
-  gap: var(--gds-space-2);
+  gap: var(--pf-space-2);
   flex: 1;
   min-width: 0;
   flex-wrap: wrap;
@@ -43,7 +43,7 @@
   justify-content: center;
   font-size: 0.55rem;
   font-weight: 800;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
   flex-shrink: 0;
 }
 
@@ -52,18 +52,18 @@
 .pf-bookmaker-banner__name {
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
   white-space: nowrap;
 }
 
 .pf-bookmaker-banner__sep {
-  color: var(--gds-color-text-muted);
+  color: var(--pf-color-text-muted);
   font-size: 0.75rem;
 }
 
 .pf-bookmaker-banner__tagline {
   font-size: 0.85rem;
-  color: var(--gds-color-text-muted);
+  color: var(--pf-color-text-muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -72,7 +72,7 @@
 .pf-bookmaker-banner__value {
   font-size: 0.9rem;
   font-weight: 800;
-  color: var(--gds-color-accent);
+  color: var(--pf-color-accent);
   white-space: nowrap;
 }
 
@@ -81,10 +81,10 @@
 .pf-bookmaker-banner__cta {
   display: inline-flex;
   align-items: center;
-  padding: var(--gds-space-2) var(--gds-space-5);
-  background: var(--gds-color-primary-deep);
-  color: var(--gds-color-text);
-  border-radius: var(--gds-radius-sm);
+  padding: var(--pf-space-2) var(--pf-space-5);
+  background: var(--pf-color-primary-deep);
+  color: var(--pf-color-text);
+  border-radius: var(--pf-radius-sm);
   font-size: 0.85rem;
   font-weight: 700;
   text-decoration: none;
@@ -94,14 +94,14 @@
 }
 
 .pf-bookmaker-banner__cta:hover {
-  background: var(--gds-color-primary);
+  background: var(--pf-color-primary);
 }
 
 /* ── Disclaimer ── */
 
 .pf-bookmaker-banner__disclaimer {
   font-size: 0.6rem;
-  color: var(--gds-color-text-muted);
+  color: var(--pf-color-text-muted);
   text-align: center;
   opacity: 0.7;
   line-height: 1.4;

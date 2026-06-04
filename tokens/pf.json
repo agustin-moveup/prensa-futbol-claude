@@ -3,7 +3,7 @@
     "primary": { "DEFAULT": "#FF2F2F", "deep": "#cc0000" },
     "accent":  { "DEFAULT": "#F1AD00" },
     "bg":      { "DEFAULT": "#0F1828" },
-    "surface": { "DEFAULT": "#2a314d", "elevated": "#313a5c" },
+    "surface": { "DEFAULT": "#1a2840", "elevated": "#1e3252" },
     "border":  { "DEFAULT": "rgba(255,255,255,0.1)" },
     "text":    { "DEFAULT": "#ffffff", "muted": "rgba(255,255,255,0.65)" },
     "success": { "DEFAULT": "#22c55e" },
@@ -13,13 +13,11 @@
     "1": 4, "2": 8, "3": 12, "4": 16, "5": 20, "6": 24, "7": 32, "8": 40
   },
   "radius": {
-    "sm": 8, "md": 12, "lg": 16
+    "sm": 6, "md": 8, "lg": 12
   },
   "font": {
-    "family": {
-      "base": "'Barlow Condensed', system-ui, sans-serif",
-      "heading": "'Montserrat', system-ui, sans-serif",
-      "mono": "ui-monospace, monospace"
-    }
+    "body":    "Roboto, \"Roboto Fallback\", system-ui, -apple-system, sans-serif",
+    "heading": "\"Barlow Condensed\", sans-serif",
+    "mono":    "ui-monospace, \"Roboto Mono\", monospace"
   }
 }

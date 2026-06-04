@@ -2,19 +2,19 @@
   container-type: inline-size;
   container-name: pf-match-odds;
 
-  background: var(--gds-color-surface);
-  border: 1px solid var(--gds-color-border);
-  border-radius: var(--gds-radius-sm);
+  background: var(--pf-color-surface);
+  border: 1px solid var(--pf-color-border);
+  border-radius: var(--pf-radius-sm);
   overflow: hidden;
-  font-family: var(--gds-font-family-base);
-  color: var(--gds-color-text);
+  font-family: var(--pf-font-body);
+  color: var(--pf-color-text);
 }
 
 /* ── Header ── */
 
 .pf-match-odds__header {
-  padding: var(--gds-space-4) var(--gds-space-5);
-  border-bottom: 1px solid var(--gds-color-border);
+  padding: var(--pf-space-4) var(--pf-space-5);
+  border-bottom: 1px solid var(--pf-color-border);
 }
 
 .pf-match-odds__competition {
@@ -23,23 +23,23 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--gds-color-accent);
-  margin-bottom: var(--gds-space-1);
+  color: var(--pf-color-accent);
+  margin-bottom: var(--pf-space-1);
 }
 
 .pf-match-odds__title {
-  font-family: var(--gds-font-family-heading);
+  font-family: var(--pf-font-heading);
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
   line-height: 1.2;
   margin: 0;
 }
 
 .pf-match-odds__subtitle {
   font-size: 0.78rem;
-  color: var(--gds-color-text-muted);
-  margin: var(--gds-space-1) 0 0;
+  color: var(--pf-color-text-muted);
+  margin: var(--pf-space-1) 0 0;
   line-height: 1.4;
 }
 
@@ -54,14 +54,14 @@
 .pf-match-odds__col-headers {
   display: grid;
   grid-template-columns: 1fr repeat(3, 88px) 120px;
-  gap: var(--gds-space-2);
-  padding: var(--gds-space-2) var(--gds-space-5);
+  gap: var(--pf-space-2);
+  padding: var(--pf-space-2) var(--pf-space-5);
   font-size: 0.6rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--gds-color-text-muted);
-  background: var(--gds-color-surface-elevated);
+  color: var(--pf-color-text-muted);
+  background: var(--pf-color-surface-elevated);
 }
 
 .pf-match-odds__col-headers span:nth-child(2),
@@ -80,13 +80,13 @@
   display: grid;
   grid-template-columns: 1fr repeat(3, 88px) 120px;
   align-items: center;
-  gap: var(--gds-space-2);
-  padding: var(--gds-space-3) var(--gds-space-5);
-  border-top: 1px solid var(--gds-color-border);
+  gap: var(--pf-space-2);
+  padding: var(--pf-space-3) var(--pf-space-5);
+  border-top: 1px solid var(--pf-color-border);
 }
 
 .pf-match-odds__row:hover {
-  background: var(--gds-color-surface-elevated);
+  background: var(--pf-color-surface-elevated);
 }
 
 /* ── Bookmaker cell ── */
@@ -94,15 +94,15 @@
 .pf-match-odds__bm {
   display: flex;
   align-items: center;
-  gap: var(--gds-space-3);
+  gap: var(--pf-space-3);
   min-width: 0;
 }
 
 .pf-match-odds__bm-logo {
   width: 36px;
   height: 36px;
-  border-radius: var(--gds-radius-sm);
-  background: var(--bm-brand-color, var(--gds-color-border));
+  border-radius: var(--pf-radius-sm);
+  background: var(--bm-brand-color, var(--pf-color-border));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,7 +122,7 @@
 .pf-match-odds__bm-name {
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -131,13 +131,13 @@
 .pf-match-odds__bm-rating {
   display: flex;
   align-items: center;
-  gap: var(--gds-space-1);
+  gap: var(--pf-space-1);
 }
 
 .pf-match-odds__bm-rating-num {
   font-size: 0.65rem;
-  color: var(--gds-color-text-muted);
-  font-family: var(--gds-font-family-mono);
+  color: var(--pf-color-text-muted);
+  font-family: var(--pf-font-mono);
 }
 
 /* ── Stars ── */
@@ -159,12 +159,12 @@
 }
 
 .pf-match-odds__stars-track {
-  color: var(--gds-color-border);
+  color: var(--pf-color-border);
 }
 
 .pf-match-odds__stars-fill {
   overflow: hidden;
-  color: var(--gds-color-accent);
+  color: var(--pf-color-accent);
 }
 
 .pf-match-odds__stars svg,
@@ -182,22 +182,22 @@
   flex-direction: column;
   align-items: center;
   gap: 3px;
-  padding: var(--gds-space-2) var(--gds-space-1);
-  background: var(--gds-color-surface-elevated);
-  border: 1px solid var(--gds-color-border);
-  border-radius: var(--gds-radius-sm);
+  padding: var(--pf-space-2) var(--pf-space-1);
+  background: var(--pf-color-surface-elevated);
+  border: 1px solid var(--pf-color-border);
+  border-radius: var(--pf-radius-sm);
   text-decoration: none;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
   transition: border-color 150ms ease;
 }
 
 .pf-match-odds__odd:hover {
-  border-color: var(--gds-color-primary);
+  border-color: var(--pf-color-primary);
 }
 
 .pf-match-odds__odd--best {
-  border-color: var(--gds-color-accent);
-  background: color-mix(in srgb, var(--gds-color-accent) 10%, var(--gds-color-surface-elevated));
+  border-color: var(--pf-color-accent);
+  background: color-mix(in srgb, var(--pf-color-accent) 10%, var(--pf-color-surface-elevated));
 }
 
 .pf-match-odds__odd-label {
@@ -205,22 +205,22 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--gds-color-text-muted);
+  color: var(--pf-color-text-muted);
 }
 
 .pf-match-odds__odd--best .pf-match-odds__odd-label {
-  color: var(--gds-color-accent);
+  color: var(--pf-color-accent);
 }
 
 .pf-match-odds__odd-value {
-  font-family: var(--gds-font-family-mono);
+  font-family: var(--pf-font-mono);
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
 }
 
 .pf-match-odds__odd--best .pf-match-odds__odd-value {
-  color: var(--gds-color-accent);
+  color: var(--pf-color-accent);
 }
 
 /* ── CTA button ── */
@@ -229,11 +229,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--gds-space-2);
-  padding: var(--gds-space-3) var(--gds-space-4);
-  background: var(--gds-color-primary-deep);
-  color: var(--gds-color-text);
-  border-radius: var(--gds-radius-sm);
+  gap: var(--pf-space-2);
+  padding: var(--pf-space-3) var(--pf-space-4);
+  background: var(--pf-color-primary-deep);
+  color: var(--pf-color-text);
+  border-radius: var(--pf-radius-sm);
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 700;
@@ -242,7 +242,7 @@
 }
 
 .pf-match-odds__cta:hover {
-  background: var(--gds-color-primary);
+  background: var(--pf-color-primary);
 }
 
 /* ── Container queries ── */
@@ -251,8 +251,8 @@
   .pf-match-odds__col-headers,
   .pf-match-odds__row {
     grid-template-columns: 1fr repeat(3, 64px) 80px;
-    gap: var(--gds-space-1);
-    padding: var(--gds-space-2) var(--gds-space-4);
+    gap: var(--pf-space-1);
+    padding: var(--pf-space-2) var(--pf-space-4);
   }
 
   .pf-match-odds__bm-logo {
@@ -269,7 +269,7 @@
   .pf-match-odds__col-headers,
   .pf-match-odds__row {
     grid-template-columns: 1fr repeat(3, 52px) 60px;
-    padding: var(--gds-space-2) var(--gds-space-3);
+    padding: var(--pf-space-2) var(--pf-space-3);
   }
 
   .pf-match-odds__bm-info {
@@ -287,6 +287,6 @@
 
   .pf-match-odds__cta {
     font-size: 0.65rem;
-    padding: var(--gds-space-2) var(--gds-space-2);
+    padding: var(--pf-space-2) var(--pf-space-2);
   }
 }

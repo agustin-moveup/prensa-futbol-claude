@@ -4,7 +4,7 @@ type TokenTree = { [key: string]: number | string | TokenTree };
 
 function flattenTokens(
   tree: TokenTree,
-  prefix: string = "--gds"
+  prefix: string = "--pf"
 ): Array<[string, string]> {
   const entries: Array<[string, string]> = [];
 
@@ -14,11 +14,10 @@ function flattenTokens(
     if (typeof value === "object" && value !== null) {
       entries.push(...flattenTokens(value as TokenTree, varName));
     } else {
-      // Apply px unit for space and radius numeric values
       const isNumeric = typeof value === "number";
       const needsPx =
         isNumeric &&
-        (prefix.startsWith("--gds-space") || prefix.startsWith("--gds-radius"));
+        (prefix.startsWith("--pf-space") || prefix.startsWith("--pf-radius"));
       const cssValue = needsPx ? `${value}px` : String(value);
       entries.push([varName, cssValue]);
     }

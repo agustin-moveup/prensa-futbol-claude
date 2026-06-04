@@ -3,15 +3,15 @@
   container-name: pf-match-tip-card;
   width: 100%;
 
-  background: var(--gds-color-surface);
-  border-radius: var(--gds-radius-sm);
-  border: 1px solid var(--gds-color-border);
-  padding: var(--gds-space-4);
+  background: var(--pf-color-surface);
+  border-radius: var(--pf-radius-sm);
+  border: 1px solid var(--pf-color-border);
+  padding: var(--pf-space-4);
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-3);
-  font-family: var(--gds-font-family-base);
-  color: var(--gds-color-text);
+  gap: var(--pf-space-3);
+  font-family: var(--pf-font-body);
+  color: var(--pf-color-text);
 }
 
 /* ── Header ── */
@@ -19,7 +19,7 @@
 .pf-match-tip-card__header {
   display: flex;
   align-items: center;
-  gap: var(--gds-space-3);
+  gap: var(--pf-space-3);
   flex-wrap: wrap;
 }
 
@@ -28,27 +28,27 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--gds-color-text-muted);
+  color: var(--pf-color-text-muted);
 }
 
 .pf-match-tip-card__meta {
   display: flex;
   align-items: center;
-  gap: var(--gds-space-2);
+  gap: var(--pf-space-2);
   margin-left: auto;
 }
 
 .pf-match-tip-card__kickoff {
-  font-family: var(--gds-font-family-mono);
+  font-family: var(--pf-font-mono);
   font-size: 0.75rem;
-  color: var(--gds-color-text-muted);
+  color: var(--pf-color-text-muted);
 }
 
 .pf-match-tip-card__live-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--gds-color-live);
+  background: var(--pf-color-live);
   animation: pf-live-pulse 1.4s ease-in-out infinite;
 }
 
@@ -67,14 +67,14 @@
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--gds-color-live);
+  color: var(--pf-color-live);
 }
 
 .pf-match-tip-card__live-score {
-  font-family: var(--gds-font-family-mono);
+  font-family: var(--pf-font-mono);
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
 }
 
 /* ── Matchup ── */
@@ -83,14 +83,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--gds-space-3);
+  gap: var(--pf-space-3);
 }
 
 .pf-match-tip-card__team {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--gds-space-2);
+  gap: var(--pf-space-2);
   flex: 1;
 }
 
@@ -116,7 +116,7 @@
   justify-content: center;
   font-size: 0.65rem;
   font-weight: 700;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
   letter-spacing: 0.02em;
   flex-shrink: 0;
 }
@@ -124,13 +124,13 @@
 .pf-match-tip-card__team-name {
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
 }
 
 .pf-match-tip-card__vs {
   font-size: 0.7rem;
   font-weight: 700;
-  color: var(--gds-color-text-muted);
+  color: var(--pf-color-text-muted);
   letter-spacing: 0.1em;
   flex-shrink: 0;
 }
@@ -138,13 +138,13 @@
 /* ── Tip box ── */
 
 .pf-match-tip-card__tip-box {
-  background: var(--gds-color-surface-elevated);
-  border-left: 3px solid var(--gds-color-accent);
-  border-radius: var(--gds-radius-sm);
-  padding: var(--gds-space-2) var(--gds-space-3);
+  background: var(--pf-color-surface-elevated);
+  border-left: 3px solid var(--pf-color-accent);
+  border-radius: var(--pf-radius-sm);
+  padding: var(--pf-space-2) var(--pf-space-3);
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-1);
+  gap: var(--pf-space-1);
 }
 
 .pf-match-tip-card__tip-label {
@@ -152,14 +152,14 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--gds-color-accent);
+  color: var(--pf-color-accent);
 }
 
 .pf-match-tip-card__tip-text {
   font-size: 0.9rem;
   font-weight: 600;
   line-height: 1.3;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -170,7 +170,7 @@
 .pf-match-tip-card__odds {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--gds-space-2);
+  gap: var(--pf-space-2);
 }
 
 /* Odds pill */
@@ -179,30 +179,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--gds-space-1);
-  padding: var(--gds-space-2) var(--gds-space-2);
-  background: var(--gds-color-surface-elevated);
-  border-radius: var(--gds-radius-sm);
-  border: 1px solid var(--gds-color-border);
+  gap: var(--pf-space-1);
+  padding: var(--pf-space-2) var(--pf-space-2);
+  background: var(--pf-color-surface-elevated);
+  border-radius: var(--pf-radius-sm);
+  border: 1px solid var(--pf-color-border);
   cursor: pointer;
   text-decoration: none;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
   transition: border-color 150ms ease;
 }
 
 .pf-match-tip-card__odd-pill:hover {
-  border-color: var(--gds-color-primary);
+  border-color: var(--pf-color-primary);
 }
 
 .pf-match-tip-card__odd-pill--best {
-  border-color: var(--gds-color-accent);
+  border-color: var(--pf-color-accent);
 }
 
 .pf-match-tip-card__odd-outcome {
   font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: var(--gds-color-text-muted);
+  color: var(--pf-color-text-muted);
 }
 
 /* Brand color circle — instance-level color via inline CSS var */
@@ -210,7 +210,7 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--bm-brand-color, var(--gds-color-border));
+  background: var(--bm-brand-color, var(--pf-color-border));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -222,24 +222,24 @@
 }
 
 .pf-match-tip-card__odd-value {
-  font-family: var(--gds-font-family-mono);
+  font-family: var(--pf-font-mono);
   font-size: 1.15rem;
   font-weight: 700;
   line-height: 1;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
 }
 
 .pf-match-tip-card__odd-best-badge {
   position: absolute;
   top: 0;
   right: 0;
-  background: var(--gds-color-accent);
-  color: var(--gds-color-bg);
+  background: var(--pf-color-accent);
+  color: var(--pf-color-bg);
   font-size: 0.5rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  padding: 2px var(--gds-space-1);
-  border-radius: 0 var(--gds-radius-sm) 0 var(--gds-radius-sm);
+  padding: 2px var(--pf-space-1);
+  border-radius: 0 var(--pf-radius-sm) 0 var(--pf-radius-sm);
 }
 
 /* ── CTA ── */
@@ -248,11 +248,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--gds-space-2);
-  padding: var(--gds-space-3) var(--gds-space-4);
-  background: var(--gds-color-primary-deep);
-  color: var(--gds-color-text);
-  border-radius: var(--gds-radius-sm);
+  gap: var(--pf-space-2);
+  padding: var(--pf-space-3) var(--pf-space-4);
+  background: var(--pf-color-primary-deep);
+  color: var(--pf-color-text);
+  border-radius: var(--pf-radius-sm);
   font-size: 0.875rem;
   font-weight: 700;
   text-decoration: none;
@@ -260,7 +260,7 @@
 }
 
 .pf-match-tip-card__cta:hover {
-  background: var(--gds-color-primary);
+  background: var(--pf-color-primary);
 }
 
 .pf-match-tip-card__cta-arrow {
@@ -284,14 +284,14 @@
 @container pf-match-tip-card (max-width: 320px) {
   .pf-match-tip-card__matchup {
     flex-direction: column;
-    gap: var(--gds-space-3);
+    gap: var(--pf-space-3);
   }
 
   .pf-match-tip-card__team--home,
   .pf-match-tip-card__team--away {
     align-items: center;
     flex-direction: row;
-    gap: var(--gds-space-2);
+    gap: var(--pf-space-2);
   }
 
   .pf-match-tip-card__team-logo {
@@ -311,7 +311,7 @@
 
 @container pf-match-tip-card (min-width: 600px) {
   .pf-match-tip-card {
-    padding: var(--gds-space-5);
+    padding: var(--pf-space-5);
   }
 
   .pf-match-tip-card__team-logo {

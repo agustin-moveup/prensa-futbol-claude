@@ -1,13 +1,13 @@
 .pf-event-spotlight {
   container-type: inline-size;
   container-name: pf-event-spotlight;
-  --es-accent-from: var(--gds-color-primary);
-  --es-accent-to:   var(--gds-color-primary-deep);
-  font-family: var(--gds-font-family-base);
-  color: var(--gds-color-text);
+  --es-accent-from: var(--pf-color-primary);
+  --es-accent-to:   var(--pf-color-primary-deep);
+  font-family: var(--pf-font-body);
+  color: var(--pf-color-text);
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-5);
+  gap: var(--pf-space-5);
 }
 
 /* ── Header ── */
@@ -15,7 +15,7 @@
 .pf-event-spotlight__header {
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-3);
+  gap: var(--pf-space-3);
 }
 
 /* Thin gradient strip above the title — carries the event theme */
@@ -29,13 +29,13 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: var(--gds-space-4);
+  gap: var(--pf-space-4);
 }
 
 .pf-event-spotlight__header-text {
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-1);
+  gap: var(--pf-space-1);
 }
 
 .pf-event-spotlight__kicker {
@@ -50,22 +50,22 @@
 
 .pf-event-spotlight__title {
   margin: 0;
-  font-family: var(--gds-font-family-heading);
+  font-family: var(--pf-font-heading);
   font-size: 1.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1.1;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
 }
 
 .pf-event-spotlight__cta {
   display: inline-flex;
   align-items: center;
-  gap: var(--gds-space-1);
+  gap: var(--pf-space-1);
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--gds-color-text-muted);
+  color: var(--pf-color-text-muted);
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
@@ -73,7 +73,7 @@
 }
 
 .pf-event-spotlight__cta:hover {
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
 }
 
 /* ── Spotlight layout ── */
@@ -82,7 +82,7 @@
 .pf-event-spotlight--spotlight .pf-event-spotlight__body {
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-4);
+  gap: var(--pf-space-4);
 }
 
 .pf-event-spotlight__primary {
@@ -98,7 +98,7 @@
 .pf-event-spotlight__rail {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--gds-space-3);
+  gap: var(--pf-space-3);
 }
 
 /* Narrow: 2 columns */
@@ -127,14 +127,14 @@
 
 .pf-event-spotlight__scroll {
   display: flex;
-  gap: var(--gds-space-4);
+  gap: var(--pf-space-4);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-padding-left: var(--gds-space-4);
-  padding-bottom: var(--gds-space-3);
+  scroll-padding-left: var(--pf-space-4);
+  padding-bottom: var(--pf-space-3);
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
-  scrollbar-color: var(--gds-color-surface-elevated) transparent;
+  scrollbar-color: var(--pf-color-surface-elevated) transparent;
 }
 
 .pf-event-spotlight__scroll-item {

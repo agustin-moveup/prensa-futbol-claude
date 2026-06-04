@@ -2,32 +2,32 @@
   container-type: inline-size;
   container-name: pf-link-grid;
 
-  font-family: var(--gds-font-family-base);
-  color: var(--gds-color-text);
+  font-family: var(--pf-font-body);
+  color: var(--pf-color-text);
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-4);
+  gap: var(--pf-space-4);
 }
 
 .pf-link-grid__heading {
-  font-family: var(--gds-font-family-heading);
+  font-family: var(--pf-font-heading);
   font-size: 1.25rem;
   font-weight: 800;
   text-transform: uppercase;
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
   letter-spacing: -0.01em;
 }
 
 .pf-link-grid__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--gds-space-4);
+  gap: var(--pf-space-4);
 }
 
 .pf-link-grid__col {
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-3);
+  gap: var(--pf-space-3);
 }
 
 .pf-link-grid__col-title {
@@ -35,40 +35,40 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--gds-color-text-muted);
-  padding-bottom: var(--gds-space-2);
-  border-bottom: 1px solid var(--gds-color-border);
+  color: var(--pf-color-text-muted);
+  padding-bottom: var(--pf-space-2);
+  border-bottom: 1px solid var(--pf-color-border);
 }
 
 .pf-link-grid__list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--gds-space-2);
+  gap: var(--pf-space-2);
 }
 
 .pf-link-grid__link {
   display: flex;
   align-items: center;
-  gap: var(--gds-space-2);
+  gap: var(--pf-space-2);
   font-size: 0.8rem;
-  color: var(--gds-color-text-muted);
+  color: var(--pf-color-text-muted);
   text-decoration: none;
   transition: color 150ms ease;
   line-height: 1.4;
 }
 
 .pf-link-grid__link:hover {
-  color: var(--gds-color-text);
+  color: var(--pf-color-text);
 }
 
 .pf-link-grid__link:hover .pf-link-grid__arrow {
-  color: var(--gds-color-primary);
+  color: var(--pf-color-primary);
 }
 
 .pf-link-grid__arrow {
   flex-shrink: 0;
-  color: var(--gds-color-border);
+  color: var(--pf-color-border);
   transition: color 150ms ease;
 }
 

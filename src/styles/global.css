@@ -10,8 +10,8 @@ html {
 }
 
 body {
-  background: var(--gds-color-bg, #0F1828);
-  color: var(--gds-color-text, #ffffff);
+  background: var(--pf-color-bg, #0F1828);
+  color: var(--pf-color-text, #ffffff);
   min-height: 100dvh;
 }
 
