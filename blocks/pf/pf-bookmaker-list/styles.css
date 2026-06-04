@@ -196,24 +196,50 @@
   border: 1px solid var(--gds-color-border);
   border-radius: var(--gds-radius-md);
   padding: var(--gds-space-3);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "logo name"
+    "logo stars"
+    "logo bonus"
+    "cta  cta";
+  column-gap: var(--gds-space-3);
+  row-gap: 2px;
   align-items: center;
-  gap: var(--gds-space-2);
-  text-align: center;
+  text-align: left;
+}
+
+.pf-bookmaker-list--sidebar .pf-bookmaker-list__logo-wrap {
+  grid-area: logo;
+  align-self: start;
+  margin-top: 2px;
 }
 
 .pf-bookmaker-list--sidebar .pf-bookmaker-list__bm-name {
-  font-size: 0.8rem;
+  grid-area: name;
+  font-size: 0.875rem;
   font-weight: 700;
   color: var(--gds-color-text);
+  line-height: 1.2;
+}
+
+.pf-bookmaker-list--sidebar .pf-bookmaker-list__rating {
+  grid-area: stars;
 }
 
 .pf-bookmaker-list--sidebar .pf-bookmaker-list__bonus {
-  font-size: 0.8rem;
+  grid-area: bonus;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--gds-color-accent);
-  text-align: center;
+  line-height: 1.3;
+}
+
+.pf-bookmaker-list--sidebar .pf-bookmaker-list__cta--full {
+  grid-area: cta;
+  margin-top: var(--gds-space-2);
+  padding: var(--gds-space-2) var(--gds-space-3);
+  font-size: 0.8rem;
 }
 
 /* ════════════════════════════════════
