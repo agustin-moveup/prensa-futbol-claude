@@ -197,12 +197,11 @@
   border-radius: var(--gds-radius-md);
   padding: var(--gds-space-3);
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto;
   grid-template-areas:
-    "logo name"
-    "logo stars"
-    "logo bonus"
-    "cta  cta";
+    "logo name  cta"
+    "logo stars cta"
+    "logo bonus cta";
   column-gap: var(--gds-space-3);
   row-gap: 2px;
   align-items: center;
@@ -237,9 +236,11 @@
 
 .pf-bookmaker-list--sidebar .pf-bookmaker-list__cta--full {
   grid-area: cta;
-  margin-top: var(--gds-space-2);
+  align-self: center;
+  width: auto;
   padding: var(--gds-space-2) var(--gds-space-3);
   font-size: 0.8rem;
+  white-space: nowrap;
 }
 
 /* ════════════════════════════════════
