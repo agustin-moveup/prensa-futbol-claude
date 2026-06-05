@@ -9,7 +9,7 @@ $away        = $data['team_away']    ?? [];
 $tip_text    = $data['tip_text']     ?? '';
 $odds        = $data['odds']         ?? [];
 $match_url   = $data['match_url']    ?? '#';
-$cta_label   = $data['cta_label']    ?? 'Ver análisis del partido';
+$cta_label   = $data['cta_label']    ?? __( 'View match analysis', 'pf' );
 ?>
 <article class="pf-match-tip-card">
 
@@ -18,7 +18,7 @@ $cta_label   = $data['cta_label']    ?? 'Ver análisis del partido';
     <div class="pf-match-tip-card__meta">
       <?php if ( $is_live ) : ?>
         <span class="pf-match-tip-card__live-dot" aria-hidden="true"></span>
-        <span class="pf-match-tip-card__live-label">EN VIVO</span>
+        <span class="pf-match-tip-card__live-label"><?php esc_html_e( 'LIVE', 'pf' ); ?></span>
         <?php if ( $live_score ) : ?>
           <span class="pf-match-tip-card__live-score"><?php echo esc_html( $live_score ); ?></span>
         <?php endif; ?>
@@ -55,7 +55,7 @@ $cta_label   = $data['cta_label']    ?? 'Ver análisis del partido';
   </div>
 
   <div class="pf-match-tip-card__tip-box">
-    <span class="pf-match-tip-card__tip-label">Tip experto</span>
+    <span class="pf-match-tip-card__tip-label"><?php esc_html_e( 'Expert tip', 'pf' ); ?></span>
     <p class="pf-match-tip-card__tip-text"><?php echo esc_html( $tip_text ); ?></p>
   </div>
 
@@ -75,7 +75,7 @@ $cta_label   = $data['cta_label']    ?? 'Ver análisis del partido';
         class="<?php echo esc_attr( $pill_class ); ?>"
         target="_blank"
         rel="nofollow sponsored noopener"
-        aria-label="<?php echo esc_attr( "$outcome: $value en $bm_name" ); ?>"
+        aria-label="<?php printf( esc_html__( '%1$s: %2$s at %3$s', 'pf' ), esc_attr( $outcome ), esc_attr( $value ), esc_attr( $bm_name ) ); ?>"
       >
         <span class="pf-match-tip-card__odd-outcome"><?php echo esc_html( $outcome ); ?></span>
         <span
@@ -85,7 +85,7 @@ $cta_label   = $data['cta_label']    ?? 'Ver análisis del partido';
         ><?php echo esc_html( $bm_initials ); ?></span>
         <span class="pf-match-tip-card__odd-value"><?php echo esc_html( $value ); ?></span>
         <?php if ( $is_best ) : ?>
-          <span class="pf-match-tip-card__odd-best-badge" aria-label="Mejor cuota">BEST</span>
+          <span class="pf-match-tip-card__odd-best-badge" aria-label="<?php esc_attr_e( 'Best odds', 'pf' ); ?>"><?php esc_html_e( 'BEST', 'pf' ); ?></span>
         <?php endif; ?>
       </a>
     <?php endforeach; ?>

@@ -13,7 +13,7 @@
 /* ── Header ── */
 
 .pf-match-odds__header {
-  padding: var(--pf-space-4) var(--pf-space-5);
+  padding: 16px 20px;
   border-bottom: 1px solid var(--pf-color-border);
 }
 
@@ -24,7 +24,7 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--pf-color-accent);
-  margin-bottom: var(--pf-space-1);
+  margin-bottom: 4px;
 }
 
 .pf-match-odds__title {
@@ -39,7 +39,7 @@
 .pf-match-odds__subtitle {
   font-size: 0.78rem;
   color: var(--pf-color-text-muted);
-  margin: var(--pf-space-1) 0 0;
+  margin: 4px 0 0;
   line-height: 1.4;
 }
 
@@ -54,14 +54,14 @@
 .pf-match-odds__col-headers {
   display: grid;
   grid-template-columns: 1fr repeat(3, 88px) 120px;
-  gap: var(--pf-space-2);
-  padding: var(--pf-space-2) var(--pf-space-5);
+  gap: 8px;
+  padding: 8px 20px;
   font-size: 0.6rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--pf-color-text-muted);
-  background: var(--pf-color-surface-elevated);
+  background: #1e3252;
 }
 
 .pf-match-odds__col-headers span:nth-child(2),
@@ -80,13 +80,13 @@
   display: grid;
   grid-template-columns: 1fr repeat(3, 88px) 120px;
   align-items: center;
-  gap: var(--pf-space-2);
-  padding: var(--pf-space-3) var(--pf-space-5);
+  gap: 8px;
+  padding: 12px 20px;
   border-top: 1px solid var(--pf-color-border);
 }
 
 .pf-match-odds__row:hover {
-  background: var(--pf-color-surface-elevated);
+  background: #1e3252;
 }
 
 /* ── Bookmaker cell ── */
@@ -94,7 +94,7 @@
 .pf-match-odds__bm {
   display: flex;
   align-items: center;
-  gap: var(--pf-space-3);
+  gap: 12px;
   min-width: 0;
 }
 
@@ -131,13 +131,13 @@
 .pf-match-odds__bm-rating {
   display: flex;
   align-items: center;
-  gap: var(--pf-space-1);
+  gap: 4px;
 }
 
 .pf-match-odds__bm-rating-num {
   font-size: 0.65rem;
   color: var(--pf-color-text-muted);
-  font-family: var(--pf-font-mono);
+  font-family: ui-monospace, "Roboto Mono", monospace;
 }
 
 /* ── Stars ── */
@@ -182,8 +182,8 @@
   flex-direction: column;
   align-items: center;
   gap: 3px;
-  padding: var(--pf-space-2) var(--pf-space-1);
-  background: var(--pf-color-surface-elevated);
+  padding: 8px 4px;
+  background: #1e3252;
   border: 1px solid var(--pf-color-border);
   border-radius: var(--pf-radius-sm);
   text-decoration: none;
@@ -197,7 +197,7 @@
 
 .pf-match-odds__odd--best {
   border-color: var(--pf-color-accent);
-  background: color-mix(in srgb, var(--pf-color-accent) 10%, var(--pf-color-surface-elevated));
+  background: color-mix(in srgb, var(--pf-color-accent) 10%, #1e3252);
 }
 
 .pf-match-odds__odd-label {
@@ -213,7 +213,7 @@
 }
 
 .pf-match-odds__odd-value {
-  font-family: var(--pf-font-mono);
+  font-family: ui-monospace, "Roboto Mono", monospace;
   font-size: 0.9rem;
   font-weight: 700;
   color: var(--pf-color-text);
@@ -229,8 +229,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--pf-space-2);
-  padding: var(--pf-space-3) var(--pf-space-4);
+  gap: 8px;
+  padding: 12px 16px;
   background: var(--pf-color-primary-deep);
   color: var(--pf-color-text);
   border-radius: var(--pf-radius-sm);
@@ -251,8 +251,8 @@
   .pf-match-odds__col-headers,
   .pf-match-odds__row {
     grid-template-columns: 1fr repeat(3, 64px) 80px;
-    gap: var(--pf-space-1);
-    padding: var(--pf-space-2) var(--pf-space-4);
+    gap: 4px;
+    padding: 8px 16px;
   }
 
   .pf-match-odds__bm-logo {
@@ -269,7 +269,7 @@
   .pf-match-odds__col-headers,
   .pf-match-odds__row {
     grid-template-columns: 1fr repeat(3, 52px) 60px;
-    padding: var(--pf-space-2) var(--pf-space-3);
+    padding: 8px 12px;
   }
 
   .pf-match-odds__bm-info {
@@ -287,6 +287,6 @@
 
   .pf-match-odds__cta {
     font-size: 0.65rem;
-    padding: var(--pf-space-2) var(--pf-space-2);
+    padding: 8px 8px;
   }
 }

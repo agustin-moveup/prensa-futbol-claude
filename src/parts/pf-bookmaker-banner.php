@@ -7,9 +7,9 @@ $initials   = $bm['initials']          ?? '';
 $bm_name    = $bm['name']              ?? '';
 $tagline    = $data['offer_tagline']   ?? '';
 $value      = $data['offer_value']     ?? '';
-$cta_label  = $data['cta_label']       ?? 'Activar bono';
+$cta_label  = $data['cta_label']       ?? __( 'Activate bonus', 'pf' );
 $cta_url    = $data['cta_url']         ?? '#';
-$disclaimer = $data['disclaimer']      ?? '18+ · Juega con responsabilidad · T&C aplican';
+$disclaimer = $data['disclaimer']      ?? __( '18+ · Play responsibly · T&C apply', 'pf' );
 ?>
 <aside class="pf-bookmaker-banner">
   <div class="pf-bookmaker-banner__inner">

@@ -1,7 +1,7 @@
 <?php defined( 'ABSPATH' ) || exit;
 
 $variant = $data['variant'] ?? 'card';
-$title   = $data['title']   ?? 'Mejores Casas de Apuestas';
+$title   = $data['title']   ?? __( 'Best Sportsbooks', 'pf' );
 $items   = $data['items']   ?? [];
 
 $list_class = 'pf-bookmaker-list pf-bookmaker-list--' . esc_attr( $variant );
@@ -15,9 +15,9 @@ $list_class = 'pf-bookmaker-list pf-bookmaker-list--' . esc_attr( $variant );
   <?php if ( 'table' === $variant ) : ?>
     <div class="pf-bookmaker-list__table-header" aria-hidden="true">
       <span class="pf-bookmaker-list__col pf-bookmaker-list__col--rank">#</span>
-      <span class="pf-bookmaker-list__col pf-bookmaker-list__col--logo-name">Casa</span>
-      <span class="pf-bookmaker-list__col pf-bookmaker-list__col--rating">Rating</span>
-      <span class="pf-bookmaker-list__col pf-bookmaker-list__col--bonus">Bono</span>
+      <span class="pf-bookmaker-list__col pf-bookmaker-list__col--logo-name"><?php esc_html_e( 'Sportsbook', 'pf' ); ?></span>
+      <span class="pf-bookmaker-list__col pf-bookmaker-list__col--rating"><?php esc_html_e( 'Rating', 'pf' ); ?></span>
+      <span class="pf-bookmaker-list__col pf-bookmaker-list__col--bonus"><?php esc_html_e( 'Bonus', 'pf' ); ?></span>
       <span class="pf-bookmaker-list__col pf-bookmaker-list__col--cta"></span>
     </div>
   <?php endif; ?>
@@ -32,7 +32,7 @@ $list_class = 'pf-bookmaker-list pf-bookmaker-list--' . esc_attr( $variant );
       $rating     = (float) ( $item['rating']         ?? 0 );
       $bonus      = $item['bonus']                    ?? '';
       $cta_url    = $item['cta_url']                  ?? '#';
-      $cta_label  = $item['cta_label']                ?? 'Activar';
+      $cta_label  = $item['cta_label']                ?? __( 'Activate', 'pf' );
       $disclaimer = $item['disclaimer']               ?? '';
       $logo_size  = 'sidebar' === $variant ? '40px' : ( 'table' === $variant ? '32px' : '48px' );
 
@@ -61,7 +61,7 @@ $list_class = 'pf-bookmaker-list pf-bookmaker-list--' . esc_attr( $variant );
               </div>
               <div class="pf-bookmaker-list__item-info">
                 <span class="pf-bookmaker-list__bm-name"><?php echo esc_html( $bm_name ); ?></span>
-                <span class="pf-bookmaker-list__rating" aria-label="<?php echo esc_attr( number_format( $rating, 1 ) . ' de 5 estrellas' ); ?>">
+                <span class="pf-bookmaker-list__rating" aria-label="<?php printf( esc_html__( '%s out of 5 stars', 'pf' ), esc_attr( number_format( $rating, 1 ) ) ); ?>">
                   <?php for ( $i = 0; $i < $full_stars; $i++ ) : ?>
                     <svg class="pf-bookmaker-list__star pf-bookmaker-list__star--full" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="<?php echo esc_attr( $star_path ); ?>" fill="currentColor" stroke="currentColor" stroke-width="0.8"/></svg>
                   <?php endfor; ?>
@@ -95,7 +95,7 @@ $list_class = 'pf-bookmaker-list pf-bookmaker-list--' . esc_attr( $variant );
             <span class="<?php echo esc_attr( $rank_class ); ?>"><?php echo esc_html( $rank ); ?></span>
           </div>
           <span class="pf-bookmaker-list__bm-name"><?php echo esc_html( $bm_name ); ?></span>
-          <span class="pf-bookmaker-list__rating" aria-label="<?php echo esc_attr( number_format( $rating, 1 ) . ' de 5 estrellas' ); ?>">
+          <span class="pf-bookmaker-list__rating" aria-label="<?php printf( esc_html__( '%s out of 5 stars', 'pf' ), esc_attr( number_format( $rating, 1 ) ) ); ?>">
             <?php for ( $i = 0; $i < $full_stars; $i++ ) : ?>
               <svg class="pf-bookmaker-list__star pf-bookmaker-list__star--full" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="<?php echo esc_attr( $star_path ); ?>" fill="currentColor" stroke="currentColor" stroke-width="0.8"/></svg>
             <?php endfor; ?>
@@ -128,7 +128,7 @@ $list_class = 'pf-bookmaker-list pf-bookmaker-list--' . esc_attr( $variant );
             <span class="pf-bookmaker-list__bm-name"><?php echo esc_html( $bm_name ); ?></span>
           </span>
           <span class="pf-bookmaker-list__col pf-bookmaker-list__col--rating">
-            <span class="pf-bookmaker-list__rating" aria-label="<?php echo esc_attr( number_format( $rating, 1 ) . ' de 5 estrellas' ); ?>">
+            <span class="pf-bookmaker-list__rating" aria-label="<?php printf( esc_html__( '%s out of 5 stars', 'pf' ), esc_attr( number_format( $rating, 1 ) ) ); ?>">
               <?php for ( $i = 0; $i < $full_stars; $i++ ) : ?>
                 <svg class="pf-bookmaker-list__star pf-bookmaker-list__star--full" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="<?php echo esc_attr( $star_path ); ?>" fill="currentColor" stroke="currentColor" stroke-width="0.8"/></svg>
               <?php endfor; ?>

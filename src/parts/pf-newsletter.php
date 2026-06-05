@@ -1,17 +1,16 @@
 <?php defined( 'ABSPATH' ) || exit;
 
-$title       = $data['title']               ?? '¡Sigue en el juego!';
+$title       = $data['title']               ?? __( 'Stay in the game!', 'pf' );
 $subtitle    = $data['subtitle']            ?? '';
 $body        = $data['body']                ?? '';
-$input_label = $data['input_label']         ?? 'Tu correo electrónico';
-$placeholder = $data['input_placeholder']   ?? 'tucorreo@ejemplo.com';
-$hint        = $data['hint']               ?? 'Sin spam. Puedes darte de baja en cualquier momento.';
-$cta_label   = $data['cta_label']          ?? 'Enviar';
+$input_label = $data['input_label']         ?? __( 'Your email address', 'pf' );
+$placeholder = $data['input_placeholder']   ?? __( 'yourmail@example.com', 'pf' );
+$hint        = $data['hint']               ?? __( 'No spam. You can unsubscribe at any time.', 'pf' );
+$cta_label   = $data['cta_label']          ?? __( 'Subscribe', 'pf' );
 
-// Split title accent (text before first space after ¡Sigue)
-preg_match( '/^(¡Sigue)\s*(.+)$/us', $title, $m );
-$title_accent = $m[1] ?? $title;
-$title_rest   = $m[2] ?? '';
+$title_parts  = explode( ' ', $title, 2 );
+$title_accent = $title_parts[0] ?? $title;
+$title_rest   = $title_parts[1] ?? '';
 ?>
 <section class="pf-newsletter" aria-labelledby="pf-nl-title">
   <div class="pf-newsletter__inner">

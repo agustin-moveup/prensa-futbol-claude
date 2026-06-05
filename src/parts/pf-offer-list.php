@@ -31,7 +31,7 @@ $star_path = 'M8 1.2 9.96 5.6l4.84.42-3.66 3.18 1.1 4.7L8 11.55 3.76 13.9l1.1-4.
       $promo_code = $item['promo_code']     ?? '';
       $code_mode  = $item['code_mode']      ?? 'copy';
       $pros       = $item['pros']           ?? [];
-      $item_cta   = $item['cta_label']      ?? 'Obtener bono';
+      $item_cta   = $item['cta_label']      ?? __( 'Get bonus', 'pf' );
       $item_href  = $item['cta_href']       ?? '#';
       $terms      = $item['terms']          ?? '';
 
@@ -53,7 +53,7 @@ $star_path = 'M8 1.2 9.96 5.6l4.84.42-3.66 3.18 1.1 4.7L8 11.55 3.76 13.9l1.1-4.
     ?>
 
       <li class="pf-offer-list__item">
-        <article class="pf-offer-list__card pf-offer-list__card--<?php echo esc_attr( $card_variant ); ?>" aria-label="<?php echo esc_attr( "$bm_name — $offer" ); ?>">
+        <article class="pf-offer-list__card pf-offer-list__card--<?php echo esc_attr( $card_variant ); ?>" aria-label="<?php printf( esc_html__( '%1$s — %2$s', 'pf' ), esc_attr( $bm_name ), esc_attr( $offer ) ); ?>">
 
           <div class="pf-offer-list__head">
             <?php if ( null !== $rank ) : ?>
@@ -62,7 +62,7 @@ $star_path = 'M8 1.2 9.96 5.6l4.84.42-3.66 3.18 1.1 4.7L8 11.55 3.76 13.9l1.1-4.
             <span class="pf-offer-list__logo" style="--bm-brand-color:<?php echo esc_attr( $bm_color ); ?>;" aria-hidden="true"><?php echo esc_html( mb_strtoupper( mb_substr( $bm_name, 0, 2 ) ) ); ?></span>
             <div class="pf-offer-list__head-text">
               <span class="pf-offer-list__name"><?php echo esc_html( $bm_name ); ?></span>
-              <span class="pf-offer-list__rating" aria-label="<?php echo esc_attr( number_format( $rating, 1 ) . ' de 5 estrellas' ); ?>">
+              <span class="pf-offer-list__rating" aria-label="<?php printf( esc_html__( '%s out of 5 stars', 'pf' ), esc_attr( number_format( $rating, 1 ) ) ); ?>">
                 <span class="pf-offer-list__stars">
                   <span class="pf-offer-list__stars-track" aria-hidden="true">
                     <?php for ( $i = 0; $i < 5; $i++ ) : ?>
@@ -86,9 +86,9 @@ $star_path = 'M8 1.2 9.96 5.6l4.84.42-3.66 3.18 1.1 4.7L8 11.55 3.76 13.9l1.1-4.
             <div class="pf-offer-list__zone">
 
               <?php if ( 'none' === $code_mode ) : ?>
-                <div class="pf-offer-list__code pf-offer-list__code--none" aria-label="No requiere código promocional">
-                  <span class="pf-offer-list__code-label">Código promo</span>
-                  <span class="pf-offer-list__code-nocode">No necesita código</span>
+                <div class="pf-offer-list__code pf-offer-list__code--none" aria-label="<?php esc_attr_e( 'No promo code required', 'pf' ); ?>">
+                  <span class="pf-offer-list__code-label"><?php esc_html_e( 'Promo code', 'pf' ); ?></span>
+                  <span class="pf-offer-list__code-nocode"><?php esc_html_e( 'No code needed', 'pf' ); ?></span>
                 </div>
 
               <?php elseif ( 'reveal' === $code_mode ) : ?>
@@ -97,9 +97,9 @@ $star_path = 'M8 1.2 9.96 5.6l4.84.42-3.66 3.18 1.1 4.7L8 11.55 3.76 13.9l1.1-4.
                   type="button"
                   data-copy-mode="reveal"
                   data-code="<?php echo esc_attr( $promo_code ); ?>"
-                  aria-label="Haz clic para ver el código"
+                  aria-label="<?php esc_attr_e( 'Click to reveal code', 'pf' ); ?>"
                 >
-                  <span class="pf-offer-list__code-label">Clic para ver</span>
+                  <span class="pf-offer-list__code-label"><?php esc_html_e( 'Click to reveal', 'pf' ); ?></span>
                   <span class="pf-offer-list__code-value"><?php echo esc_html( $promo_code ); ?></span>
                   <span class="pf-offer-list__code-icon" aria-hidden="true">
                     <svg viewBox="0 0 18 18" fill="none" width="15" height="15"><path d="M1.5 9s3-6 7.5-6 7.5 6 7.5 6-3 6-7.5 6-7.5-6-7.5-6Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="9" cy="9" r="2.25" stroke="currentColor" stroke-width="1.4"/></svg>
@@ -112,9 +112,9 @@ $star_path = 'M8 1.2 9.96 5.6l4.84.42-3.66 3.18 1.1 4.7L8 11.55 3.76 13.9l1.1-4.
                   type="button"
                   data-copy-mode="copy"
                   data-code="<?php echo esc_attr( $promo_code ); ?>"
-                  aria-label="<?php echo esc_attr( 'Copiar código ' . $promo_code ); ?>"
+                  aria-label="<?php printf( esc_html__( 'Copy code %s', 'pf' ), esc_attr( $promo_code ) ); ?>"
                 >
-                  <span class="pf-offer-list__code-label">Código promo</span>
+                  <span class="pf-offer-list__code-label"><?php esc_html_e( 'Promo code', 'pf' ); ?></span>
                   <span class="pf-offer-list__code-value"><?php echo esc_html( $promo_code ); ?></span>
                   <span class="pf-offer-list__code-icon" aria-hidden="true">
                     <svg viewBox="0 0 18 18" fill="none" width="15" height="15"><rect x="5.75" y="5.75" width="9" height="9" rx="1.25" stroke="currentColor" stroke-width="1.5"/><path d="M11.5 5V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6.5a1 1 0 0 0 1 1h1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>

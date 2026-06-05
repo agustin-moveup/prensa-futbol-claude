@@ -51,7 +51,7 @@ if ( $accent_to )   $root_style .= '--es-accent-to:' . esc_attr( $accent_to ) . 
       endif; ?>
 
       <?php if ( count( $articles ) > 1 ) : ?>
-        <aside class="pf-event-spotlight__rail" aria-label="Artículos relacionados">
+        <aside class="pf-event-spotlight__rail" aria-label="<?php esc_attr_e( 'Related articles', 'pf' ); ?>">
           <?php foreach ( array_slice( $articles, 1 ) as $article ) :
             $data = array_merge( $article, [ 'variant' => 'md' ] );
             include __DIR__ . '/pf-post-card.php';

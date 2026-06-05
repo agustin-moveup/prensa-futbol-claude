@@ -11,8 +11,9 @@ $author_name  = $data['author_name']         ?? '';
 $author_url   = $data['author_url']          ?? '#';
 $post_url     = $data['url']                 ?? '#';
 
-// Human-readable date via WP helper
-$date_display = $date_iso ? human_time_diff( strtotime( $date_iso ), current_time( 'timestamp' ) ) . ' atrás' : '';
+$date_display = $date_iso
+  ? sprintf( __( '%s ago', 'pf' ), human_time_diff( strtotime( $date_iso ), current_time( 'timestamp' ) ) )
+  : '';
 
 $show_image   = $image_src && 'xs' !== $variant;
 
@@ -36,7 +37,7 @@ $img_height   = 'sm' === $variant ? 100 : ( 'md' === $variant ? 225 : 280 );
           <div class="pf-post-card__overlay" aria-hidden="true"></div>
         <?php endif; ?>
         <?php if ( 'md' === $variant && $cat_label ) : ?>
-          <span class="pf-post-card__category" aria-label="<?php echo esc_attr( 'Categoría: ' . $cat_label ); ?>">
+          <span class="pf-post-card__category" aria-label="<?php printf( esc_html__( 'Category: %s', 'pf' ), esc_attr( $cat_label ) ); ?>">
             <?php echo esc_html( $cat_label ); ?>
           </span>
         <?php endif; ?>
@@ -44,14 +45,14 @@ $img_height   = 'sm' === $variant ? 100 : ( 'md' === $variant ? 225 : 280 );
     <?php endif; ?>
 
     <?php if ( 'featured' === $variant && $cat_label ) : ?>
-      <span class="pf-post-card__category" aria-label="<?php echo esc_attr( 'Categoría: ' . $cat_label ); ?>">
+      <span class="pf-post-card__category" aria-label="<?php printf( esc_html__( 'Category: %s', 'pf' ), esc_attr( $cat_label ) ); ?>">
         <?php echo esc_html( $cat_label ); ?>
       </span>
     <?php endif; ?>
 
     <div class="pf-post-card__body">
       <?php if ( in_array( $variant, [ 'sm', 'xs' ], true ) && $cat_label ) : ?>
-        <span class="pf-post-card__category" aria-label="<?php echo esc_attr( 'Categoría: ' . $cat_label ); ?>">
+        <span class="pf-post-card__category" aria-label="<?php printf( esc_html__( 'Category: %s', 'pf' ), esc_attr( $cat_label ) ); ?>">
           <?php echo esc_html( $cat_label ); ?>
         </span>
       <?php endif; ?>

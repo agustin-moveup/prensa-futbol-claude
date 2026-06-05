@@ -29,7 +29,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 3px var(--pf-space-2);
+  padding: 3px 8px;
   border-radius: var(--pf-radius-sm);
   line-height: 1.4;
 }
@@ -82,7 +82,7 @@
 .pf-post-card__byline {
   display: flex;
   align-items: center;
-  gap: var(--pf-space-2);
+  gap: 8px;
   font-size: 0.7rem;
   color: var(--pf-color-text-muted);
 }
@@ -128,8 +128,8 @@
 /* Category badge: absolute top-left above the image */
 .pf-post-card--featured .pf-post-card__category {
   position: absolute;
-  top: var(--pf-space-3);
-  left: var(--pf-space-3);
+  top: 12px;
+  left: 12px;
   z-index: 2;
 }
 
@@ -140,10 +140,10 @@
   left: 0;
   right: 0;
   z-index: 2;
-  padding: var(--pf-space-4);
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-2);
+  gap: 8px;
 }
 
 .pf-post-card--featured .pf-post-card__title {
@@ -157,7 +157,7 @@
   }
 
   .pf-post-card--featured .pf-post-card__body {
-    padding: var(--pf-space-3);
+    padding: 12px;
   }
 }
 
@@ -173,16 +173,16 @@
 
 .pf-post-card--md .pf-post-card__category {
   position: absolute;
-  top: var(--pf-space-2);
-  left: var(--pf-space-2);
+  top: 8px;
+  left: 8px;
   z-index: 1;
 }
 
 .pf-post-card--md .pf-post-card__body {
-  padding: var(--pf-space-3) var(--pf-space-4);
+  padding: 12px 16px;
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-2);
+  gap: 8px;
 }
 
 .pf-post-card--md .pf-post-card__title {
@@ -213,10 +213,10 @@
 }
 
 .pf-post-card--sm .pf-post-card__body {
-  padding: var(--pf-space-3);
+  padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-1);
+  gap: 4px;
   min-width: 0;
 }
 
@@ -246,10 +246,10 @@
 ══════════════════════════════════════════════ */
 
 .pf-post-card--xs .pf-post-card__body {
-  padding: var(--pf-space-3) var(--pf-space-4);
+  padding: 12px 16px;
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-1);
+  gap: 4px;
 }
 
 .pf-post-card--xs .pf-post-card__title {

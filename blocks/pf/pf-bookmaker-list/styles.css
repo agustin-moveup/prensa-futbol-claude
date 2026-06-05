@@ -6,7 +6,7 @@
   color: var(--pf-color-text);
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-4);
+  gap: 16px;
 }
 
 /* ── Title ── */
@@ -27,7 +27,7 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-3);
+  gap: 12px;
 }
 
 /* ── Logo circle ── */
@@ -61,7 +61,7 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--pf-color-surface-elevated);
+  background: #1e3252;
   border: 1px solid var(--pf-color-border);
   font-size: 0.55rem;
   font-weight: 800;
@@ -91,11 +91,11 @@
 }
 
 .pf-bookmaker-list__rating-value {
-  font-family: var(--pf-font-mono);
+  font-family: ui-monospace, "Roboto Mono", monospace;
   font-size: 0.7rem;
   font-weight: 700;
   color: var(--pf-color-text-muted);
-  margin-left: var(--pf-space-1);
+  margin-left: 4px;
 }
 
 /* ── CTA button ── */
@@ -104,7 +104,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--pf-space-3) var(--pf-space-5);
+  padding: 12px 20px;
   background: var(--pf-color-primary-deep);
   color: var(--pf-color-text);
   border-radius: var(--pf-radius-sm);
@@ -131,7 +131,7 @@
   color: var(--pf-color-text-muted);
   text-align: center;
   line-height: 1.5;
-  padding-top: var(--pf-space-2);
+  padding-top: 8px;
   border-top: 1px solid var(--pf-color-border);
 }
 
@@ -143,22 +143,22 @@
   background: var(--pf-color-surface);
   border: 1px solid var(--pf-color-border);
   border-radius: var(--pf-radius-sm);
-  padding: var(--pf-space-4);
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-3);
+  gap: 12px;
 }
 
 .pf-bookmaker-list--card .pf-bookmaker-list__item-main {
   display: flex;
   align-items: center;
-  gap: var(--pf-space-3);
+  gap: 12px;
 }
 
 .pf-bookmaker-list--card .pf-bookmaker-list__item-left {
   display: flex;
   align-items: center;
-  gap: var(--pf-space-3);
+  gap: 12px;
   flex: 1;
   min-width: 0;
 }
@@ -166,7 +166,7 @@
 .pf-bookmaker-list--card .pf-bookmaker-list__item-info {
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-1);
+  gap: 4px;
   min-width: 0;
 }
 
@@ -188,21 +188,21 @@
    ════════════════════════════════════ */
 
 .pf-bookmaker-list--sidebar .pf-bookmaker-list__list {
-  gap: var(--pf-space-2);
+  gap: 8px;
 }
 
 .pf-bookmaker-list--sidebar .pf-bookmaker-list__item--sidebar {
   background: var(--pf-color-surface);
   border: 1px solid var(--pf-color-border);
   border-radius: var(--pf-radius-md);
-  padding: var(--pf-space-3);
+  padding: 12px;
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-template-areas:
     "logo name  cta"
     "logo stars cta"
     "logo bonus cta";
-  column-gap: var(--pf-space-3);
+  column-gap: 12px;
   row-gap: 2px;
   align-items: center;
   text-align: left;
@@ -238,7 +238,7 @@
   grid-area: cta;
   align-self: center;
   width: auto;
-  padding: var(--pf-space-2) var(--pf-space-3);
+  padding: 8px 12px;
   font-size: 0.8rem;
   white-space: nowrap;
 }
@@ -250,8 +250,8 @@
 .pf-bookmaker-list--table .pf-bookmaker-list__table-header {
   display: grid;
   grid-template-columns: 36px 1fr 100px 1fr auto;
-  gap: var(--pf-space-3);
-  padding: var(--pf-space-2) var(--pf-space-4);
+  gap: 12px;
+  padding: 8px 16px;
   font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -263,11 +263,11 @@
   display: grid;
   grid-template-columns: 36px 1fr 100px 1fr auto;
   align-items: center;
-  gap: var(--pf-space-3);
+  gap: 12px;
   background: var(--pf-color-surface);
   border: 1px solid var(--pf-color-border);
   border-radius: var(--pf-radius-md);
-  padding: var(--pf-space-3) var(--pf-space-4);
+  padding: 12px 16px;
 }
 
 .pf-bookmaker-list--table .pf-bookmaker-list__col--rank {
@@ -285,7 +285,7 @@
 .pf-bookmaker-list--table .pf-bookmaker-list__col--logo-name {
   display: flex;
   align-items: center;
-  gap: var(--pf-space-2);
+  gap: 8px;
 }
 
 .pf-bookmaker-list--table .pf-bookmaker-list__col--logo-name .pf-bookmaker-list__logo-wrap {
@@ -327,7 +327,7 @@
   }
 
   .pf-bookmaker-list--card .pf-bookmaker-list__cta {
-    padding: var(--pf-space-2) var(--pf-space-3);
+    padding: 8px 12px;
     font-size: 0.8rem;
   }
 }

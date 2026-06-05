@@ -15,7 +15,7 @@ $bm_color     = $pick['bm_brand_color']      ?? '#555';
 $bm_text      = $pick['bm_text_color']       ?? '#ffffff';
 $odds         = number_format( (float) ( $pick['odds'] ?? 0 ), 2 );
 $cta_url      = $pick['cta_url']             ?? '#';
-$cta_label    = $pick['cta_label']           ?? 'Apostar ahora';
+$cta_label    = $pick['cta_label']           ?? __( 'Bet now', 'pf' );
 
 $quote        = $data['quote']               ?? '';
 ?>
@@ -24,7 +24,7 @@ $quote        = $data['quote']               ?? '';
   <div class="pf-tipster-card__top">
 
     <div class="pf-tipster-card__identity">
-      <a href="<?php echo esc_url( $profile_url ); ?>" class="pf-tipster-card__avatar-link" aria-label="<?php echo esc_attr( 'Ver perfil de ' . $name ); ?>">
+      <a href="<?php echo esc_url( $profile_url ); ?>" class="pf-tipster-card__avatar-link" aria-label="<?php printf( esc_html__( 'View %s profile', 'pf' ), esc_attr( $name ) ); ?>">
         <span
           class="pf-tipster-card__avatar"
           style="--avatar-from:<?php echo esc_attr( $avatar_from ); ?>;--avatar-to:<?php echo esc_attr( $avatar_to ); ?>;"
@@ -48,7 +48,7 @@ $quote        = $data['quote']               ?? '';
           style="--bm-brand-color:<?php echo esc_attr( $bm_color ); ?>;--bm-text-color:<?php echo esc_attr( $bm_text ); ?>;"
           target="_blank"
           rel="nofollow sponsored noopener"
-          aria-label="<?php echo esc_attr( "$bm_name: cuota $odds" ); ?>"
+          aria-label="<?php printf( esc_html__( '%1$s: odds %2$s', 'pf' ), esc_attr( $bm_name ), esc_attr( $odds ) ); ?>"
         >
           <span class="pf-tipster-card__bm-name"><?php echo esc_html( $bm_name ); ?></span>
           <span class="pf-tipster-card__bm-odds"><?php echo esc_html( $odds ); ?></span>

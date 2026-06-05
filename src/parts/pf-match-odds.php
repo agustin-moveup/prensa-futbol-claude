@@ -34,7 +34,7 @@ foreach ( $items as $item ) {
     <div class="pf-match-odds__col-headers" aria-hidden="true">
       <span></span>
       <span><?php echo esc_html( $team_home ); ?></span>
-      <span>Empate</span>
+      <span><?php esc_html_e( 'Draw', 'pf' ); ?></span>
       <span><?php echo esc_html( $team_away ); ?></span>
       <span></span>
     </div>
@@ -49,7 +49,7 @@ foreach ( $items as $item ) {
         $odds_draw  = (float) ( $item['odds_draw'] ?? 0 );
         $odds_away  = (float) ( $item['odds_away'] ?? 0 );
         $cta_href   = $item['cta_href']    ?? '#';
-        $cta_label  = $item['cta_label']   ?? 'Apostar';
+        $cta_label  = $item['cta_label']   ?? __( 'Bet', 'pf' );
         $bm_initials = mb_strtoupper( mb_substr( $bm_name, 0, 2 ) );
       ?>
         <li class="pf-match-odds__row">
@@ -58,7 +58,7 @@ foreach ( $items as $item ) {
             <span class="pf-match-odds__bm-logo" style="--bm-brand-color:<?php echo esc_attr( $bm_color ); ?>;" aria-hidden="true"><?php echo esc_html( $bm_initials ); ?></span>
             <div class="pf-match-odds__bm-info">
               <span class="pf-match-odds__bm-name"><?php echo esc_html( $bm_name ); ?></span>
-              <span class="pf-match-odds__bm-rating" aria-label="<?php echo esc_attr( number_format( $rating, 1 ) . ' de 5' ); ?>">
+              <span class="pf-match-odds__bm-rating" aria-label="<?php printf( esc_html__( '%s out of 5', 'pf' ), esc_attr( number_format( $rating, 1 ) ) ); ?>">
                 <span class="pf-match-odds__stars">
                   <span class="pf-match-odds__stars-track" aria-hidden="true">
                     <?php for ( $i = 0; $i < 5; $i++ ) : ?>

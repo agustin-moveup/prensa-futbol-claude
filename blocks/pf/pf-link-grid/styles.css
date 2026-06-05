@@ -6,7 +6,7 @@
   color: var(--pf-color-text);
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-4);
+  gap: 16px;
 }
 
 .pf-link-grid__heading {
@@ -21,13 +21,13 @@
 .pf-link-grid__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--pf-space-4);
+  gap: 16px;
 }
 
 .pf-link-grid__col {
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-3);
+  gap: 12px;
 }
 
 .pf-link-grid__col-title {
@@ -36,7 +36,7 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--pf-color-text-muted);
-  padding-bottom: var(--pf-space-2);
+  padding-bottom: 8px;
   border-bottom: 1px solid var(--pf-color-border);
 }
 
@@ -44,13 +44,13 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-2);
+  gap: 8px;
 }
 
 .pf-link-grid__link {
   display: flex;
   align-items: center;
-  gap: var(--pf-space-2);
+  gap: 8px;
   font-size: 0.8rem;
   color: var(--pf-color-text-muted);
   text-decoration: none;

@@ -3,7 +3,7 @@
   container-name: pf-offer-list;
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-5);
+  gap: 20px;
   font-family: var(--pf-font-body);
   color: var(--pf-color-text);
 }
@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--pf-space-4);
+  gap: 16px;
 }
 
 .pf-offer-list__title {
@@ -31,7 +31,7 @@
 .pf-offer-list__header-cta {
   display: flex;
   align-items: center;
-  gap: var(--pf-space-1);
+  gap: 4px;
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--pf-color-text-muted);
@@ -53,7 +53,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-3);
+  gap: 12px;
 }
 
 /* ── Card wrapper (li) ── */
@@ -61,7 +61,7 @@
 .pf-offer-list__item {
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-2);
+  gap: 8px;
 }
 
 /* ── Card ── */
@@ -74,8 +74,8 @@
   grid-template-columns: 200px 1fr 260px 160px;
   grid-template-areas: "head offer zone cta";
   align-items: center;
-  gap: var(--pf-space-5);
-  padding: var(--pf-space-4) var(--pf-space-5);
+  gap: 20px;
+  padding: 16px 20px;
   background: var(--pf-color-surface);
   border-radius: var(--pf-radius-sm);
   border: 1px solid var(--pf-color-border);
@@ -87,7 +87,7 @@
   grid-area: head;
   display: flex;
   align-items: center;
-  gap: var(--pf-space-3);
+  gap: 12px;
   min-width: 160px;
 }
 
@@ -106,14 +106,14 @@
 .pf-offer-list__rank--gold   { background: #F1AD00; color: #1a1a1a; }
 .pf-offer-list__rank--silver { background: #a8b0c0; color: #1a1a1a; }
 .pf-offer-list__rank--bronze { background: #c47a3a; color: #ffffff; }
-.pf-offer-list__rank--plain  { background: var(--pf-color-surface-elevated); color: var(--pf-color-text-muted); }
+.pf-offer-list__rank--plain  { background: #1e3252; color: var(--pf-color-text-muted); }
 
 /* Brand logo circle — instance-level color via inline var */
 .pf-offer-list__logo {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: var(--bm-brand-color, var(--pf-color-surface-elevated));
+  background: var(--bm-brand-color, #1e3252);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,7 +141,7 @@
 .pf-offer-list__rating {
   display: flex;
   align-items: center;
-  gap: var(--pf-space-2);
+  gap: 8px;
 }
 
 /* Star rating */
@@ -200,7 +200,7 @@
   grid-area: zone;
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-3);
+  gap: 12px;
   min-width: 0;
 }
 
@@ -211,9 +211,9 @@
   grid-template-rows: auto auto;
   grid-template-areas: "label icon" "value icon";
   align-items: center;
-  gap: 2px var(--pf-space-3);
-  padding: var(--pf-space-2) var(--pf-space-3);
-  background: var(--pf-color-surface-elevated);
+  gap: 2px 12px;
+  padding: 8px 12px;
+  background: #1e3252;
   border: 1.5px dashed var(--pf-color-accent);
   border-radius: var(--pf-radius-sm);
   cursor: pointer;
@@ -237,7 +237,7 @@
 
 .pf-offer-list__code-value {
   grid-area: value;
-  font-family: var(--pf-font-mono);
+  font-family: ui-monospace, "Roboto Mono", monospace;
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -291,13 +291,13 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-2);
+  gap: 8px;
 }
 
 .pf-offer-list__pro {
   display: flex;
   align-items: flex-start;
-  gap: var(--pf-space-2);
+  gap: 8px;
   font-size: 0.85rem;
   line-height: 1.35;
   color: var(--pf-color-text-muted);
@@ -305,7 +305,7 @@
 
 .pf-offer-list__pro-icon {
   flex-shrink: 0;
-  color: var(--pf-color-success);
+  color: #22c55e;
   margin-top: 1px;
   display: flex;
 }
@@ -317,9 +317,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--pf-space-2);
+  gap: 8px;
   min-width: 140px;
-  padding: var(--pf-space-3) var(--pf-space-5);
+  padding: 12px 20px;
   background: var(--pf-color-primary-deep);
   border-radius: var(--pf-radius-sm);
   color: var(--pf-color-text);
@@ -337,7 +337,7 @@
 
 .pf-offer-list__terms {
   margin: 0;
-  padding: 0 var(--pf-space-5);
+  padding: 0 20px;
   font-size: 0.7rem;
   line-height: 1.4;
   color: var(--pf-color-text-muted);
@@ -357,7 +357,7 @@
       "head cta"
       "offer offer"
       "zone zone";
-    gap: var(--pf-space-4);
+    gap: 16px;
   }
 
   .pf-offer-list__offer {
@@ -374,8 +374,8 @@
       "offer"
       "zone"
       "cta";
-    padding: var(--pf-space-4);
-    gap: var(--pf-space-3);
+    padding: 16px;
+    gap: 12px;
   }
 
   .pf-offer-list__head {
@@ -395,7 +395,7 @@
     min-width: 0;
     width: 100%;
     justify-content: center;
-    padding: var(--pf-space-3) var(--pf-space-4);
+    padding: 12px 16px;
   }
 }
 

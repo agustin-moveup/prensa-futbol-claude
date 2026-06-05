@@ -5,11 +5,11 @@
   background: color-mix(in srgb, var(--pf-color-accent) 13%, var(--pf-color-surface));
   border: 1px solid color-mix(in srgb, var(--pf-color-accent) 30%, transparent);
   border-radius: var(--pf-radius-sm);
-  padding: var(--pf-space-3) var(--pf-space-5);
+  padding: 12px 20px;
   font-family: var(--pf-font-body);
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-2);
+  gap: 8px;
 }
 
 /* ── Inner row ── */
@@ -17,7 +17,7 @@
 .pf-bookmaker-banner__inner {
   display: flex;
   align-items: center;
-  gap: var(--pf-space-3);
+  gap: 12px;
 }
 
 /* ── Left group ── */
@@ -25,7 +25,7 @@
 .pf-bookmaker-banner__left {
   display: flex;
   align-items: center;
-  gap: var(--pf-space-2);
+  gap: 8px;
   flex: 1;
   min-width: 0;
   flex-wrap: wrap;
@@ -81,7 +81,7 @@
 .pf-bookmaker-banner__cta {
   display: inline-flex;
   align-items: center;
-  padding: var(--pf-space-2) var(--pf-space-5);
+  padding: 8px 20px;
   background: var(--pf-color-primary-deep);
   color: var(--pf-color-text);
   border-radius: var(--pf-radius-sm);

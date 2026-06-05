@@ -7,7 +7,7 @@
   color: var(--pf-color-text);
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-5);
+  gap: 20px;
 }
 
 /* ── Header ── */
@@ -15,7 +15,7 @@
 .pf-event-spotlight__header {
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-3);
+  gap: 12px;
 }
 
 /* Thin gradient strip above the title — carries the event theme */
@@ -29,13 +29,13 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: var(--pf-space-4);
+  gap: 16px;
 }
 
 .pf-event-spotlight__header-text {
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-1);
+  gap: 4px;
 }
 
 .pf-event-spotlight__kicker {
@@ -62,7 +62,7 @@
 .pf-event-spotlight__cta {
   display: inline-flex;
   align-items: center;
-  gap: var(--pf-space-1);
+  gap: 4px;
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--pf-color-text-muted);
@@ -82,7 +82,7 @@
 .pf-event-spotlight--spotlight .pf-event-spotlight__body {
   display: flex;
   flex-direction: column;
-  gap: var(--pf-space-4);
+  gap: 16px;
 }
 
 .pf-event-spotlight__primary {
@@ -98,7 +98,7 @@
 .pf-event-spotlight__rail {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--pf-space-3);
+  gap: 12px;
 }
 
 /* Narrow: 2 columns */
@@ -127,14 +127,14 @@
 
 .pf-event-spotlight__scroll {
   display: flex;
-  gap: var(--pf-space-4);
+  gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-padding-left: var(--pf-space-4);
-  padding-bottom: var(--pf-space-3);
+  scroll-padding-left: 16px;
+  padding-bottom: 12px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
-  scrollbar-color: var(--pf-color-surface-elevated) transparent;
+  scrollbar-color: #1e3252 transparent;
 }
 
 .pf-event-spotlight__scroll-item {

@@ -32,10 +32,10 @@ $star_path = 'M6 1l1.4 2.8 3.1.45-2.25 2.19.53 3.09L6 8.05 3.22 9.53l.53-3.09L1.
 
     <div class="pf-competition-accordion__table-header" aria-hidden="true">
       <span></span>
-      <span>Partido</span>
-      <span>Casa</span>
-      <span>Empate</span>
-      <span>Visitante</span>
+      <span><?php esc_html_e( 'Match', 'pf' ); ?></span>
+      <span><?php esc_html_e( 'Home', 'pf' ); ?></span>
+      <span><?php esc_html_e( 'Draw', 'pf' ); ?></span>
+      <span><?php esc_html_e( 'Away', 'pf' ); ?></span>
       <span></span>
     </div>
 
@@ -54,21 +54,19 @@ $star_path = 'M6 1l1.4 2.8 3.1.45-2.25 2.19.53 3.09L6 8.05 3.22 9.53l.53-3.09L1.
       ?>
         <li class="pf-competition-accordion__match-row">
 
-          <!-- Status -->
           <div class="pf-competition-accordion__kickoff">
             <?php if ( 'live' === $status ) : ?>
               <span class="pf-competition-accordion__badge pf-competition-accordion__badge--live">
                 <span class="pf-competition-accordion__live-dot" aria-hidden="true"></span>
-                Live
+                <?php esc_html_e( 'Live', 'pf' ); ?>
               </span>
             <?php elseif ( 'finish' === $status ) : ?>
-              <span class="pf-competition-accordion__badge pf-competition-accordion__badge--finish">Finish</span>
+              <span class="pf-competition-accordion__badge pf-competition-accordion__badge--finish"><?php esc_html_e( 'Finished', 'pf' ); ?></span>
             <?php else : ?>
               <time class="pf-competition-accordion__time"><?php echo esc_html( $kickoff ); ?></time>
             <?php endif; ?>
           </div>
 
-          <!-- Teams -->
           <div class="pf-competition-accordion__teams">
             <div class="pf-competition-accordion__team-row">
               <span
@@ -88,7 +86,6 @@ $star_path = 'M6 1l1.4 2.8 3.1.45-2.25 2.19.53 3.09L6 8.05 3.22 9.53l.53-3.09L1.
             </div>
           </div>
 
-          <!-- Odds 1 / X / 2 -->
           <?php foreach ( [ '1', 'X', '2' ] as $outcome ) :
             if ( isset( $odds_map[ $outcome ] ) ) :
               $o = $odds_map[ $outcome ];
@@ -99,7 +96,7 @@ $star_path = 'M6 1l1.4 2.8 3.1.45-2.25 2.19.53 3.09L6 8.05 3.22 9.53l.53-3.09L1.
                 style="--bm-brand-color:<?php echo esc_attr( $o['bm_brand_color'] ?? '#555' ); ?>;"
                 target="_blank"
                 rel="nofollow sponsored noopener"
-                aria-label="<?php echo esc_attr( number_format( (float) ( $o['value'] ?? 0 ), 2 ) . ' en ' . ( $o['bm_name'] ?? '' ) ); ?>"
+                aria-label="<?php printf( esc_html__( '%1$s at %2$s', 'pf' ), esc_attr( number_format( (float) ( $o['value'] ?? 0 ), 2 ) ), esc_attr( $o['bm_name'] ?? '' ) ); ?>"
               >
                 <span class="pf-competition-accordion__odd-logo" aria-hidden="true"><?php echo esc_html( mb_strtoupper( mb_substr( $o['bm_name'] ?? '', 0, 2 ) ) ); ?></span>
                 <span class="pf-competition-accordion__odd-value"><?php echo esc_html( number_format( (float) ( $o['value'] ?? 0 ), 2 ) ); ?></span>
@@ -109,11 +106,10 @@ $star_path = 'M6 1l1.4 2.8 3.1.45-2.25 2.19.53 3.09L6 8.05 3.22 9.53l.53-3.09L1.
             <?php endif;
           endforeach; ?>
 
-          <!-- Arrow link -->
           <a
             href="<?php echo esc_url( $match_url ); ?>"
             class="pf-competition-accordion__arrow"
-            aria-label="<?php echo esc_attr( 'Ver ' . ( $home['name'] ?? '' ) . ' vs ' . ( $away['name'] ?? '' ) ); ?>"
+            aria-label="<?php printf( esc_html__( 'View %1$s vs %2$s', 'pf' ), esc_attr( $home['name'] ?? '' ), esc_attr( $away['name'] ?? '' ) ); ?>"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
               <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
