@@ -187,18 +187,18 @@ const sidebarListData = {
   .pf-page__container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--pf-space-5);
+    padding: 0 20px;
   }
 
   /* Banner strip */
   .pf-page__banner {
-    padding: var(--pf-space-4) 0;
+    padding: 16px 0;
     border-bottom: 1px solid var(--pf-color-border);
   }
 
   /* Main content */
   .pf-page__main {
-    padding: var(--pf-space-7) 0 var(--pf-space-8);
+    padding: 32px 0 40px;
   }
 
   /* Two-column layout: main + sidebar */
@@ -206,7 +206,7 @@ const sidebarListData = {
     display: grid;
     grid-template-columns: 1fr 272px;
     align-items: start;
-    gap: 0 var(--pf-space-6);
+    gap: 0 24px;
   }
 
   .pf-page__content {
@@ -216,20 +216,20 @@ const sidebarListData = {
   /* Sticky sidebar */
   .pf-page__sidebar-inner {
     position: sticky;
-    top: var(--pf-space-6);
+    top: 24px;
     display: flex;
     flex-direction: column;
-    gap: var(--pf-space-5);
+    gap: 20px;
   }
 
   /* Sections */
   .pf-section {
     display: flex;
     flex-direction: column;
-    gap: var(--pf-space-5);
-    padding-bottom: var(--pf-space-8);
+    gap: 20px;
+    padding-bottom: 40px;
     border-bottom: 1px solid var(--pf-color-border);
-    margin-bottom: var(--pf-space-8);
+    margin-bottom: 40px;
   }
 
   .pf-section--last {
@@ -241,14 +241,14 @@ const sidebarListData = {
   /* Match tip slider */
   .pf-tip-slider {
     display: flex;
-    gap: var(--pf-space-4);
+    gap: 16px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-padding-left: var(--pf-space-5);
-    padding-bottom: var(--pf-space-3);
+    scroll-padding-left: 20px;
+    padding-bottom: 12px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
-    scrollbar-color: var(--pf-color-surface-elevated) transparent;
+    scrollbar-color: #1e3252 transparent;
   }
 
   .pf-tip-slider__item {
@@ -265,14 +265,14 @@ const sidebarListData = {
   /* News slider — featured cards, fixed height */
   .pf-news-slider {
     display: flex;
-    gap: var(--pf-space-4);
+    gap: 16px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-padding-left: var(--pf-space-5);
-    padding-bottom: var(--pf-space-3);
+    scroll-padding-left: 20px;
+    padding-bottom: 12px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
-    scrollbar-color: var(--pf-color-surface-elevated) transparent;
+    scrollbar-color: #1e3252 transparent;
   }
 
   .pf-news-slider__item {
@@ -292,13 +292,13 @@ const sidebarListData = {
   .pf-section__stack {
     display: flex;
     flex-direction: column;
-    gap: var(--pf-space-3);
+    gap: 12px;
   }
 
   .pf-section__grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--pf-space-5);
+    gap: 20px;
   }
 
   /* Responsive */
@@ -313,14 +313,14 @@ const sidebarListData = {
 
     /* On mobile the sidebar appears below all main content */
     .pf-page__sidebar {
-      padding-top: var(--pf-space-8);
+      padding-top: 40px;
       border-top: 1px solid var(--pf-color-border);
     }
   }
 
   @media (max-width: 768px) {
     .pf-page__container {
-      padding: 0 var(--pf-space-4);
+      padding: 0 16px;
     }
 
     .pf-section__grid-2 {
@@ -328,8 +328,8 @@ const sidebarListData = {
     }
 
     .pf-section {
-      padding-bottom: var(--pf-space-6);
-      margin-bottom: var(--pf-space-6);
+      padding-bottom: 24px;
+      margin-bottom: 24px;
     }
   }
 </style>

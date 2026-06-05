@@ -155,7 +155,7 @@ const socialLinks = [
   .pf-footer__inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 56px var(--pf-space-6) var(--pf-space-8);
+    padding: 56px 24px 40px;
     display: grid;
     grid-template-columns: 1fr auto auto;
     gap: 64px;
@@ -167,7 +167,7 @@ const socialLinks = [
   .pf-footer__brand {
     display: flex;
     flex-direction: column;
-    gap: var(--pf-space-5);
+    gap: 20px;
   }
 
   .pf-footer__logo {
@@ -194,14 +194,14 @@ const socialLinks = [
   .pf-footer__social {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--pf-space-2);
+    gap: 8px;
   }
 
   .pf-footer__social-link {
     display: flex;
     align-items: center;
-    gap: var(--pf-space-2);
-    padding: var(--pf-space-2) var(--pf-space-3);
+    gap: 8px;
+    padding: 8px 12px;
     background: var(--pf-color-accent);
     border-radius: var(--pf-radius-sm);
     color: #1a1a1a;
@@ -234,7 +234,7 @@ const socialLinks = [
   /* ── Nav columns ── */
 
   .pf-footer__nav-title {
-    margin: 0 0 var(--pf-space-4);
+    margin: 0 0 16px;
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -248,13 +248,13 @@ const socialLinks = [
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--pf-space-3);
+    gap: 12px;
   }
 
   .pf-footer__nav-link {
     display: inline-flex;
     align-items: center;
-    gap: var(--pf-space-2);
+    gap: 8px;
     font-size: 0.9rem;
     color: var(--pf-color-text-muted);
     text-decoration: none;
@@ -284,11 +284,11 @@ const socialLinks = [
   .pf-footer__bottom-inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--pf-space-5) var(--pf-space-5);
+    padding: 20px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--pf-space-4);
+    gap: 16px;
   }
 
   .pf-footer__legal {
@@ -314,7 +314,7 @@ const socialLinks = [
   @media (max-width: 960px) {
     .pf-footer__inner {
       grid-template-columns: 1fr 1fr;
-      gap: var(--pf-space-7);
+      gap: 32px;
     }
 
     .pf-footer__brand {
@@ -325,8 +325,8 @@ const socialLinks = [
   @media (max-width: 600px) {
     .pf-footer__inner {
       grid-template-columns: 1fr;
-      padding: var(--pf-space-7) var(--pf-space-4) var(--pf-space-6);
-      gap: var(--pf-space-6);
+      padding: 32px 16px 24px;
+      gap: 24px;
     }
 
     .pf-footer__brand {
@@ -336,12 +336,12 @@ const socialLinks = [
     .pf-footer__bottom-inner {
       flex-direction: column;
       align-items: flex-start;
-      gap: var(--pf-space-3);
-      padding: var(--pf-space-4);
+      gap: 12px;
+      padding: 16px;
     }
 
     .pf-footer__social {
-      gap: var(--pf-space-2);
+      gap: 8px;
     }
   }
 
