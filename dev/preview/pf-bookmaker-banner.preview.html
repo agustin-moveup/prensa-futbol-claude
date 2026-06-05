@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>pf-bookmaker-banner — Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Design tokens ── */
+    :root {
+      --pf-color-primary:          #FF2F2F;
+      --pf-color-primary-deep:     #cc0000;
+      --pf-color-accent:           #F1AD00;
+      --pf-color-bg:               #0F1828;
+      --pf-color-surface:          #1a2840;
+      --pf-color-surface-elevated: #1e3252;
+      --pf-color-border:           rgba(255,255,255,0.1);
+      --pf-color-text:             #ffffff;
+      --pf-color-text-muted:       rgba(255,255,255,0.65);
+      --pf-color-success:          #22c55e;
+      --pf-color-live:             #FF2F2F;
+      --pf-font-body:    Roboto, "Roboto Fallback", system-ui, -apple-system, sans-serif;
+      --pf-font-heading: "Barlow Condensed", sans-serif;
+      --pf-font-mono:    ui-monospace, "Roboto Mono", monospace;
+      --pf-radius-sm: 6px;
+      --pf-radius-md: 8px;
+      --pf-radius-lg: 12px;
+      --pf-space-1: 4px;
+      --pf-space-2: 8px;
+      --pf-space-3: 12px;
+      --pf-space-4: 16px;
+      --pf-space-5: 20px;
+      --pf-space-6: 24px;
+      --pf-space-7: 32px;
+      --pf-space-8: 40px;
+    }
+
+    /* ── Preview shell ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--pf-color-bg);
+      color: var(--pf-color-text);
+      font-family: var(--pf-font-body);
+      padding: 40px 24px;
+    }
+    .preview-title {
+      font-family: var(--pf-font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--pf-color-text-muted);
+      margin-bottom: 40px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--pf-color-border);
+    }
+    .scenario {
+      margin-bottom: 40px;
+    }
+    .scenario-label {
+      font-family: var(--pf-font-mono);
+      font-size: 0.7rem;
+      color: var(--pf-color-accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .scenario-frame {
+      max-width: 800px;
+    }
+    .scenario-frame--narrow {
+      max-width: 360px;
+    }
+
+    /* ── Block CSS ── */
+    .pf-bookmaker-banner {
+      container-type: inline-size;
+      container-name: pf-bookmaker-banner;
+      background: color-mix(in srgb, var(--pf-color-accent) 13%, var(--pf-color-surface));
+      border: 1px solid color-mix(in srgb, var(--pf-color-accent) 30%, transparent);
+      border-radius: var(--pf-radius-sm);
+      padding: var(--pf-space-3) var(--pf-space-5);
+      font-family: var(--pf-font-body);
+      display: flex;
+      flex-direction: column;
+      gap: var(--pf-space-2);
+    }
+    .pf-bookmaker-banner__inner {
+      display: flex;
+      align-items: center;
+      gap: var(--pf-space-3);
+    }
+    .pf-bookmaker-banner__left {
+      display: flex;
+      align-items: center;
+      gap: var(--pf-space-2);
+      flex: 1;
+      min-width: 0;
+      flex-wrap: wrap;
+    }
+    .pf-bookmaker-banner__logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--logo-from, #555), var(--logo-to, #222));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.55rem;
+      font-weight: 800;
+      color: var(--pf-color-text);
+      flex-shrink: 0;
+    }
+    .pf-bookmaker-banner__name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--pf-color-text);
+      white-space: nowrap;
+    }
+    .pf-bookmaker-banner__sep {
+      color: var(--pf-color-text-muted);
+      font-size: 0.75rem;
+    }
+    .pf-bookmaker-banner__tagline {
+      font-size: 0.85rem;
+      color: var(--pf-color-text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .pf-bookmaker-banner__value {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--pf-color-accent);
+      white-space: nowrap;
+    }
+    .pf-bookmaker-banner__cta {
+      display: inline-flex;
+      align-items: center;
+      padding: var(--pf-space-2) var(--pf-space-5);
+      background: var(--pf-color-primary-deep);
+      color: var(--pf-color-text);
+      border-radius: var(--pf-radius-sm);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 150ms ease;
+    }
+    .pf-bookmaker-banner__cta:hover { background: var(--pf-color-primary); }
+    .pf-bookmaker-banner__disclaimer {
+      font-size: 0.6rem;
+      color: var(--pf-color-text-muted);
+      text-align: center;
+      opacity: 0.7;
+      line-height: 1.4;
+    }
+    @container pf-bookmaker-banner (max-width: 480px) {
+      .pf-bookmaker-banner__tagline,
+      .pf-bookmaker-banner__sep:nth-of-type(1) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <p class="preview-title">pf-bookmaker-banner</p>
+
+  <!-- ── Scenario 1: betano ── -->
+  <div class="scenario">
+    <p class="scenario-label">betano — default</p>
+    <div class="scenario-frame">
+      <aside class="pf-bookmaker-banner">
+        <div class="pf-bookmaker-banner__inner">
+          <div class="pf-bookmaker-banner__left">
+            <span class="pf-bookmaker-banner__logo" style="--logo-from:#e01f26;--logo-to:#8b0000;" aria-hidden="true">BT</span>
+            <span class="pf-bookmaker-banner__name">Betano</span>
+            <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
+            <span class="pf-bookmaker-banner__tagline">Exclusivo para Chile</span>
+            <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
+            <span class="pf-bookmaker-banner__value">200% hasta $200.000 CLP</span>
+          </div>
+          <a href="#" class="pf-bookmaker-banner__cta" target="_blank" rel="nofollow sponsored noopener">Activar bono</a>
+        </div>
+        <p class="pf-bookmaker-banner__disclaimer">18+ · Juega con responsabilidad · Términos y condiciones aplican</p>
+      </aside>
+    </div>
+  </div>
+
+  <!-- ── Scenario 2: bet365 ── -->
+  <div class="scenario">
+    <p class="scenario-label">bet365 — bono de bienvenida</p>
+    <div class="scenario-frame">
+      <aside class="pf-bookmaker-banner">
+        <div class="pf-bookmaker-banner__inner">
+          <div class="pf-bookmaker-banner__left">
+            <span class="pf-bookmaker-banner__logo" style="--logo-from:#027b5b;--logo-to:#014d38;" aria-hidden="true">b3</span>
+            <span class="pf-bookmaker-banner__name">bet365</span>
+            <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
+            <span class="pf-bookmaker-banner__tagline">Bono de bienvenida</span>
+            <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
+            <span class="pf-bookmaker-banner__value">Hasta $100.000 CLP en apuestas gratis</span>
+          </div>
+          <a href="#" class="pf-bookmaker-banner__cta" target="_blank" rel="nofollow sponsored noopener">Reclamar oferta</a>
+        </div>
+        <p class="pf-bookmaker-banner__disclaimer">18+ · Solo nuevos clientes · T&amp;C aplican · Juega responsablemente</p>
+      </aside>
+    </div>
+  </div>
+
+  <!-- ── Scenario 3: betsafe ── -->
+  <div class="scenario">
+    <p class="scenario-label">betsafe — primera apuesta asegurada</p>
+    <div class="scenario-frame">
+      <aside class="pf-bookmaker-banner">
+        <div class="pf-bookmaker-banner__inner">
+          <div class="pf-bookmaker-banner__left">
+            <span class="pf-bookmaker-banner__logo" style="--logo-from:#d4a017;--logo-to:#a07800;" aria-hidden="true">BS</span>
+            <span class="pf-bookmaker-banner__name">Betsafe</span>
+            <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
+            <span class="pf-bookmaker-banner__tagline">Primera apuesta asegurada</span>
+            <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
+            <span class="pf-bookmaker-banner__value">Reembolso hasta $50.000 CLP</span>
+          </div>
+          <a href="#" class="pf-bookmaker-banner__cta" target="_blank" rel="nofollow sponsored noopener">Ir a Betsafe</a>
+        </div>
+        <p class="pf-bookmaker-banner__disclaimer">18+ · Aplica solo a nuevos usuarios · Términos y condiciones aplican</p>
+      </aside>
+    </div>
+  </div>
+
+  <!-- ── Scenario 4: narrow (container query test) ── -->
+  <div class="scenario">
+    <p class="scenario-label">betano — narrow (≤480px container)</p>
+    <div class="scenario-frame scenario-frame--narrow">
+      <aside class="pf-bookmaker-banner">
+        <div class="pf-bookmaker-banner__inner">
+          <div class="pf-bookmaker-banner__left">
+            <span class="pf-bookmaker-banner__logo" style="--logo-from:#e01f26;--logo-to:#8b0000;" aria-hidden="true">BT</span>
+            <span class="pf-bookmaker-banner__name">Betano</span>
+            <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
+            <span class="pf-bookmaker-banner__tagline">Exclusivo para Chile</span>
+            <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
+            <span class="pf-bookmaker-banner__value">200% hasta $200.000 CLP</span>
+          </div>
+          <a href="#" class="pf-bookmaker-banner__cta" target="_blank" rel="nofollow sponsored noopener">Activar bono</a>
+        </div>
+        <p class="pf-bookmaker-banner__disclaimer">18+ · Juega con responsabilidad · Términos y condiciones aplican</p>
+      </aside>
+    </div>
+  </div>
+
+</body>
+</html>
