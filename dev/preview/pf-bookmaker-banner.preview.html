@@ -49,9 +49,7 @@
       padding-bottom: 12px;
       border-bottom: 1px solid var(--pf-color-border);
     }
-    .scenario {
-      margin-bottom: 40px;
-    }
+    .scenario { margin-bottom: 40px; }
     .scenario-label {
       font-family: ui-monospace, "Roboto Mono", monospace;
       font-size: 0.7rem;
@@ -60,17 +58,14 @@
       text-transform: uppercase;
       margin-bottom: 12px;
     }
-    .scenario-frame {
-      max-width: 800px;
-    }
-    .scenario-frame--narrow {
-      max-width: 360px;
-    }
+    .scenario-frame { max-width: 800px; }
+    .scenario-frame--narrow { max-width: 360px; }
 
     /* ── Block CSS (verbatim from styles.css) ── */
     .pf-bookmaker-banner {
       container-type: inline-size;
       container-name: pf-bookmaker-banner;
+      position: relative;
       background: color-mix(in srgb, var(--pf-color-accent) 13%, var(--pf-color-surface));
       border: 1px solid color-mix(in srgb, var(--pf-color-accent) 30%, transparent);
       border-radius: var(--pf-radius-sm);
@@ -79,6 +74,19 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+    }
+    .pf-bookmaker-banner__ribbon {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 2px 10px;
+      border-radius: var(--pf-radius-sm);
+      background: var(--hl-color, var(--pf-color-primary));
+      color: var(--pf-color-text);
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.6;
     }
     .pf-bookmaker-banner__inner {
       display: flex;
@@ -97,7 +105,7 @@
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--logo-from, #555), var(--logo-to, #222));
+      background: var(--logo-color, #555);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -105,6 +113,10 @@
       font-weight: 800;
       color: var(--pf-color-text);
       flex-shrink: 0;
+    }
+    .pf-bookmaker-banner__logo--img {
+      object-fit: contain;
+      background: transparent;
     }
     .pf-bookmaker-banner__name {
       font-size: 0.9rem;
@@ -164,86 +176,105 @@
 
   <p class="preview-title">pf-bookmaker-banner</p>
 
-  <!-- Scenario 1: betano -->
+  <!-- Scenario 1: standard_copy — Coolbet, no ribbon, img logo -->
   <div class="scenario">
-    <p class="scenario-label">betano — default</p>
+    <p class="scenario-label">standard_copy — Coolbet · sports · copy code</p>
     <div class="scenario-frame">
       <aside class="pf-bookmaker-banner">
         <div class="pf-bookmaker-banner__inner">
           <div class="pf-bookmaker-banner__left">
-            <span class="pf-bookmaker-banner__logo" style="--logo-from:#e01f26;--logo-to:#8b0000;" aria-hidden="true">BT</span>
+            <img class="pf-bookmaker-banner__logo pf-bookmaker-banner__logo--img" src="https://via.placeholder.com/80x80/0a1f44/ffffff?text=CB" alt="Coolbet" width="32" height="32" />
+            <span class="pf-bookmaker-banner__name">Coolbet</span>
+            <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
+            <span class="pf-bookmaker-banner__tagline">Duplica tu primer depósito</span>
+            <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
+            <span class="pf-bookmaker-banner__value">100% hasta $50.000</span>
+          </div>
+          <a href="#" class="pf-bookmaker-banner__cta" target="_blank" rel="nofollow sponsored noopener">APOSTAR</a>
+        </div>
+        <p class="pf-bookmaker-banner__disclaimer">Solo mayores de 18 años. Aplican términos y condiciones. Juega con responsabilidad.</p>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Scenario 2: featured_blurred — Betano, orange ribbon -->
+  <div class="scenario">
+    <p class="scenario-label">featured_blurred — Betano · highlight ribbon · blurred code</p>
+    <div class="scenario-frame">
+      <aside class="pf-bookmaker-banner pf-bookmaker-banner--highlighted" style="--hl-color:#ff6b00;">
+        <span class="pf-bookmaker-banner__ribbon">MÁS POPULAR</span>
+        <div class="pf-bookmaker-banner__inner">
+          <div class="pf-bookmaker-banner__left">
+            <img class="pf-bookmaker-banner__logo pf-bookmaker-banner__logo--img" src="https://via.placeholder.com/80x80/ff6b00/ffffff?text=B" alt="Betano" width="32" height="32" />
             <span class="pf-bookmaker-banner__name">Betano</span>
             <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
-            <span class="pf-bookmaker-banner__tagline">Exclusivo para Chile</span>
+            <span class="pf-bookmaker-banner__tagline">El mejor bono del mercado</span>
             <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
-            <span class="pf-bookmaker-banner__value">200% hasta $200.000 CLP</span>
+            <span class="pf-bookmaker-banner__value">200% hasta $100.000</span>
           </div>
-          <a href="#" class="pf-bookmaker-banner__cta" target="_blank" rel="nofollow sponsored noopener">Activar bono</a>
+          <a href="#" class="pf-bookmaker-banner__cta" target="_blank" rel="nofollow sponsored noopener">APOSTAR AHORA</a>
         </div>
-        <p class="pf-bookmaker-banner__disclaimer">18+ · Juega con responsabilidad · Términos y condiciones aplican</p>
+        <p class="pf-bookmaker-banner__disclaimer">Solo mayores de 18 años. Bono sujeto a rollover x5. Juega con responsabilidad.</p>
       </aside>
     </div>
   </div>
 
-  <!-- Scenario 2: bet365 -->
+  <!-- Scenario 3: light — Jugabet, no bonus amount -->
   <div class="scenario">
-    <p class="scenario-label">bet365 — bono de bienvenida</p>
+    <p class="scenario-label">light — Jugabet · light variant · no bonus amount</p>
+    <div class="scenario-frame">
+      <aside class="pf-bookmaker-banner pf-bookmaker-banner--light">
+        <div class="pf-bookmaker-banner__inner">
+          <div class="pf-bookmaker-banner__left">
+            <img class="pf-bookmaker-banner__logo pf-bookmaker-banner__logo--img" src="https://via.placeholder.com/80x80/00b86b/ffffff?text=J" alt="Jugabet" width="32" height="32" />
+            <span class="pf-bookmaker-banner__name">Jugabet</span>
+          </div>
+          <a href="#" class="pf-bookmaker-banner__cta" target="_blank" rel="nofollow sponsored noopener">VER OFERTA</a>
+        </div>
+        <p class="pf-bookmaker-banner__disclaimer">Solo mayores de 18 años.</p>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Scenario 4: casino — Betsson, casino terms -->
+  <div class="scenario">
+    <p class="scenario-label">casino — Betsson Casino · type:casino · casino_terms</p>
     <div class="scenario-frame">
       <aside class="pf-bookmaker-banner">
         <div class="pf-bookmaker-banner__inner">
           <div class="pf-bookmaker-banner__left">
-            <span class="pf-bookmaker-banner__logo" style="--logo-from:#027b5b;--logo-to:#014d38;" aria-hidden="true">b3</span>
-            <span class="pf-bookmaker-banner__name">bet365</span>
+            <img class="pf-bookmaker-banner__logo pf-bookmaker-banner__logo--img" src="https://via.placeholder.com/80x80/f5a623/000000?text=BS" alt="Betsson Casino" width="32" height="32" />
+            <span class="pf-bookmaker-banner__name">Betsson Casino</span>
             <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
-            <span class="pf-bookmaker-banner__tagline">Bono de bienvenida</span>
+            <span class="pf-bookmaker-banner__tagline">Sin depósito requerido</span>
             <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
-            <span class="pf-bookmaker-banner__value">Hasta $100.000 CLP en apuestas gratis</span>
+            <span class="pf-bookmaker-banner__value">50 giros gratis</span>
           </div>
-          <a href="#" class="pf-bookmaker-banner__cta" target="_blank" rel="nofollow sponsored noopener">Reclamar oferta</a>
+          <a href="#" class="pf-bookmaker-banner__cta" target="_blank" rel="nofollow sponsored noopener">JUGAR</a>
         </div>
-        <p class="pf-bookmaker-banner__disclaimer">18+ · Solo nuevos clientes · T&amp;C aplican · Juega responsablemente</p>
+        <p class="pf-bookmaker-banner__disclaimer">Solo mayores de 18 años. Giros sujetos a rollover x30.</p>
       </aside>
     </div>
   </div>
 
-  <!-- Scenario 3: betsafe -->
+  <!-- Scenario 5: narrow container query test -->
   <div class="scenario">
-    <p class="scenario-label">betsafe — primera apuesta asegurada</p>
-    <div class="scenario-frame">
-      <aside class="pf-bookmaker-banner">
-        <div class="pf-bookmaker-banner__inner">
-          <div class="pf-bookmaker-banner__left">
-            <span class="pf-bookmaker-banner__logo" style="--logo-from:#d4a017;--logo-to:#a07800;" aria-hidden="true">BS</span>
-            <span class="pf-bookmaker-banner__name">Betsafe</span>
-            <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
-            <span class="pf-bookmaker-banner__tagline">Primera apuesta asegurada</span>
-            <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
-            <span class="pf-bookmaker-banner__value">Reembolso hasta $50.000 CLP</span>
-          </div>
-          <a href="#" class="pf-bookmaker-banner__cta" target="_blank" rel="nofollow sponsored noopener">Ir a Betsafe</a>
-        </div>
-        <p class="pf-bookmaker-banner__disclaimer">18+ · Aplica solo a nuevos usuarios · Términos y condiciones aplican</p>
-      </aside>
-    </div>
-  </div>
-
-  <!-- Scenario 4: narrow — container query test -->
-  <div class="scenario">
-    <p class="scenario-label">betano — narrow (≤480px container)</p>
+    <p class="scenario-label">featured_blurred — narrow (≤480px container query)</p>
     <div class="scenario-frame scenario-frame--narrow">
-      <aside class="pf-bookmaker-banner">
+      <aside class="pf-bookmaker-banner pf-bookmaker-banner--highlighted" style="--hl-color:#ff6b00;">
+        <span class="pf-bookmaker-banner__ribbon">MÁS POPULAR</span>
         <div class="pf-bookmaker-banner__inner">
           <div class="pf-bookmaker-banner__left">
-            <span class="pf-bookmaker-banner__logo" style="--logo-from:#e01f26;--logo-to:#8b0000;" aria-hidden="true">BT</span>
+            <img class="pf-bookmaker-banner__logo pf-bookmaker-banner__logo--img" src="https://via.placeholder.com/80x80/ff6b00/ffffff?text=B" alt="Betano" width="32" height="32" />
             <span class="pf-bookmaker-banner__name">Betano</span>
             <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
-            <span class="pf-bookmaker-banner__tagline">Exclusivo para Chile</span>
+            <span class="pf-bookmaker-banner__tagline">El mejor bono del mercado</span>
             <span class="pf-bookmaker-banner__sep" aria-hidden="true">·</span>
-            <span class="pf-bookmaker-banner__value">200% hasta $200.000 CLP</span>
+            <span class="pf-bookmaker-banner__value">200% hasta $100.000</span>
           </div>
-          <a href="#" class="pf-bookmaker-banner__cta" target="_blank" rel="nofollow sponsored noopener">Activar bono</a>
+          <a href="#" class="pf-bookmaker-banner__cta" target="_blank" rel="nofollow sponsored noopener">APOSTAR AHORA</a>
         </div>
-        <p class="pf-bookmaker-banner__disclaimer">18+ · Juega con responsabilidad · Términos y condiciones aplican</p>
+        <p class="pf-bookmaker-banner__disclaimer">Solo mayores de 18 años. Bono sujeto a rollover x5. Juega con responsabilidad.</p>
       </aside>
     </div>
   </div>
